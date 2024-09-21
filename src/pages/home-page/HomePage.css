@@ -1,0 +1,59 @@
+.about{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    padding: 60px 15px;
+}
+.about .Image-box{
+    width: 30%;
+    margin: 25px 20px;
+    background-color: beige;
+    min-width: 320px;
+    position: relative;
+}
+.about .text-box{
+    width: 70%;
+    padding: 20px 10px;
+    margin: 25px 20px;
+    max-width: 33.75vw;
+    background-color: beige;
+    text-align: initial;
+    max-width: 648px;
+    min-width: 350px;
+}
+.about .text-box small{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.8px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #24C2A5;
+    margin: 20px 0;
+}
+.about .text-box h2{
+    font-family: "Syne", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 51.6px;
+    text-align: left;
+    margin: 10px 0px;
+    color: #040119;
+}
+.about .text-box p{
+    color: #000000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    width: 95%;
+}
+.sparkle{
+    position: absolute;
+    top: -2%;
+    right: -3%;
+    max-width: 40px;
+    max-height: 40px;
+}
