@@ -3,7 +3,7 @@ import Navbar from '../../components/NavBar'
 import Banner from '../../components/banner/Banner';
 import './HomePage.css';
 import Sparkle from '../../assets/Sparkle.png';
-import spring from '../../assets/image (3).png';
+import spring from '../../assets/image3.png';
 import ForSale from '../../assets/image (1).png';
 import stream from '../../assets/image (2).png';
 import Features from '../../components/features/Features';
