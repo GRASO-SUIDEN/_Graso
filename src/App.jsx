@@ -1,4 +1,4 @@
-import Navbar from "./pages/home-page/HomePage";
+import Navbar from "./pages/HomePage";
 
 function App() {
   return (
