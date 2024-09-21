@@ -1,0 +1,66 @@
+.features{
+    width: 100%;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.features small{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.8px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #24C2A5;
+    margin: 20px 0;
+}
+.features h1{
+    font-family: "Syne", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 51.6px;
+    text-align: left;
+    margin: 10px 0px;
+    color: #040119;
+}
+.features p{
+    color: #000000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: initial;
+    width: 95%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);  
+    gap: 20px; 
+    width: 60%;
+    text-align: left;
+    min-width: 350px;
+  }
+  
+  .grid-item {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .grid-item h2{
+    font-family: "DM Sans", system-ui;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 78.12px;
+    text-align: center;
+    color: #24C2A5;
+  }
+  .grid-item h5{
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 29.05px;
+    text-align: center;
+  }

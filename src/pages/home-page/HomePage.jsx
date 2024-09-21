@@ -2,7 +2,11 @@ import React from 'react'
 import Navbar from '../../components/NavBar'
 import Banner from '../../components/banner/Banner';
 import './HomePage.css';
-import Sparkle from '../../assets/Sparkle.png.png'
+import Sparkle from '../../assets/Sparkle.png'
+import spring from '../../assets/image (3).png'
+import ForSale from '../../assets/image (1).png'
+import stream from '../../assets/image (2).png'
+import Features from '../../components/features/Features';
 
  const HomePage = () => {
   return (
@@ -11,9 +15,9 @@ import Sparkle from '../../assets/Sparkle.png.png'
       <Banner />
       <div className="about">
         <div className='Image-box'>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span><img src={spring} alt="spring" /></span>
+          <span><img src={ForSale} alt="sale" /><img src="" alt="" /></span>
+          <span><img src={stream} alt="" /></span>
           <img src={Sparkle} alt="sparkle" className='sparkle' />
         </div>
         <div className='text-box'>
@@ -25,7 +29,13 @@ import Sparkle from '../../assets/Sparkle.png.png'
             <button>Learn more</button>
         </div>
       </div>
-    </div>
+
+
+      
+      <Features/>
+
+      </div>
+
   )
 }
 
