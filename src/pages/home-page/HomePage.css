@@ -5,19 +5,24 @@
     flex-wrap: wrap-reverse;
     justify-content: center;
     padding: 60px 15px;
+    height: auto;
 }
 .about .Image-box{
     width: 30%;
     margin: 25px 20px;
     min-width: 320px;
     position: relative;
+    background-color: gray;
+    height: 100%;
 }
 .about .Image-box span{
     position: absolute;
     max-width: 330px;
-    min-width: 180px;
+    min-width: 150px;
     max-height: 329.99px;
-    min-height: 179.99;
+    min-height: 100.99;
+    width: 50%;
+    background-color: rosybrown;
 }
 .about .Image-box span img{
     width: 100%;
@@ -66,7 +71,22 @@
     max-width: 40px;
     max-height: 40px;
 }
-
+.text-box button{
+    max-width: 120px;
+    min-width: 100px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    border-bottom: 2px solid #1A1A1A57;
+    border-radius: 0;
+    transition: transform 0.3s ease-in-out;
+}
+.text-box button:active{
+    transform: scale(0.9);
+}
 
 
 
@@ -111,7 +131,11 @@
     .about .text-box{
         width: 100%;
     }
+    .about .text-box p{
+         width: 100%;
+     } 
 }
+
 
 
 

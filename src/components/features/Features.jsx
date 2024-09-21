@@ -1,7 +1,7 @@
 import React from 'react'
 import './Features.css'
 import Spring from '../../assets/image (3).png'
-import assets from '../../assets/image (4).png'
+import round from '../../assets/round-img.png'
 
  const Features = () => {
   return (
@@ -19,7 +19,9 @@ import assets from '../../assets/image (4).png'
                 </div>
 
         </div>
-       
+       <div className="features-img">
+        <img src={round} alt="" />
+       </div>
     </div>
   )
 }
