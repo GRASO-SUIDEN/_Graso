@@ -4,10 +4,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 p-4 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-blue-600 p-1 fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-bold">Brand</div>
 
+        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 items-center">
           <a href="#home" className="text-white hover:text-gray-300">
             Home
@@ -21,15 +22,19 @@ const Navbar = () => {
           <a href="#contact" className="text-white hover:text-gray-300">
             Whitepaper
           </a>
-          {/* Get Started Button for Desktop */}
-          <div>
-            <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold">
-              Get started
-            </button>
-          </div>
+          <a href="#about" className="text-white hover:text-gray-300">
+            About us
+          </a>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Button */}
+        <div className="py-2">
+          <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold w-full">
+            Get started
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -63,15 +68,18 @@ const Navbar = () => {
           Home
         </a>
         <a href="#about" className="block text-white py-2">
-          Explore
+          About
         </a>
         <a href="#services" className="block text-white py-2">
-          Portfolio
+          Services
         </a>
         <a href="#contact" className="block text-white py-2">
-            Whitepaper
+          Contact
         </a>
-    </div>
+        <a href="#about" className="text-white hover:text-gray-300">
+          About us
+        </a>
+      </div>
     </nav>
   );
 };

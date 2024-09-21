@@ -1,0 +1,80 @@
+.banner{
+    font-family: "Montserrat", system-ui;
+}
+.hero{
+    width: 100%;
+    background: #fff url("../../assets/Section.webp");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.text{
+    width: 60%;
+    min-width: 350px;
+    max-width: 854px;
+    margin: 50px 0px;
+}
+.text h1{
+font-size: 60px;
+font-weight: 700;
+text-align: center;
+}
+.text p{
+    text-align: center;
+    padding: 20px;
+    color: #111111;
+}
+.button-holder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+button{
+    width: 28%;
+    min-width: 145px;
+    max-width: 150px;
+    padding: 16px 0px;
+    border-radius: 10px;
+    border: 1px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 54px;
+}
+.button-holder button:nth-of-type(1){
+    border: 1px solid #111111;
+    background:transparent;
+    color: #111111;
+}
+.button-holder button:nth-of-type(2){
+    border: 1px solid #24C2A5;
+    background-color: #24C2A5;
+    color: #ffffff;
+}
+.main-img{
+max-width: Fixed (552px);
+height: Hug (658px);
+padding: 30px 30px 50px 30px;
+gap: 0px;
+border-radius: 40px 40px 0px 0px;
+opacity: 0px;
+background-color: red;
+}
+
+
+
+
+
+
+
+
+
+

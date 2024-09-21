@@ -1,9 +1,10 @@
-import Navbar from "./pages/HomePage";
+import Homepage from "./pages/home-page/HomePage";
+
 
 function App() {
   return (
     <div>
-      <HomePage />
+      <Homepage />
     </div>
   );
 }
