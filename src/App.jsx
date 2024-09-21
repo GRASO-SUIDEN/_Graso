@@ -1,9 +1,10 @@
-import Navbar from "./components/NavBar";
+import HomePage from "./pages/home-page/HomePage";
+
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <HomePage/>
     </div>
   );
 }
