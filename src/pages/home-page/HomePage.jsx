@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Navbar from '../../components/NavBar'
 import Banner from '../../components/banner/Banner';
 
@@ -12,4 +13,5 @@ import Banner from '../../components/banner/Banner';
   )
 }
 
-export default HomePage;
+export default ;
+

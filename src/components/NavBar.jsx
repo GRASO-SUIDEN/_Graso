@@ -6,9 +6,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-600 px-5 py-1 fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold">Brand</div>
-
-        {/* Desktop Menu */}
+        <div className="text-white text-lg font-bold">Brand</div
         <div className="hidden md:flex space-x-6 items-center">
           <a href="#home" className="text-white hover:text-gray-300">
             Home
@@ -19,13 +17,19 @@ const Navbar = () => {
           <a href="#services" className="text-white hover:text-gray-300">
             Portfolio
           </a>
-          <a href="#contact" className="text-white hover:text-gray-300">
-            Whitepaper
+          <a href="#contact" className="text-white hover:text-gray-300"><<<<<<< main
           </a>
-          <a href="#about" className="text-white hover:text-gray-300">
-            About us
+  out" className="text-white hover:text-gray-300">
+        
+=======
+>>>>>
           </a>
-        </div>
+          {/* Get Started Button for Desktop */}
+          <div>
+            <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold">
+              Get started
+            </button>
+          </div>
 
         {/* Button */}
         <div className="py-2">
@@ -35,12 +39,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
+==
+        {/* Mobile menu button */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none"
           >
-            <svg
+            <sv
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
@@ -68,14 +74,15 @@ const Navbar = () => {
           Home
         </a>
         <a href="#about" className="block text-white py-2">
-          About
+          Ex
         </a>
         <a href="#services" className="block text-white py-2">
-          Services
+          Portfolio
         </a>
         <a href="#contact" className="block text-white py-2">
-          Contact
+            Whitepaper
         </a>
+
         <a href="#about" className="text-white hover:text-gray-300">
           About us
         </a>
