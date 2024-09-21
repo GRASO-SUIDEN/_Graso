@@ -1,4 +1,4 @@
-import Navbar from "./src/pages/";
+import Navbar from "./pages/home-page/HomePage";
 
 function App() {
   return (
