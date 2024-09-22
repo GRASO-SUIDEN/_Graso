@@ -16,7 +16,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center items-start flex-1 gap-10 max-md:flex-col max-md:gap-6 [&_h2]:text-[1.5rem]">
+        <div className="flex justify-center items-start flex-1 space-x-7 max-md:flex-col max-md:gap-6 [&_h2]:text-[1.5rem]">
           <div className="flex flex-col space-y-2 flex-1 min-w-[100px]">
             <h2 className="font-semibold">COMMUNITY</h2>
             <div className="flex flex-col space-y-2 [&_p]:cursor-pointer">
@@ -53,16 +53,16 @@ function Footer() {
       {/* Down Part */}
       <div className="w-full h-[0.01rem] bg-gray-300 my-5"></div>
 
-      <div className="flex justify-between items-start gap-10 max-md:flex-col-reverse max-md:items-center">
-        <div className="mt-1 text-gray-400 max-md:text-center">
+      <div className="flex justify-between items-start gap-10 max-md:flex-col-reverse max-md:items-center ">
+        <div className="mt-1 text-gray-400 max-md:text-center w-full min-w-[200px]">
           <p>
             Copyright &copy; {new Date().getFullYear()} GRASO. All rights
             reserved.
           </p>
         </div>
 
-        <div>
-          <ul className="flex gap-6 justify-center max-md:flex-col max-md:gap-3 [&_li]:cursor-pointer">
+        <div className="w-full">
+          <ul className="flex gap-6 justify-center max-md:flex-col max-md:gap-3 [&_li]:cursor-pointer min-w-[200px]">
             <li>Home</li>
             <li>About Us</li>
             <li>Our Team</li>
