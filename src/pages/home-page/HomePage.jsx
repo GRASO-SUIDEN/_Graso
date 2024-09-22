@@ -6,6 +6,7 @@ import spring from "../../assets/image3.png";
 import ForSale from "../../assets/image (1).png";
 import stream from "../../assets/image (2).png";
 import Features from "../../components/features/Features";
+import Footer from "../../components/Footer";
 
 const HomePage = () => {
   return (
@@ -42,6 +43,7 @@ const HomePage = () => {
       </div>
 
       <Features />
+      <Footer />
     </div>
   );
 };
