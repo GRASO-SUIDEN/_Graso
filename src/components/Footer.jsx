@@ -16,7 +16,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center items-start flex-1 space-x-15 max-md:flex-col max-md:gap-6 [&_h2]:text-[1.5rem] min-w-[500px]">
+        <div className="flex justify-center items-start flex-1 space-x-16 max-md:flex-col max-md:gap-6 [&_h2]:text-[1.5rem] min-w-[500px] max-md:space-x-0">
           <div className="flex flex-col space-y-2 flex-1 min-w-[100px]">
             <h2 className="font-semibold">COMMUNITY</h2>
             <div className="flex flex-col space-y-2 [&_p]:cursor-pointer">
