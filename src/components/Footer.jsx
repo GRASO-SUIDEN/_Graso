@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex flex-col p-16 font-[Montserrat] max-md:p-6 bg-gradient-to-r from-[#f9f4fb] to-[#fffaec] w-full min-w-full">
+    <footer className="flex flex-col p-16 font-[Montserrat] max-md:p-6 bg-gradient-to-r from-[#f9f4fb] to-[#fffaec] w-full">
       {/* Up part */}
       <div className="flex justify-between items-start space-x-16  max-md:flex-col max-md:space-x-0 max-md:space-y-3">
         <div className="flex flex-col space-y-2 w-full min-w-[200px]">
@@ -61,7 +61,7 @@ function Footer() {
         </div>
 
         <div className="w-full">
-          <ul className="flex space-x-6 justify-center [&_li]:cursor-pointer max-md:flex-col max-md:space-x-0 max-md:space-y-3 min-w-[500px]">
+          <ul className="flex justify-center flex-wrap gap-4 [&_li]:cursor-pointer max-md:flex-col max-md:space-y-3">
             <li>Home</li>
             <li>About Us</li>
             <li>Our Team</li>
