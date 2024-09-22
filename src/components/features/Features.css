@@ -68,6 +68,15 @@
     line-height: 29.05px;
     text-align: center;
   }
+  .features-img{
+    max-width:342px;
+    max-height: 342px;
+  }
+  .features-img img{
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+  }
 
 
 
@@ -126,4 +135,18 @@
 
 
 
+  }
+
+
+  @media(max-width:1024px){
+    .features .text{
+      width: 50%;
+      max-width: 608px;
+      min-width: 350px;
+  }
+  .features-img{
+    max-width:342px;
+    max-height: 342px;
+    width: 50%;
+  }
   }

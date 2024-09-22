@@ -6,6 +6,7 @@ import ForSale from "../../assets/image (1).png";
 import stream from "../../assets/image (2).png";
 import Features from "../../components/features/Features";
 import Footer from "../../components/Footer";
+import { FaArrowRight } from 'react-icons/fa';
 
 const HomePage = () => {
   return (
@@ -14,11 +15,13 @@ const HomePage = () => {
       <Banner />
       <div className="about">
         <div className="Image-box">
-          <span>
+          <span className="spring" >
           <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png" alt="spring" />
           </span>
            <span>
             <img src={ForSale} alt="" />
+            <h2>STREAM</h2>
+            <h5>Delta, Nigeria</h5>
            </span>
           <span>
             <img src={stream} alt="stream" />
@@ -38,7 +41,7 @@ const HomePage = () => {
             fractional ownership in Real estates around the globe in a secure
             and compliant environment.
           </p>
-          <button>Learn more </button>
+          <button>Learn more <FaArrowRight className="right-arrow" size={20} color="black" /></button>
         </div>
       </div>
 
