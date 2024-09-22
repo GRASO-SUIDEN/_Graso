@@ -13,10 +13,10 @@ function Navbar() {
 
       <div
         className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-white max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5] ${
-          isOpen ? "translate-y-0 opacity-100" : "-translate-y-full"
+          isOpen ? "translate-y-0 opacity-100" : "max-md:-translate-y-full"
         }`}
       >
-        <ul className="flex space-x-8 text-lg max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:w-full max-md:space-x-0 max-md:space-y-4">
+        <ul className="flex space-x-8 text-lg max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:w-full max-md:space-x-0 max-md:space-y-4 max-md:mt-10">
           <li className="cursor-pointer">Home</li>
           <li className="cursor-pointer">Explore</li>
           <li className="cursor-pointer">Portfolio</li>
@@ -25,8 +25,8 @@ function Navbar() {
         </ul>
       </div>
 
-      <div className="flex justify-between items-center">
-        <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold">
+      <div className="max-md:flex max-md:-space-x-4">
+        <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold max-md:ml-10">
           Get started
         </button>
 
