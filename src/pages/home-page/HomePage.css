@@ -1,3 +1,6 @@
+.homepage{
+    background-color: #ffffff;
+}
 .about{
     width: 100%;
     display: flex;
@@ -9,20 +12,24 @@
 }
 .about .Image-box{
     width: 30%;
-    margin: 25px 20px;
-    min-width: 320px;
+    padding: 20px 10px;
+    margin: 5px 20px;
+    text-align: initial;
+    max-width: 648px;
+    min-width: 330px;
+    min-height: 358px;
     position: relative;
-    background-color: gray;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about .Image-box span{
     position: absolute;
-    max-width: 330px;
+    max-width: 380px;
     min-width: 150px;
     max-height: 329.99px;
-    min-height: 100.99;
-    width: 50%;
-    background-color: rosybrown;
+    min-height: 100.99px;
+    width: 60%;
 }
 .about .Image-box span img{
     width: 100%;
@@ -31,7 +38,7 @@
 .about .text-box{
     width: 70%;
     padding: 20px 10px;
-    margin: 25px 20px;
+    margin: 5px 20px;
     max-width: 33.75vw;
     text-align: initial;
     max-width: 648px;
@@ -67,7 +74,7 @@
 .sparkle{
     position: absolute;
     top: -2%;
-    right: -5%;
+    right: -3%;
     max-width: 40px;
     max-height: 40px;
 }

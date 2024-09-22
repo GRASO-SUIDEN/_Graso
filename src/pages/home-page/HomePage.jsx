@@ -2,29 +2,29 @@ import "./HomePage.css";
 import Navbar from "../../components/NavBar";
 import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
-import spring from "../../assets/image3.png";
 import ForSale from "../../assets/image (1).png";
 import stream from "../../assets/image (2).png";
 import Features from "../../components/features/Features";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="homepage">
       <Navbar />
       <Banner />
       <div className="about">
         <div className="Image-box">
           <span>
-            <img src={spring} alt="spring" />
+          <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png" alt="spring" />
           </span>
-          <span>
-            <img src={ForSale} alt="sale" />
-            <img src="" alt="" />
-          </span>
+           <span>
+            <img src={ForSale} alt="" />
+           </span>
           <span>
             <img src={stream} alt="stream" />
-          </span>
-          <img src={Sparkle} alt="sparkle" className="sparkle" />
+            <h2>HOLA</h2>
+            <h5>Lagos, Nigeria</h5>
+          </span> 
+           <img src={Sparkle} alt="sparkle" className="sparkle" /> 
         </div>
         <div className="text-box">
           <small>ABOUT THE PLATFORM</small>
