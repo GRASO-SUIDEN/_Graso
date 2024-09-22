@@ -1,87 +1,44 @@
-import React, { useState } from "react";
+import { FiAlignCenter } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
+import { useState } from "react";
 
-const Navbar = () => {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 p-1 fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold">Brand</div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 items-center">
-          <a href="#home" className="text-white hover:text-gray-300">
-            Home
-          </a>
-          <a href="#about" className="text-white hover:text-gray-300">
-            Explore
-          </a>
-          <a href="#services" className="text-white hover:text-gray-300">
-            Portfolio
-          </a>
-          <a href="#contact" className="text-white hover:text-gray-300">
-            Whitepaper
-          </a>
-          <a href="#about" className="text-white hover:text-gray-300">
-            About us
-          </a>
-        </div>
-
-        {/* Button */}
-        <div className="py-2">
-          <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold w-full">
-            Get started
-          </button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
-        </div>
+    <nav className="flex items-center fixed top-0 left-0 justify-between px-8 py-4 w-full bg-white bg-opacity-70 backdrop-blur-md z-50">
+      <div className="flex-shrink-0">
+        <h1 className="text-2xl text-[#24C2A5] font-bold">Graso</h1>
       </div>
 
-      {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-blue-500 overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-60" : "max-h-0"
+        className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-white max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5] ${
+          isOpen ? "translate-y-0 opacity-100" : "-translate-y-full"
         }`}
       >
-        <a href="#home" className="block text-white py-2">
-          Home
-        </a>
-        <a href="#about" className="block text-white py-2">
-          About
-        </a>
-        <a href="#services" className="block text-white py-2">
-          Services
-        </a>
-        <a href="#contact" className="block text-white py-2">
-          Contact
-        </a>
-        <a href="#about" className="text-white hover:text-gray-300">
-          About us
-        </a>
+        <ul className="flex space-x-8 text-lg max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:w-full max-md:space-x-0 max-md:space-y-4">
+          <li className="cursor-pointer">Home</li>
+          <li className="cursor-pointer">Explore</li>
+          <li className="cursor-pointer">Portfolio</li>
+          <li className="cursor-pointer">Whitepaper</li>
+          <li className="cursor-pointer">About Us</li>
+        </ul>
+      </div>
+
+      <div className="flex justify-between items-center">
+        <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold">
+          Get started
+        </button>
+
+        <button
+          className="z-10 text-center hidden max-md:flex max-md:justify-center max-md:items-center"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FiX size={30} /> : <FiAlignCenter size={30} />}
+        </button>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
