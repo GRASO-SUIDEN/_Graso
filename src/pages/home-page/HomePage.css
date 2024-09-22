@@ -166,7 +166,7 @@
 
 @media(max-width:1024px) {
     .about .text-box, .about .Image-box {
-        width: 80%; 
+        width: 30%; 
     }
 }
 
