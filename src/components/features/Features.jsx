@@ -9,7 +9,7 @@ const Features = () => {
   const [uniqueInvestors, setUniqueInvestors] = useState(0);
   const featuresRef = useRef(null);
 
-  // Target values
+  
   const targetValues = {
     averageRaise: 400000,
     projectLaunch: 1000000,
@@ -23,11 +23,11 @@ const Features = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             startIncrementCounters();
-            observer.unobserve(entry.target); // Stop observing once counters start
+            observer.unobserve(entry.target); 
           }
         });
       },
-      { threshold: 0.5 } // Adjust this threshold if needed
+      { threshold: 0.5 } 
     );
 
     if (featuresRef.current) {
@@ -50,7 +50,7 @@ const Features = () => {
 
   const incrementCounter = (setCounter, targetValue, step) => {
     let count = 0;
-    const duration = 2000; // Total time to reach the target value
+    const duration = 2000;
     const increment = Math.ceil(targetValue / (duration / step));
 
     const counterInterval = setInterval(() => {
@@ -63,7 +63,7 @@ const Features = () => {
     }, step);
   };
 
-  // Function to format the final value
+  
   const formatValue = (value, label) => {
     if (value === targetValues.averageRaise) return "$400k";
     if (value === targetValues.projectLaunch) return "1M+";
