@@ -31,13 +31,13 @@ const HomePage = () => {
           <span className="spring">
             <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png" alt="spring" />
           </span>
-          <span>
-            <img src={ForSale} alt="" />
+          <span className='top-card'>
+            <img src={ForSale} alt="top-card" />
             <h2>STREAM</h2>
             <h5>Delta, Nigeria</h5>
           </span>
-          <span>
-            <img src={stream} alt="stream" />
+          <span className='bottom-card'>
+            <img src={stream} alt="bottom-card"  />
             <h2>HOLA</h2>
             <h5>Lagos, Nigeria</h5>
           </span>

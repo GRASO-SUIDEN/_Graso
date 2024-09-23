@@ -71,11 +71,13 @@
   .features-img{
     max-width:342px;
     max-height: 342px;
+    position: relative;
   }
-  .features-img img{
+  .feature-image{
     width: 90%;
     height: 90%;
     margin: 0 auto;
+    position: relative;
   }
 
 
