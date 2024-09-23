@@ -89,7 +89,7 @@
 .sparkle{
     position: absolute;
     top: -2%;
-    right: -3%;
+    right: -10%;
     max-width: 40px;
     max-height: 40px;
 }
@@ -116,16 +116,16 @@
     margin-left: 3px;
 }
 .top-card{
-    top: -3%;
+    top: -1%;
     z-index: 99;
     transform: rotate(10deg);
-    right: 10%;
+    right: 5%;
     background-color: #ffffff;
     border-radius: 30px;
 }
 .bottom-card{
     z-index: 2;
-    transform: rotate(-10deg);
+    transform: rotate(-15deg);
     background-color: #111111;
     border-radius: 30px;
 }
@@ -162,6 +162,7 @@
 @media(max-width:768px){
     .about .text-box{
         width: 100%;
+        margin: 0;
     }
     .about .text-box h2{
         font-family: "Syne", sans-serif;
@@ -203,14 +204,26 @@
 
 
 
-@media(max-width:1024px) {
-    .about .text-box  {
-        width: 55%; 
+
+    @media(max-width:1024px) {
+        .about {
+            flex-wrap: wrap; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        
+      
+    
+        .about .text-box h2 {
+            font-size: 30px; 
+        }
+    
+        .about .text-box p {
+            font-size: 16px; 
+        }
     }
-    .about .Image-box{
-        width: 20%;
-    }
-}
+    
+
 
 
 

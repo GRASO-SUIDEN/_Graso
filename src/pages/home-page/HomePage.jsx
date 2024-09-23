@@ -5,6 +5,7 @@ import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
 import Features from "../../components/features/Features";
 import Footer from "../../components/Footer";
+import JoinUs from "../../components/JoinUs";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -68,6 +69,7 @@ const HomePage = () => {
         </div>
       </div>
       <Features />
+      <JoinUs />
       <Footer />
     </div>
   );
