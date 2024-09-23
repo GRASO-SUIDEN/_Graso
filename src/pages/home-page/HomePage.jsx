@@ -10,6 +10,7 @@ import Footer from '../../components/Footer';
 import { FaArrowRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import JoinUs from '../../components/JoinUs';
 
 const HomePage = () => {
   useEffect(() => {
@@ -60,6 +61,7 @@ const HomePage = () => {
         </div>
       </div>
       <Features />
+      <JoinUs/>
       <Footer />
     </div>
   );
