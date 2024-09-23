@@ -1,15 +1,13 @@
+import { useEffect } from "react";
 import "./HomePage.css";
 import Navbar from "../../components/NavBar";
 import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
-import ForSale from "../../assets/image (1).png";
-import stream from "../../assets/image (2).png";
 import Features from "../../components/features/Features";
 import Footer from "../../components/Footer";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 const HomePage = () => {
   useEffect(() => {
@@ -34,13 +32,19 @@ const HomePage = () => {
               alt="spring"
             />
           </span>
-          <span className='top-card'>
-            <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-47.jpg?raw=true" alt="top-card" />
+          <span className="top-card">
+            <img
+              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-47.jpg?raw=true"
+              alt="top-card"
+            />
             <h2>HOLA</h2>
             <h5>Lagos, Nigeria</h5>
           </span>
-          <span className='bottom-card'>
-            <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-36.jpg?raw=true" alt="bottom-card"  />
+          <span className="bottom-card">
+            <img
+              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-36.jpg?raw=true"
+              alt="bottom-card"
+            />
             <h2>STREAM</h2>
             <h5>Delta, Nigeria</h5>
           </span>
