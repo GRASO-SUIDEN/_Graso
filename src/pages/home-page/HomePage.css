@@ -33,7 +33,9 @@
     color: #ffffff;
     padding: 10px ;
 }
-
+.about .Image-box span img{
+    border-radius: 23px;
+}
 .spring{
     top: -10%;
     right: 0;
@@ -128,13 +130,18 @@
     border-radius: 30px;
 }
 .about span h2{
-    color: #111111;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 26px;
     text-align: left;
-    padding: 0px 10px;
+    padding: 10px 10px 0px 10px;
     width: 100%;
+}
+.bottom-card h2{
+    color: #ffffff;
+}
+.top-card h2{
+    color: #111111;
 }
 .about span h5{
    font-size: 13px;
