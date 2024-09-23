@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Features.css";
 import round from "../../assets/round-img.png";
 
@@ -9,7 +9,6 @@ const Features = () => {
   const [uniqueInvestors, setUniqueInvestors] = useState(0);
   const featuresRef = useRef(null);
 
-  
   const targetValues = {
     averageRaise: 400000,
     projectLaunch: 1000000,
@@ -23,11 +22,11 @@ const Features = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             startIncrementCounters();
-            observer.unobserve(entry.target); 
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 }
     );
 
     if (featuresRef.current) {
@@ -63,7 +62,6 @@ const Features = () => {
     }, step);
   };
 
-  
   const formatValue = (value, label) => {
     if (value === targetValues.averageRaise) return "$400k";
     if (value === targetValues.projectLaunch) return "1M+";

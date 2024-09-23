@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import './HomePage.css';
-import Navbar from '../../components/NavBar';
-import Banner from '../../components/banner/Banner';
-import Sparkle from '../../assets/sparkle.png';
-import ForSale from '../../assets/image (1).png';
-import stream from '../../assets/image (2).png';
-import Features from '../../components/features/Features';
-import Footer from '../../components/Footer';
-import { FaArrowRight } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "./HomePage.css";
+import Navbar from "../../components/NavBar";
+import Banner from "../../components/banner/Banner";
+import Sparkle from "../../assets/sparkle.png";
+import ForSale from "../../assets/image (1).png";
+import stream from "../../assets/image (2).png";
+import Features from "../../components/features/Features";
+import Footer from "../../components/Footer";
+import { FaArrowRight } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const HomePage = () => {
   useEffect(() => {
@@ -25,11 +25,14 @@ const HomePage = () => {
       <Banner />
       <div
         className="about"
-        data-aos="slide-right"  // This triggers the AOS animation
+        data-aos="slide-right" // This triggers the AOS animation
       >
         <div className="Image-box">
           <span className="spring">
-            <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png" alt="spring" />
+            <img
+              src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png"
+              alt="spring"
+            />
           </span>
           <span>
             <img src={ForSale} alt="" />
@@ -55,7 +58,8 @@ const HomePage = () => {
             and compliant environment.
           </p>
           <button>
-            Learn more <FaArrowRight className="right-arrow" size={20} color="black" />
+            Learn more{" "}
+            <FaArrowRight className="right-arrow" size={20} color="black" />
           </button>
         </div>
       </div>

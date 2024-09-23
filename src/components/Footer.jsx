@@ -16,7 +16,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center items-start w-full [&_h2]:text-[1.5rem] space-x-16 max-md:space-x-0  max-md:flex-col">
+        <div className="flex justify-center items-start w-full [&_h2]:text-[1.5rem] space-x-16 max-md:space-x-0  max-md:flex-col max-md:space-y-3">
           <div className="flex flex-col space-y-2 w-1/3 min-w-[100px]">
             <h2 className="font-semibold">COMMUNITY</h2>
             <div className="flex flex-col space-y-2 [&_p]:cursor-pointer">
@@ -51,7 +51,7 @@ function Footer() {
       </div>
 
       {/* Down Part */}
-      <div className="w-full max-w-full h-[0.01rem] bg-gray-300 mx-auto my-5"></div>
+      <div className="w-full max-w-full h-[0.05rem] bg-gray-300 mx-auto my-5"></div>
       <div className="flex justify-between items-start space-x-10 max-md:flex-col-reverse max-md:justify-center max-md:items-center max-md:space-x-0">
         <div className="w-full mt-1 max-md:text-center min-w-[100px]">
           <p className="text-gray-400">
@@ -61,7 +61,7 @@ function Footer() {
         </div>
 
         <div className="w-full">
-          <ul className="flex justify-center flex-wrap gap-4 [&_li]:cursor-pointer max-md:flex-col max-md:space-y-3">
+          <ul className="flex justify-center flex-wrap gap-3 [&_li]:cursor-pointer max-md:flex-col max-md:space-y-2">
             <li>Home</li>
             <li>About Us</li>
             <li>Our Team</li>
