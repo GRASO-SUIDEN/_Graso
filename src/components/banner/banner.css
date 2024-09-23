@@ -1,5 +1,6 @@
 .banner{
     font-family: "Montserrat", system-ui;
+    padding-bottom: 20px
 }
 .hero{
     width: 100%;
@@ -131,7 +132,7 @@ z-index:10;
 .asset-card img{
     width: 100%;
     height: 60%;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 .assetcard1{
     top: 18%;
@@ -151,6 +152,7 @@ z-index:10;
 .assetcard4{
     top: 22%;
     left: 2%;
+    transform: rotate(-15deg);
 }
 .asset-card h4{
     font-size: 15px;

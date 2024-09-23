@@ -30,22 +30,22 @@ const Banner = () => {
         </div>
 
         <div className="asset-card assetcard1">
-          <img src={AssetCard1} alt="asset-card" />
+          <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_827.jpg?raw=true" alt="asset-card" />
           <h4>JOS ESTATE</h4>
           <h5>Port Harcourt, Nigeria</h5>
         </div>
         <div className="asset-card assetcard2">
-          <img src={AssetCard2} alt="asset-card" />
+          <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_985.jpg?raw=true" alt="asset-card" />
           <h4>MONEYLAND</h4>
           <h5>Calabar, Nigeria</h5>
         </div>
         <div className="asset-card assetcard3">
-          <img src={AssetCard5} alt="asset-card" />
+          <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045951_309.jpg?raw=true" alt="asset-card" />
           <h4>EVERCLEAR</h4>
           <h5>Delta, Nigeria</h5>
         </div>
         <div className="asset-card assetcard4">
-          <img src={AssetCard4} alt="asset-card" />
+          <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_912.jpg?raw=true" alt="asset-card" />
           <h4>HOLA</h4>
           <h5>Lagos, Nigeria.</h5>
         </div>

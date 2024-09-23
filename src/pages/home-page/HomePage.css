@@ -30,8 +30,12 @@
     max-height: 329.99px;
     min-height: 100.99px;
     width: 60%;
+    color: #ffffff;
+    padding: 10px ;
 }
-
+.about .Image-box span img{
+    border-radius: 23px;
+}
 .spring{
     top: -10%;
     right: 0;
@@ -111,8 +115,43 @@
 .right-arrow{
     margin-left: 3px;
 }
-
-
+.top-card{
+    top: -3%;
+    z-index: 99;
+    transform: rotate(10deg);
+    right: 10%;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+.bottom-card{
+    z-index: 2;
+    transform: rotate(-10deg);
+    background-color: #111111;
+    border-radius: 30px;
+}
+.about span h2{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: left;
+    padding: 10px 10px 0px 10px;
+    width: 100%;
+}
+.bottom-card h2{
+    color: #ffffff;
+}
+.top-card h2{
+    color: #111111;
+}
+.about span h5{
+   font-size: 13px;
+   font-weight: 400;
+   line-height: 18px;
+   text-align: left;
+   padding: 0px 10px;
+   width: 100%;
+   color: #A0A0A1;
+}
 
 
 
