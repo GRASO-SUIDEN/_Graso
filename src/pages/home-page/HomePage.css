@@ -9,6 +9,10 @@
     justify-content: center;
     padding: 60px 15px;
     height: auto;
+    background: url(https://github.com/chiscookeke11/Test-pagea/blob/main/bg2.jpg?raw=true);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .about .Image-box{
     width: 30%;
@@ -22,6 +26,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url(https://github.com/chiscookeke11/Test-pagea/blob/main/spring.png?raw=true);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .about .Image-box span{
     position: absolute;
