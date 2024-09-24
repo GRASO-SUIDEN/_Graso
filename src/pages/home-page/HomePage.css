@@ -26,10 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(https://github.com/chiscookeke11/Test-pagea/blob/main/spring.png?raw=true);
-    background-position: right;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 .about .Image-box span{
     position: absolute;
