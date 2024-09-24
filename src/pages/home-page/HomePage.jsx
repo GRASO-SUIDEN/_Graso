@@ -15,8 +15,8 @@ import JoinUs from '../../components/JoinUs';
 const HomePage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Animates only once when the element comes into view
+      duration: 1000, 
+      once: true, 
     });
   }, []);
 
@@ -26,7 +26,7 @@ const HomePage = () => {
       <Banner />
       <div
         className="about"
-        data-aos="slide-right"  // This triggers the AOS animation
+        data-aos="slide-right" 
       >
         <div className="Image-box">
           <span className="spring">

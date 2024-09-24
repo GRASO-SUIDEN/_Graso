@@ -190,6 +190,15 @@
         height: 15px;
         margin-left: 2px;
     }
+    .about{
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        padding: 60px 15px 20px 15px;
+        height: auto;
+    }
 }
 
 
