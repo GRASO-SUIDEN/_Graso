@@ -1,22 +1,20 @@
-import React, { useEffect } from 'react';
-import './HomePage.css';
-import Navbar from '../../components/NavBar';
-import Banner from '../../components/banner/Banner';
-import Sparkle from '../../assets/sparkle.png';
-import ForSale from '../../assets/image (1).png';
-import stream from '../../assets/image (2).png';
-import Features from '../../components/features/Features';
-import Footer from '../../components/Footer';
-import { FaArrowRight } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Explore from './Explore';
+import { useEffect } from "react";
+import "./HomePage.css";
+import Navbar from "../../components/NavBar";
+import Banner from "../../components/banner/Banner";
+import Sparkle from "../../assets/sparkle.png";
+import Features from "../../components/features/Features";
+import Footer from "../../components/Footer";
+import { FaArrowRight } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Explore from "../../components/Explore";
 
 const HomePage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
+      duration: 1000,
+      once: true,
     });
   }, []);
 
@@ -24,11 +22,7 @@ const HomePage = () => {
     <div className="homepage">
       <Navbar />
       <Banner />
-      <div
-        className="about"
-        data-aos="slide-right" 
-
-      >
+      <div className="about" data-aos="slide-right">
         <div className="Image-box">
           <span className="spring">
             <img
@@ -74,7 +68,6 @@ const HomePage = () => {
       <Features />
       <Explore />
       <Footer />
-      
     </div>
   );
 };

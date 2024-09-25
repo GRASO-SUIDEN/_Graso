@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CiStopwatch } from "react-icons/ci";
 
 const Timer = () => {
@@ -40,12 +40,15 @@ const Timer = () => {
       <div className=" flex  justify-around  bg-teal-500 rounded-b-2xl shadow-lg shadow-teal-950/50 ">
         <h1 className=" text-white font-semibold ">Ends In</h1>
         <section className=" pt-1 pl-10 ">
-        <i className=" text-white font-semibold " > <CiStopwatch /></i>
+          <i className=" text-white font-semibold ">
+            {" "}
+            <CiStopwatch />
+          </i>
         </section>
         <section>
           <p className=" text-white font-semibold ">
-               {timerDays}
-            <small className=" text-white " >D</small>{" "}
+            {timerDays}
+            <small className=" text-white ">D</small>{" "}
           </p>
           {/* <p><small>Days</small></p> */}
         </section>
