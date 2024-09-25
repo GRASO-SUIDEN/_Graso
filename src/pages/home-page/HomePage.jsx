@@ -10,6 +10,7 @@ import Footer from '../../components/Footer';
 import { FaArrowRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Explore from './Explore';
 
 const HomePage = () => {
   useEffect(() => {
@@ -71,7 +72,9 @@ const HomePage = () => {
         </div>
       </div>
       <Features />
+      <Explore />
       <Footer />
+      
     </div>
   );
 };
