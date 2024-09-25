@@ -29,6 +29,7 @@
     text-align: left;
     margin: 10px 0px;
     color: #040119;
+    width: 100%;
 }
 .features p{
     color: #000000;
@@ -37,6 +38,7 @@
     font-weight: 400;
     text-align: left;
     width: 95%;
+    padding: 7px 0 5px 0;
 }
 .grid-container {
     display: grid;
@@ -133,7 +135,9 @@
         line-height: 17px;
         text-align: center;
       }
-    
+      .features{
+        padding: 20px 10px;
+    }
 
 
 

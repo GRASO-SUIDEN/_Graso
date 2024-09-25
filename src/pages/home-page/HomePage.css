@@ -9,6 +9,10 @@
     justify-content: center;
     padding: 60px 15px;
     height: auto;
+    background: url(https://github.com/chiscookeke11/Test-pagea/blob/main/bg2.jpg?raw=true);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .about .Image-box{
     width: 30%;
@@ -189,6 +193,15 @@
         width: 15px;
         height: 15px;
         margin-left: 2px;
+    }
+    .about{
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        padding: 60px 10px 20px 10px;
+        height: auto;
     }
 }
 

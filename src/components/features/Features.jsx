@@ -73,7 +73,7 @@ const Features = () => {
   return (
     <div className="features" ref={featuresRef}>
       <div className="text">
-        <small>Features</small>
+        <small>FEATURES</small>
         <h1>Secure funds for your project with Graso</h1>
         <p>
           Leverage our extensive experience, gain investments, and build a
