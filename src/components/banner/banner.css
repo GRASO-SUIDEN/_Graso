@@ -1,5 +1,6 @@
 .banner{
     font-family: "Montserrat", system-ui;
+    padding-bottom: 20px
 }
 .hero{
     width: 100%;
@@ -126,12 +127,12 @@ z-index:10;
     animation-delay:  900ms;
     background-color: #ffffff;
     border-radius: 10px;
-    z-index:0;
+    z-index:10;
 }
 .asset-card img{
     width: 100%;
     height: 60%;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 .assetcard1{
     top: 18%;
@@ -151,6 +152,7 @@ z-index:10;
 .assetcard4{
     top: 22%;
     left: 2%;
+    transform: rotate(-15deg);
 }
 .asset-card h4{
     font-size: 15px;
@@ -210,6 +212,14 @@ z-index:10;
     .asset-card{
         display: none;
     }
+    .join-us .text h1{
+    font-family: "Syne", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    margin: 0;
+}
 
 }
 
@@ -232,5 +242,111 @@ z-index:10;
     .assetcard4{
         top: 32%;
         left: 0;
+    }
+}
+
+
+
+
+
+
+/************************* join us style **********************/
+
+.join-us{
+    width: 100%;
+    padding: 50px 20px;
+}
+.join-us .text{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 773px;
+    min-width: 300px;
+    max-height: 260.78px;
+    position: relative;
+    padding: 20px 10px;
+}
+.join-us .text h1{
+    font-family: "Syne", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    margin: 0;
+}
+.join-us .text p{
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.31rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+.join-us-btn{
+    width: 28%;
+    min-width: 145px;
+    max-width: 150px;
+    padding: 16px 0px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 54px;
+    transition: 0.3s ease-in-out;
+    border: 1px solid #111111;
+    background:transparent;
+    color: #111111;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+.join-us-btn::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    background-color: #24C2A5;
+    height: 100%;
+    border-radius: inherit;
+    z-index: -1;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+.join-us-btn:hover::before{
+    width: 100%;
+}
+.join-us-btn:hover{
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+}
+.join-us-btn:active{
+    transform: scale(0.9);
+}
+.join-us .text img{
+    position: absolute;
+    max-width: 40px;
+    max-height: 40px;
+}
+.star-1{
+    bottom: 0;
+    left: 0;
+}
+.star-2{
+    right: 0;
+    top: 0;
+}
+
+
+
+
+
+
+@media(max-width:768px){
+    .join-us .text h1{
+        font-size: 2.9rem;
+    }
+    .join-us .text p{
+        font-size: 1.2rem;
     }
 }

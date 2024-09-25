@@ -10,13 +10,12 @@ import Footer from '../../components/Footer';
 import { FaArrowRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Explore from './Explore';
 
 const HomePage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Animates only once when the element comes into view
+      duration: 1000, 
+      once: true, 
     });
   }, []);
 
@@ -26,21 +25,31 @@ const HomePage = () => {
       <Banner />
       <div
         className="about"
-        data-aos="slide-right"  // This triggers the AOS animation
+        data-aos="slide-right" 
+
       >
         <div className="Image-box">
           <span className="spring">
-            <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png" alt="spring" />
+            <img
+              src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/refs/heads/main/spring.png"
+              alt="spring"
+            />
           </span>
-          <span>
-            <img src={ForSale} alt="" />
-            <h2>STREAM</h2>
-            <h5>Delta, Nigeria</h5>
-          </span>
-          <span>
-            <img src={stream} alt="stream" />
+          <span className="top-card">
+            <img
+              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-47.jpg?raw=true"
+              alt="top-card"
+            />
             <h2>HOLA</h2>
             <h5>Lagos, Nigeria</h5>
+          </span>
+          <span className="bottom-card">
+            <img
+              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-36.jpg?raw=true"
+              alt="bottom-card"
+            />
+            <h2>STREAM</h2>
+            <h5>Delta, Nigeria</h5>
           </span>
           <img src={Sparkle} alt="sparkle" className="sparkle" />
         </div>
@@ -56,12 +65,12 @@ const HomePage = () => {
             and compliant environment.
           </p>
           <button>
-            Learn more <FaArrowRight className="right-arrow" size={20} color="black" />
+            Learn more{" "}
+            <FaArrowRight className="right-arrow" size={20} color="black" />
           </button>
         </div>
       </div>
       <Features />
-      <Explore />
       <Footer />
     </div>
   );
