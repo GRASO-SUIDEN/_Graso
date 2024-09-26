@@ -6,7 +6,7 @@ import './dashboardsidenav.css'
     <div className='dashboard-sidenav'>
         <div className="logo">GRASO</div>
         <ul>
-            <li><span>Dashboard</span></li>
+            <li><span className='active-nav'> Dashboard</span></li>
             <li><span>Explore Properties</span></li>
             <li><span>Staking</span></li>
             <li><span>Add Properties</span></li>
@@ -15,7 +15,7 @@ import './dashboardsidenav.css'
             <li><span>Blog</span></li>
             <li><span>Pages</span></li>
             <li><span>Authentication</span></li>
-            <li><span>Miscellaneous</span></li>
+            <li><span>Miscellaneous</span> </li>
         </ul>
     </div>
   )
