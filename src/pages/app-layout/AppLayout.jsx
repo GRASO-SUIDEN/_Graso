@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import AppSidenav from "../../components/app-sidenav/AppSidenav";
 function AppLayout() {
   return (
-    <div>
+    <div className="flex">
       <AppSidenav />
       <Outlet />
     </div>

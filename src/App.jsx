@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/home-page/HomePage";
 import LoadingPage from "./pages/loading-page/LoadingPage";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -22,7 +22,8 @@ function App() {
       <Routes>
         <Route index element={loading ? <LoadingPage /> : <Homepage />} />
         <Route path="app" element={<AppLayout />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<Navigate replace to="dashboard" />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
