@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/home-page/HomePage";
 import LoadingPage from "./pages/loading-page/LoadingPage";
-import Dashboard from "./pages/dashboard/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
+import AppLayout from "./pages/app-layout/AppLayout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={loading ? <LoadingPage /> : <Homepage />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
