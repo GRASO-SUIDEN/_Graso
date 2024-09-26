@@ -1,0 +1,7 @@
+.king{
+    width: 100%;
+    background: #fff url("../../assets/bg-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+}
