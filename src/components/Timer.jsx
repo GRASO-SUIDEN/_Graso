@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { CiStopwatch } from "react-icons/ci";
+import { FaStopwatch } from "react-icons/fa6";
 
 const Timer = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
-  const [timerseconds, setTimerSeconds] = useState("00");
+  const [timerSeconds, setTimerSeconds] = useState("00");
 
   let interval = useRef();
   const startTimer = () => {
@@ -36,44 +36,28 @@ const Timer = () => {
     startTimer();
   });
   return (
-    <div>
-      <div className=" flex  justify-around  bg-teal-500 rounded-b-2xl shadow-lg shadow-teal-950/50 ">
+    <div className="w-full flex justify-around items-center p-1">
+      <div>
         <h1 className=" text-white font-semibold ">Ends In</h1>
-        <section className=" pt-1 pl-10 ">
-          <i className=" text-white font-semibold ">
-            {" "}
-            <CiStopwatch />
-          </i>
-        </section>
-        <section>
-          <p className=" text-white font-semibold ">
-            {timerDays}
-            <small className=" text-white ">D</small>{" "}
-          </p>
-          {/* <p><small>Days</small></p> */}
-        </section>
-        {/* <span>:</span> */}
-        <section>
-          <p className=" text-white font-semibold ">
-            {timerHours}
-            <small>H</small>{" "}
-          </p>
-          {/* <p><small>hours</small></p> */}
-        </section>
-        {/* <span>:</span> */}
-        <section>
-          <p className=" text-white font-semibold ">
-            {timerMinutes}
-            <small>M</small>{" "}
-          </p>
-          {/* <p><small>minutes</small></p> */}
-        </section>
-        <section>
-          <p className=" text-white font-semibold ">
-            {timerseconds} <small>S</small>{" "}
-          </p>
-          {/* <p><small>seconds</small></p> */}
-        </section>
+      </div>
+      <div className="flex justify-center items-center space-x-2 text-white font-semibold">
+        <FaStopwatch />
+        <span>
+          {timerDays < 10 ? "0" : ""}
+          {timerDays}D
+        </span>
+        <span>
+          {timerHours < 10 ? "0" : ""}
+          {timerHours}H
+        </span>
+        <span>
+          {timerMinutes < 10 ? "0" : ""}
+          {timerMinutes}M
+        </span>
+        <span>
+          {timerSeconds < 10 ? "0" : ""}
+          {timerSeconds}S
+        </span>
       </div>
     </div>
   );

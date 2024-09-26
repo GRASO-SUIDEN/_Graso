@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/home-page/HomePage";
 import LoadingPage from "./pages/loading-page/LoadingPage";
-
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +13,13 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return <div>{loading ? <LoadingPage /> : <Homepage />}</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={loading ? <LoadingPage /> : <Homepage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
