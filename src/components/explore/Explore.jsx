@@ -4,7 +4,6 @@ import Timer from "../Timer";
 import "./Explore.css";
 import Slider from "./Slider";
 
-//
 const Explore = () => {
   return (
     <div className="mb-10 p-16 w-full bg-gradient-to-b from-[#effdf1] to-[#f8f3ff] flex flex-col justify-center items-center space-y-2">
