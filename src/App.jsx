@@ -16,6 +16,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -27,6 +28,7 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
+
 }
 
 export default App;

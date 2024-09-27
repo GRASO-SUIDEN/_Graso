@@ -1,4 +1,137 @@
 .Dashboard-container{
     width: 100%;
     height: 100vh;
+    overflow-x: scroll;
+}
+.Dashboard-container .head{
+    width: 100%;
+    background-color:#FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    box-shadow: 0px 0px 3px 0px #3C485826;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.Dashboard-container .small-box{
+    width: 40px;
+    height: 40px;
+    background-color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+.Dashboard-container .head_menu-search{
+    width: 86%;
+    border-radius: 6px;
+    margin: 0px 5px;
+}
+.Dashboard-container .head_menu-search input{
+    width: 100%;
+    height: 100%;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    background-color: #F3F4F6;
+    border-radius: 6px;
+}
+.Dashboard-container .head_menu-search ::placeholder{
+    color: gray;
+    font-family: "League Spartan", sans-serif;
+}
+.Dashboard-container .head_menu-search img{
+    width: 100%;
+    height: 100%;
+}
+.Dashboard-container .head_menu_country{
+    padding: 3px;
+}
+.Dashboard-container .head_menu_country img{
+    width: 90%;
+    height: 90%;
+}
+
+/*--------------------------------------------------------*/
+
+.Dashboard-container .greeting{
+    padding: 30px 30px;
+}
+.Dashboard-container .greeting h2{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+    font-family: "League Spartan", sans-serif;
+    color: #161C2D;
+}
+.Dashboard-container .greeting p{
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25.5px;
+    text-align: left;
+    color: #94A3B8;
+    font-family: "League Spartan", sans-serif;
+}
+/* ---------------------------------------------------- */
+.Dashboard-container .stats {
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+.Dashboard-container .stats p{
+    font-family: "League Spartan", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+    color: #94A3B8;
+    width: 100%;
+}
+.Dashboard-container .stats h1{
+    font-family: "League Spartan", sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+    color: #161C2D;
+}
+.Dashboard-container .stats div{
+    padding: 17px 30px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px #3C485826;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+    max-height: 124px;
+    min-height: 124px;
+    max-width: 250px;
+    min-width: 223px;
+}
+.Dashboard-container .stats .image{
+    background-color: #F8FAFC;
+    max-height: 48px;
+    max-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    min-width: 48px;
+    padding: 10.5px 10px 13.5px 10px;
+}
+.Dashboard-container .stats img{
+    width: 10px;
+    height: 18px;
+    object-fit: cover;
+    object-position: center;
 }
