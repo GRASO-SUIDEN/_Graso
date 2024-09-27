@@ -1,7 +1,8 @@
-import Landsite from "../assets/landsite.jpg";
-import Usdt from "../assets/usdt-img.png";
-import Timer from "./Timer";
+import Landsite from "../../assets/landsite.jpg";
+import Usdt from "../../assets/usdt-img.png";
+import Timer from "../Timer";
 import "./Explore.css";
+import Slider from "./Slider";
 
 //
 const Explore = () => {
@@ -18,7 +19,7 @@ const Explore = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-10 justify-center">
+      <div className="grid grid-cols-3 gap-10 justify-center max-md:hidden">
         <ExploreCard />
         <ExploreCard />
         <ExploreCard />
@@ -26,11 +27,12 @@ const Explore = () => {
         <ExploreCard />
         <ExploreCard />
       </div>
+      <Slider />
     </div>
   );
 };
 
-function ExploreCard() {
+export function ExploreCard() {
   return (
     <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h-full space-y-1 min-w-[250px]">
       <div className="bg-white rounded-b-3xl rounded-t-[2rem]">

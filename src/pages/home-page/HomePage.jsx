@@ -5,7 +5,7 @@ import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
 import Features from "../../components/features/Features";
 import Footer from "../../components/Footer";
-import Explore from "../../components/Explore";
+import Explore from "../../components/explore/Explore";
 import JoinUs from "../../components/JoinUs";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
