@@ -21,8 +21,3 @@ progress {
 .swiper-button-prev {
   color: #24c2a5 !important;
 }
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: #24c2a5;
-}

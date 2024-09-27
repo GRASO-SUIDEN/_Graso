@@ -18,7 +18,7 @@ const Explore = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-10 justify-center max-md:hidden">
+      <div className="w-full grid grid-cols-3 gap-10 justify-center max-md:hidden">
         <ExploreCard />
         <ExploreCard />
         <ExploreCard />
