@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Navbar from '../../components/NavBar';
-import JoinUs from '../../components/JoinUs';
-import Footer from '../../components/Footer';
-import './about-us.css';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Navbar from "../../components/navbar/NavBar";
+import JoinUs from "../../components/JoinUs";
+import Footer from "../../components/Footer";
+import "./about-us.css";
 
 const AboutUs = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, 
-      once: true,     
+      duration: 2000,
+      once: true,
     });
   }, []);
 
   return (
-    <div className='about-us-page'>
+    <div className="about-us-page">
       <Navbar />
       <div className="section mt-16">
         <div className="about-us-banner">
@@ -48,7 +48,9 @@ const AboutUs = () => {
         </div>
 
         <div className="info-box-text">
-          <h2 data-aos="fade-up">Providing the best future for your best living</h2>
+          <h2 data-aos="fade-up">
+            Providing the best future for your best living
+          </h2>
           <p data-aos="fade-up" data-aos-delay="300">
             To revolutionize the global real estate market by making property ownership 
             and investment opportunities available to everyone, regardless of financial background. 

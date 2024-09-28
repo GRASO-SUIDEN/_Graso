@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./HomePage.css";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/navbar/NavBar";
 import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
 import Features from "../../components/features/Features";
