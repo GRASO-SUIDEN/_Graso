@@ -3,7 +3,7 @@
   height: 100vh;
   background-color: #0f172a;
   padding: 20px 23px;
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: space-evenly;
   color: #fff;

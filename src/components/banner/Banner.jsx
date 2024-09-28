@@ -1,5 +1,6 @@
 import "./banner.css";
 import MainImage from "../../assets/image (2).webp";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -14,7 +15,9 @@ const Banner = () => {
           </p>
           <div className="button-holder">
             <button>Invest</button>
-            <button>Develop</button>
+            <button>
+              <Link to="/app">Develop</Link>
+            </button>
           </div>
         </div>
         <div className="main-img">

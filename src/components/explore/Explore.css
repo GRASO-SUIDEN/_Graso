@@ -16,3 +16,8 @@ progress {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #24c2a5 !important;
+}
