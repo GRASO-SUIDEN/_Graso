@@ -1,70 +1,5 @@
-.Dashboard-container {
-  width: 100%;
-  height: 100vh;
-  overflow-x: scroll;
-}
-.Dashboard-container .head {
-  width: 1139px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  box-shadow: 0px 0px 3px 0px #3c485826;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-.Dashboard-container .small-box {
-  width: 40px;
-  height: 40px;
-  background-color: #f3f4f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 0px 5px;
-}
-.Dashboard-container .head_menu-search {
-  width: 86%;
-  border-radius: 6px;
-  margin: 0px 5px;
-}
-.Dashboard-container .head_menu-search input {
-  width: 100%;
-  height: 100%;
-  padding: 10px 16px;
-  outline: none;
-  border: none;
-  background-color: #f3f4f6;
-  border-radius: 6px;
-}
-.Dashboard-container .head_menu-search ::placeholder {
-  color: gray;
-  font-family: "League Spartan", sans-serif;
-}
-.Dashboard-container .head_menu-search img {
-  width: 100%;
-  height: 100%;
-}
-.Dashboard-container .head_menu_country {
-  padding: 3px;
-}
-.Dashboard-container .head_menu_country img {
-  width: 90%;
-  height: 90%;
-}
-
-/*--------------------------------------------------------*/
-
 .Dashboard-container .greeting {
-  /* padding: 30px 30px;  */
   width: 1115.99px;
-  position: absolute;
-
-  top: 45px;
-  right: 0;
 }
 .Dashboard-container .greeting h2 {
   font-size: 20px;
@@ -85,17 +20,14 @@
 /* ---------------------------------------------------- */
 .Dashboard-container .stats {
   padding: 10px 30px;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 25px;
-  align-items: center;
-  margin-left: 20%;
+  width: 100%;
+  /* margin-left: 20%;
   position: relative;
-  top: 25%;
-
-  justify-content: center;
+  top: 25%; */
 }
 .Dashboard-container .stats p {
   font-family: "League Spartan", sans-serif;
@@ -119,7 +51,6 @@
   text-align: left;
   border-radius: 8px;
   box-shadow: 0px 0px 3px 0px #3c485826;
-  width: 5%;
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
@@ -160,10 +91,6 @@
   }
   .Dashboard-container .greeting {
     padding: 30px 30px;
-    width: 1115.99px; 
-    position: relative; 
-    top: 20px;
-    right: 0;
+    width: 1115.99px;
   }
- 
 }

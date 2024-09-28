@@ -3,38 +3,18 @@ import "./appsidenav.css";
 const DashboardSidenav = () => {
   return (
     <div className="app-sidenav">
-      <div className="logo">GRASO</div>
+      <h2 className="logo">GRASO</h2>
       <ul>
-        <li>
-          <span>Dashboard</span>
-        </li>
-        <li>
-          <span>Explore Properties</span>
-        </li>
-        <li>
-          <span>Staking</span>
-        </li>
-        <li>
-          <span>Add Properties</span>
-        </li>
-        <li>
-          <span>Chat</span>
-        </li>
-        <li>
-          <span>User Profile</span>
-        </li>
-        <li>
-          <span>Blog</span>
-        </li>
-        <li>
-          <span>Pages</span>
-        </li>
-        <li>
-          <span>Authentication</span>
-        </li>
-        <li>
-          <span>Miscellaneous</span>
-        </li>
+        <li>Dashboard</li>
+        <li>Explore Properties</li>
+        <li>Staking</li>
+        <li>Add Properties</li>
+        <li>Chat</li>
+        <li>User Profile</li>
+        <li>Blog</li>
+        <li>Pages</li>
+        <li>Authentication</li>
+        <li>Miscellaneous</li>
       </ul>
     </div>
   );

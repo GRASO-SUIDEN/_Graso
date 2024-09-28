@@ -18,7 +18,7 @@ const Explore = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div className="w-full grid grid-cols-3 gap-10 justify-center max-md:hidden">
+      <div className="min-w-[500px] grid grid-cols-3 gap-10 justify-center max-md:hidden">
         <ExploreCard />
         <ExploreCard />
         <ExploreCard />
@@ -52,7 +52,7 @@ export function ExploreCard() {
                 <h2>200,000</h2>
               </div>
             </div>
-            <progress max="15" value="7.5"></progress>
+            <progress max="15" value="7.5" />
           </div>
 
           <div className="flex gap-[30%] pt-10">

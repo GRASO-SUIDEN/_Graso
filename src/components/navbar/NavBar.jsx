@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FiAlignCenter } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import NavList from "./NavList";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,17 +44,11 @@ function Navbar() {
         }`}
       >
         <ul className="flex space-x-8 text-lg max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:w-full max-md:space-x-0 max-md:space-y-4 max-md:mt-10">
-          {["Home", "Explore", "Portfolio", "Whitepaper", "About Us"].map(
-            (item) => (
-              <li
-                key={item}
-                className="relative  cursor-pointer group select-none max-md:w-[7rem] max-md:text-center max-md:hover:bg-[#24C2A5] max-md:hover:text-white max-md:hover:rounded-md"
-              >
-                {item}
-                <span className="max-md:hidden absolute left-0 bottom-0 w-0 h-[3px] bg-[#24C2A5] transition-all duration-300 group-hover:w-full" />
-              </li>
-            )
-          )}
+          <NavList navLink="Home" path="/" />
+          <NavList navLink="Explore" path="/explore" />
+          <NavList navLink="Portfolio" path="/portfolio" />
+          <NavList navLink="Whitepaper" path="/whitepaper" />
+          <NavList navLink="About Us" path="/about-us" />
         </ul>
       </div>
 

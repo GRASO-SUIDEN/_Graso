@@ -1,12 +1,18 @@
 import { Outlet } from "react-router-dom";
 import AppSidenav from "../../components/app-sidenav/AppSidenav";
+import AppHeader from "../../components/app-header/AppHeader";
 function AppLayout() {
   return (
-    <div className="gird grid-cols-2 gap-10  ">
+    <div className="flex">
       <AppSidenav />
-      <Outlet />
+      <div className="flex flex-col w-full">
+        <AppHeader />
+
+        <div className="flex-grow">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }
-
 export default AppLayout;
