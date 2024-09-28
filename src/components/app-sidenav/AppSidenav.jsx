@@ -1,7 +1,4 @@
 import "./appsidenav.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons'; 
-
 
 const DashboardSidenav = () => {
   return (
