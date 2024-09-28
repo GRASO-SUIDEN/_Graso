@@ -18,6 +18,9 @@ const AboutUs = () => {
     <div className='about-us-page'>
       <Navbar />
       <div className="section mt-16">
+        <div className="about-us-banner">
+          <h1>About Us</h1>
+        </div>
         <div className="mission">
           <div className="image">
             <div className='back-img'>

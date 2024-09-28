@@ -71,8 +71,6 @@ const HomePage = () => {
       <Explore />
       <JoinUs />
       <Footer />
-
-      <AboutUs/>
     </div>
   );
 };

@@ -2,7 +2,23 @@
     width: 100%;
     height: auto;
 }
-
+.about-us-banner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../../assets/Section.webp");
+    font-family: "Montserrat", system-ui;
+}
+.about-us-banner h1{
+    font-size: 3.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
 .mission {
     padding: 50px 30px;
     display: flex;
