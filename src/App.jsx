@@ -4,6 +4,7 @@ import Homepage from "./pages/home-page/HomePage";
 import LoadingPage from "./pages/loading-page/LoadingPage";
 import Dashboard from "./components/dashboard/Dashboard";
 import AppLayout from "./pages/app-layout/AppLayout";
+import AboutUs from "./pages/about-us/AboutUs";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={loading ? <LoadingPage /> : <Homepage />} />
+        <Route index element={loading ? <LoadingPage /> : <AboutUs/>} />
         <Route path="app" element={<AppLayout />}>
           <Route index element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
