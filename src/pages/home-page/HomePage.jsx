@@ -10,7 +10,6 @@ import JoinUs from "../../components/JoinUs";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import AboutUs from "../about-us/AboutUs";
 
 const HomePage = () => {
   useEffect(() => {
