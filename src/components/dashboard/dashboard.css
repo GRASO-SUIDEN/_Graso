@@ -1,4 +1,4 @@
-.Dashboard-container .greeting {
+/* .Dashboard-container .greeting {
   width: 1115.99px;
 }
 .Dashboard-container .greeting h2 {
@@ -17,7 +17,7 @@
   color: #94a3b8;
   font-family: "League Spartan", sans-serif;
 }
-/* ---------------------------------------------------- */
+
 .Dashboard-container .stats {
   padding: 10px 30px;
   display: flex;
@@ -25,9 +25,6 @@
   flex-wrap: wrap;
   gap: 25px;
   width: 100%;
-  /* margin-left: 20%;
-  position: relative;
-  top: 25%; */
 }
 .Dashboard-container .stats p {
   font-family: "League Spartan", sans-serif;
@@ -80,17 +77,9 @@
 @media (max-width: 768px) {
   .Dashboard-container .head {
     width: 100%;
-    /* background-color:#FFFFFF; */
-    /* display: flex; */
-    /* justify-content: space-between;
-        padding: 15px 20px;
-        box-shadow: 0px 0px 3px 0px #3C485826;
-        position: fixed;
-        top: 0;
-        right: 0; */
   }
   .Dashboard-container .greeting {
     padding: 30px 30px;
     width: 1115.99px;
   }
-}
+} */

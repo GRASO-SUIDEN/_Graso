@@ -60,10 +60,16 @@ const HomePage = () => {
             fractional ownership in Real estates around the globe in a secure
             and compliant environment.
           </p>
-          <button>
-            Learn more{" "}
-            <FaArrowRight className="right-arrow" size={20} color="black" />
-          </button>
+          <a
+            href="https://graso.gitbook.io/graso"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>
+              Learn more{" "}
+              <FaArrowRight className="right-arrow" size={20} color="black" />
+            </button>
+          </a>
         </div>
       </div>
       <Features />

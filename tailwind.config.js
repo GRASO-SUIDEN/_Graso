@@ -9,6 +9,9 @@ export default {
         "max-lg": { max: "1024px" },
         "max-xl": { max: "1280px" },
       },
+      fontFamily: {
+        spartan: ["League Spartan", "sans-serif"],
+      },
     },
   },
   plugins: [],

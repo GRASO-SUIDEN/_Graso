@@ -1,8 +1,8 @@
 import "./appsidenav.css";
 
-const DashboardSidenav = () => {
+const AppSidenav = () => {
   return (
-    <div className="app-sidenav">
+    <div className="app-sidenav max-md:hidden">
       <h2 className="logo">GRASO</h2>
       <ul>
         <li>Dashboard</li>
@@ -20,4 +20,4 @@ const DashboardSidenav = () => {
   );
 };
 
-export default DashboardSidenav;
+export default AppSidenav;
