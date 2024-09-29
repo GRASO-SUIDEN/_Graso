@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 const AboutUs = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
       once: true,
     });
   }, []);
@@ -20,9 +20,51 @@ const AboutUs = () => {
     <div className="about-us-page">
       <Navbar />
       <div className="section mt-16">
+
         <div className="about-us-banner">
-          <h1 data-aos="fade-down">About Us</h1>
+          <div className="about-us-banner-text">
+          <h1 data-aos="fade-down">Making Real Estate More Accessible to All</h1>
+          <p>Bringing a better and faster means for developers to raise funds,
+          while giving individual investors fractional ownership of real world assets.</p>
         </div>
+        <div className="about-us-banner-img">
+          <div className="image2">
+            <div className="shadow top"><img src="https://github.com/chiscookeke11/Test-pagea/blob/main/rs-bg-elem%20(1).png?raw=true" alt="image" /></div>
+
+            
+            <div className="shadow bottom"><img src="https://github.com/chiscookeke11/Test-pagea/blob/main/rs-bg-elem.png?raw=true" alt="image" /></div>
+          </div>
+          <div className="image1">
+          <div className="shadow top"><img src="https://github.com/chiscookeke11/Test-pagea/blob/main/Graso%20(4)/rs-bg-elem.png?raw=true" alt="image" /></div>
+
+            
+<div className="shadow bottom"><img src="https://github.com/chiscookeke11/Test-pagea/blob/main/Graso%20(5)/rs-bg-elem.png?raw=true" alt="image" /></div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="mission">
           <div className="image">
             <div className="back-img">
@@ -55,7 +97,7 @@ const AboutUs = () => {
 
         <div className="teams">
           <div className="team-text">
-            <h5>Team</h5>
+            <h5><span>Team</span></h5>
             <h2>The  Experts You Can Trust</h2>
           </div>
 
@@ -84,6 +126,7 @@ const AboutUs = () => {
       </div>
       <JoinUs />
       <Footer />
+      
     </div>
   );
 };
