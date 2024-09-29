@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./HomePage.css";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/navbar/NavBar";
 import Banner from "../../components/banner/Banner";
 import Sparkle from "../../assets/sparkle.png";
 import Features from "../../components/features/Features";
@@ -60,10 +60,16 @@ const HomePage = () => {
             fractional ownership in Real estates around the globe in a secure
             and compliant environment.
           </p>
-          <button>
-            Learn more{" "}
-            <FaArrowRight className="right-arrow" size={20} color="black" />
-          </button>
+          <a
+            href="https://graso.gitbook.io/graso"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>
+              Learn more{" "}
+              <FaArrowRight className="right-arrow" size={20} color="black" />
+            </button>
+          </a>
         </div>
       </div>
       <Features />

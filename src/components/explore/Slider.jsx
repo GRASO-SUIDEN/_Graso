@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Mousewheel } from "swiper/modules";
 import "swiper/css/bundle";
 import "./Explore.css";
+import { ExploreData } from "../../../data/ExploreData";
 
 function Slider() {
   return (
@@ -19,26 +20,13 @@ function Slider() {
         grabCursor={true}
         mousewheel={true}
       >
-        <SwiperSlide>
-          <div className="w-full flex justify-center">
-            <ExploreCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full flex justify-center">
-            <ExploreCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full flex justify-center">
-            <ExploreCard />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full flex justify-center">
-            <ExploreCard />
-          </div>
-        </SwiperSlide>
+        {ExploreData.map((data) => (
+          <SwiperSlide key={data.id}>
+            <div className="w-full flex justify-center">
+              <ExploreCard data={data} />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

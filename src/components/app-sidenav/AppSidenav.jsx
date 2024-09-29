@@ -3,25 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const DashboardSidenav = () => {
-  // const Navigate = useNavigate();
-  // const handleclick=()=>{
-  //   Navigate("/Exploreproperties")
-  // }
   return (
-    <div className="app-sidenav">
-      <div className="logo">GRASO</div>
+    <div className="app-sidenav max-md:hidden">
+      <h2 className="logo">GRASO</h2>
       <ul>
         <li>
           <span>Dashboard</span>
         </li>
         <li>
-        <Link to={ "/Exploreproperties" } > <span  > Explore Properties</span></Link>
+          <span>Explore Properties</span>
         </li>
         <li>
           <span>Staking</span>
         </li>
         <li>
-         <span>Add Properties</span>
+          <span>Add Properties</span>
         </li>
         <li>
           <span>Chat</span>
@@ -46,4 +42,4 @@ const DashboardSidenav = () => {
   );
 };
 
-export default DashboardSidenav;
+export default AppSidenav;
