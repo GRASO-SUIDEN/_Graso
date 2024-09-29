@@ -47,7 +47,7 @@ function Navbar() {
           <NavList navLink="Home" path="/" />
           <NavList navLink="Explore" path="/app" />
           <NavList navLink="Portfolio" path="/portfolio" />
-          <NavList navLink="Whitepaper" path="/whitepaper" />
+          <NavList navLink="Whitepaper" path="https://graso.gitbook.io/graso" />
           <NavList navLink="About Us" path="/about-us" />
         </ul>
       </div>

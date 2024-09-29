@@ -10,7 +10,6 @@ import JoinUs from "../../components/JoinUs";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import AboutUs from "../about-us/AboutUs";
 
 const HomePage = () => {
   useEffect(() => {
@@ -61,10 +60,16 @@ const HomePage = () => {
             fractional ownership in Real estates around the globe in a secure
             and compliant environment.
           </p>
-          <button>
-            Learn more{" "}
-            <FaArrowRight className="right-arrow" size={20} color="black" />
-          </button>
+          <a
+            href="https://graso.gitbook.io/graso"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>
+              Learn more{" "}
+              <FaArrowRight className="right-arrow" size={20} color="black" />
+            </button>
+          </a>
         </div>
       </div>
       <Features />
