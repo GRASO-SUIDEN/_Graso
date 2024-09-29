@@ -98,7 +98,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    max-height: 55vh;
+    min-height: 55vh;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -149,12 +149,13 @@
 }
 .team-text h5{
     font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 23px;
+    font-weight: 700;
     line-height: 20px;
     letter-spacing: 0.2800000011920929px;
     text-align: center;
     color: #24C2A5;
+    text-transform: uppercase;
 }
 .team-text h2{
     font-family: "Montserrat", sans-serif;
@@ -305,4 +306,21 @@
     .info-box-text{
         height: 70vh;
     }
+    .contact form{
+        background: #fff;
+        width: 70vw;
+        height: auto;
+        padding: 40px 30px;
+        min-width: 350px;
+        max-width: 700px;
+        position: absolute;
+        bottom: -14%;
+        right: 4%;
+        min-height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      
+}
+
 }

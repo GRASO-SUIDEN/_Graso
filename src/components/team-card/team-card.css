@@ -1,0 +1,115 @@
+.card-box{
+	width: 100%;
+	min-height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	flex-direction: row;
+	padding: 20px 10px;
+	gap: 20px;
+}
+.card{
+	width: 280px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	text-align: center;
+	overflow: hidden;
+	border: 1px solid #cfcfcf;;
+}
+.image-container{
+	width: 100%;
+	height: 250px;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+	overflow: hidden;
+	object-fit: cover;
+	object-position: center;
+	border-bottom:1px solid #cfcfcf;;
+}
+.image-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.content{
+	padding: 24px 16px;
+}
+.profile-name{
+	font-size:22px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+.social-links{
+	width: 100%;
+	display: flex;
+	height: 0;
+	border-top: 1px solid #cfcfcf;
+	transition: height 0.3s ease;
+}
+.social-links img{
+	width: 100%;
+	height: 80%;
+}
+.description{
+	font-size: 14px;
+	letter-spacing: 1px;
+	color: #111111;
+}
+.card:hover .social-links{
+	height: 70px;
+}
+.social-links .instagram{
+	color: #ee5487;
+}
+
+.social-links > a{
+	font-size: 20px;
+	padding-block: 20px;
+	flex: 1;
+}
+.social-links >a:not(:last-child){
+	border-right: 1px solid #cfcfcf;
+}
+.social-links > a:hover{
+	background-color:  #24C2A5;
+}
+.social-links > a:hover > img{
+	color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

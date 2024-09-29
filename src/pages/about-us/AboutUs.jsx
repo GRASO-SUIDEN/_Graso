@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar/NavBar";
 import JoinUs from "../../components/JoinUs";
 import Footer from "../../components/Footer";
 import "./about-us.css";
+import TeamCard from "../../components/team-card/TeamCard";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -56,9 +57,13 @@ const AboutUs = () => {
             <h5>Team</h5>
             <h2>The  Experts You Can Trust</h2>
           </div>
+
+
           <div className="team-card-container">
-            
+            <TeamCard/>
           </div>
+
+
         </div>
 
         <div className="contact">
