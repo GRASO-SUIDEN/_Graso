@@ -1,6 +1,12 @@
 import "./appsidenav.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DashboardSidenav = () => {
+  // const Navigate = useNavigate();
+  // const handleclick=()=>{
+  //   Navigate("/Exploreproperties")
+  // }
   return (
     <div className="app-sidenav">
       <div className="logo">GRASO</div>
@@ -9,13 +15,13 @@ const DashboardSidenav = () => {
           <span>Dashboard</span>
         </li>
         <li>
-          <span>Explore Properties</span>
+        <Link to={ "/Exploreproperties" } > <span  > Explore Properties</span></Link>
         </li>
         <li>
           <span>Staking</span>
         </li>
         <li>
-          <span>Add Properties</span>
+         <span>Add Properties</span>
         </li>
         <li>
           <span>Chat</span>
