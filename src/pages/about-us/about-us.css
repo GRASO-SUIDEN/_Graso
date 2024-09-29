@@ -95,7 +95,7 @@
 /*------------------------------------------------------*/
 
 .info-box-text{
-    background: linear-gradient( #232323, rgba(35, 35, 35, 0.1)), url('https://github.com/chiscookeke11/Test-pagea/blob/main/652d5e0df43908a4afdf2708573bfc86.jpg?raw=true');
+    background: linear-gradient( rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url('https://github.com/chiscookeke11/Test-pagea/blob/main/652d5e0df43908a4afdf2708573bfc86.jpg?raw=true');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -174,7 +174,7 @@
     width: 100%;
     height: 100vh;
     min-height: 60vh;
-    background: linear-gradient( #232323, rgba(35, 35, 35, 0.1)), url('https://github.com/chiscookeke11/Test-pagea/blob/main/family.jpg?raw=true');
+    background: linear-gradient( rgba(35, 35, 35, 0.4), rgba(35, 35, 35, 0.4)), url('https://github.com/chiscookeke11/Test-pagea/blob/main/family.jpg?raw=true');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
