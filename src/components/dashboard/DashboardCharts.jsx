@@ -87,8 +87,8 @@ function DashboardCharts() {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className=" w-[60%] mr-10 flex flex-col">
+    <div className="flex justify-center max-md:flex-col">
+      <div className=" w-[60%] mr-10 flex flex-col max-md:w-full">
         <div className="flex justify-between space-x-4 mr-2">
           <h2>Revenue Analytics</h2>
           <select name="frequency" className="cursor-pointer">
@@ -102,7 +102,7 @@ function DashboardCharts() {
         </div>
       </div>
 
-      <div className="w-[40%] flex flex-col space-y-2">
+      <div className="w-[40%] flex flex-col space-y-2 max-md:w-full">
         <div className="flex justify-between space-x-4">
           <h2>Sales Data</h2>
           <select name="frequency" className="cursor-pointer">
