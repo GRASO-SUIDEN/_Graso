@@ -6,6 +6,7 @@ import JoinUs from "../../components/JoinUs";
 import Footer from "../../components/Footer";
 import "./about-us.css";
 import TeamCard from "../../components/team-card/TeamCard";
+import { FaArrowRight } from "react-icons/fa";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -73,11 +74,11 @@ const AboutUs = () => {
             <div className="form-details">
               <input type="text" placeholder="Name" required />
               <input type="text" placeholder="Email" required />
-              <input type="number" placeholder="Phone" required />
+              <input type="tel" placeholder="Phone" required />
               <input type="text" placeholder="Subject" required />
             </div>
-            <input type="text" placeholder="icon" className="message" required />
-            <button>Send Message</button>
+            <input type="text" placeholder="" className="message" required />
+            <button>Send Message  <FaArrowRight className="right-arrow" size={17} color="white" /></button>
           </form>
         </div>
       </div>
