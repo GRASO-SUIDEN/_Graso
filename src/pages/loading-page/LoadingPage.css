@@ -6,6 +6,7 @@
      display:flex;
      align-items:center;
      height:100vh;
+	 padding: 10px;
 }
 	.back {
 		margin:1em auto;
