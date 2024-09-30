@@ -58,7 +58,6 @@ function DashboardCharts() {
   };
 
   const options = {
-    responsive: true,
     scales: {
       x: {
         title: {
@@ -84,6 +83,7 @@ function DashboardCharts() {
         enabled: true,
       },
     },
+    maintainAspectRatio: false,
   };
 
   return (
@@ -100,8 +100,8 @@ function DashboardCharts() {
             <option value="Daily">Daily</option>
           </select>
         </div>
-        <div className="flex-grow">
-          <Line data={data} options={options} />
+        <div className="flex-grow max-md:w-full max-md:h-full">
+          <Line data={data} options={options} height="500" />
         </div>
       </div>
 
