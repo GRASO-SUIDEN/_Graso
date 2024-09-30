@@ -87,11 +87,14 @@ function DashboardCharts() {
   };
 
   return (
-    <div className="flex justify-center max-md:flex-col">
-      <div className=" w-[60%] mr-10 flex flex-col max-md:w-full">
-        <div className="flex justify-between space-x-4 mr-2">
-          <h2>Revenue Analytics</h2>
-          <select name="frequency" className="cursor-pointer">
+    <div className="flex max-md:flex-col border border-gray-100">
+      <div className="w-[60%] flex flex-col max-md:w-full">
+        <div className="w-full flex justify-between space-x-4 mr-2 p-5 border border-gray-100 rounded-md">
+          <h2 className="font-bold text-[1.2rem]">Revenue Analytics</h2>
+          <select
+            name="frequency"
+            className="cursor-pointer border border-gray-100 font-semibold"
+          >
             <option value="Yearly">Yearly</option>
             <option value="Montly">Monthly</option>
             <option value="Daily">Daily</option>
@@ -102,16 +105,19 @@ function DashboardCharts() {
         </div>
       </div>
 
-      <div className="w-[40%] flex flex-col space-y-2 max-md:w-full">
-        <div className="flex justify-between space-x-4">
-          <h2>Sales Data</h2>
-          <select name="frequency" className="cursor-pointer">
+      <div className="w-[40%] flex flex-col space-y-8 max-md:w-full border border-gray-100">
+        <div className="flex justify-between space-x-4 p-5 border border-b-gray-100 rounded-md">
+          <h2 className="font-bold text-[1.2rem]">Sales Data</h2>
+          <select
+            name="frequency"
+            className="cursor-pointer border border-gray-100 font-semibold"
+          >
             <option value="Yearly">Yearly</option>
             <option value="Montly">Monthly</option>
             <option value="Daily">Daily</option>
           </select>
         </div>
-        <div className="flex-grow [&_p]:text-[#94A3B8] mt-5">
+        <div className="flex-grow [&_p]:text-[#94A3B8] pr-7 pl-7 space-y-3">
           <div>
             <div className="flex justify-between">
               <p>Via Website</p>
@@ -121,38 +127,38 @@ function DashboardCharts() {
           </div>
           <div>
             <div className="flex justify-between">
-              <p>Via Website</p>
-              <p>50%</p>
+              <p>Via Team Member</p>
+              <p>12%</p>
             </div>
-            <progress max="10" value="5" className="h-2" />
+            <progress max="10" value="1.2" className="h-2" />
           </div>
           <div>
             <div className="flex justify-between">
-              <p>Via Website</p>
-              <p>50%</p>
+              <p>Via Agents</p>
+              <p>6%</p>
             </div>
-            <progress max="10" value="5" className="h-2" />
+            <progress max="10" value="0.6" className="h-2" />
           </div>
           <div>
             <div className="flex justify-between">
-              <p>Via Website</p>
-              <p>50%</p>
+              <p>Via Social Media</p>
+              <p>15%</p>
             </div>
-            <progress max="10" value="5" className="h-2" />
+            <progress max="10" value="1.5" className="h-2" />
           </div>
           <div>
             <div className="flex justify-between">
-              <p>Via Website</p>
-              <p>50%</p>
+              <p>Via Digital Marketing</p>
+              <p>12%</p>
             </div>
-            <progress max="10" value="5" className="h-2" />
+            <progress max="10" value="1.2" className="h-2" />
           </div>
           <div>
             <div className="flex justify-between">
-              <p>Via Website</p>
-              <p>50%</p>
+              <p>Via Others</p>
+              <p>5%</p>
             </div>
-            <progress max="10" value="5" className="h-2" />
+            <progress max="10" value="0.5" className="h-2" />
           </div>
         </div>
       </div>
