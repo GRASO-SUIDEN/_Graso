@@ -83,3 +83,9 @@
     width: 1115.99px;
   }
 } */
+
+@media (max-width: 902px) {
+  canvas {
+    height: 30vh;
+  }
+}

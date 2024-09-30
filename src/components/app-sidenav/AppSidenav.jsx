@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { FiX } from "react-icons/fi";
 import "./appsidenav.css";
 
-const AppSidenav = () => {
+function AppSidenav({ isOpen, setIsOpen }) {
   const [showUserProfile, setShowUserProfile] = useState(false);
 
   const toggleUserProfile = () => {
@@ -10,10 +11,20 @@ const AppSidenav = () => {
   };
 
   return (
-    <div className="app-sidenav">
-      <h2 className="logo">GRASO</h2>
+    <div
+      className={`app-sidenav z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
+        isOpen ? "-translate-x-0" : "-translate-x-full"
+      } transition-all duration-300`}
+    >
+      <div className="flex justify-between">
+        <h2 className="logo">GRASO</h2>
+        <FiX size={30} onClick={() => setIsOpen(!isOpen)} />
+      </div>
       <ul>
-        <li>Dashboard</li>
+        <Link to="dashboard">
+          <li>Dashboard</li>
+        </Link>
+
         <Link to="explore-properties">
           <li>Explore Properties</li>
         </Link>
@@ -40,6 +51,6 @@ const AppSidenav = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default AppSidenav;

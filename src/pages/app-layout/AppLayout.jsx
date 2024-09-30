@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom";
 import AppSidenav from "../../components/app-sidenav/AppSidenav";
 import AppHeader from "../../components/app-header/AppHeader";
+import { useState } from "react";
 function AppLayout() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="flex w-full h-[100vh]">
-      <AppSidenav />
+      <AppSidenav isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex flex-col flex-grow">
-        <AppHeader />
+        <AppHeader setIsOpen={setIsOpen} />
         <Outlet />
       </div>
     </div>
