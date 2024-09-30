@@ -21,9 +21,7 @@ function Profile() {
           <h1>Personal Details</h1>
 
           <div className="email">
-            <img src="" alt="" />
-                      
-                      </div>
+            <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true" alt="image" /></div>
          </div>
 
 

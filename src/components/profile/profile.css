@@ -92,7 +92,10 @@ header h1{
     text-align: center;
     color: #FF3B30;
 }
-
+.detail-list img{
+    width: 30px;
+    height: 30px;
+}
 
 
 
