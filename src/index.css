@@ -7,3 +7,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+.custom-connect-button button {
+  background-color: #24C2A5 !important;
+  color: white !important;
+}
+
+.custom-connect-button button:hover {
+  background-color: white !important;
+  color: #24C2A5 !important;
+}

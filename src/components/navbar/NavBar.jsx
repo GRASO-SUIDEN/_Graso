@@ -1,11 +1,27 @@
 import { useEffect, useState } from "react";
+import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
 import { FiAlignCenter } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import NavList from "./NavList";
 
 function Navbar() {
+  const currentAccount = useCurrentAccount();
+   const navigate = useNavigate();
+   const location = useLocation();
+
+
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    // ... (other logic)
+
+    if (currentAccount) {
+      console.log("Success!");
+      navigate("/app"); // Use navigate instead of router.push
+    }
+
+    // ... (other logic)
+  }, [currentAccount, navigate]);
 
   useEffect(
     function () {
@@ -53,9 +69,18 @@ function Navbar() {
       </div>
 
       <div className="max-md:flex max-md:-space-x-4 max-sm:space-x-0 max-sm:justify-end max-sm:-mr-8">
-        <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
-          <Link to="/app">Get started</Link>
-        </button>
+        {/* <button className="bg-[#24C2A5] text-white  rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
+          {/* <Link to={currentAccount ? "/app" : "/"}> */}
+            {/* <ConnectButton
+            
+              connectText="Get started"
+              className="w-full h-full bg-[#24C2A5] text-white"
+            /> */}
+          {/* </Link> */}
+    {/* </button>  */}
+        <div className="custom-connect-button">
+  <ConnectButton connectText="Get started" />
+</div>
 
         <button
           className="z-10 text-center hidden max-md:flex max-md:justify-center max-md:items-center"
