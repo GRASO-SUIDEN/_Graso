@@ -18,7 +18,11 @@ function AppSidenav({ isOpen, setIsOpen }) {
     >
       <div className="flex justify-between">
         <h2 className="logo">GRASO</h2>
-        <FiX size={30} onClick={() => setIsOpen(!isOpen)} />
+        <FiX
+          size={30}
+          onClick={() => setIsOpen(!isOpen)}
+          className="hidden max-md:flex"
+        />
       </div>
       <ul>
         <Link to="dashboard">
