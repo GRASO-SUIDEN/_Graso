@@ -19,7 +19,7 @@ const Explore = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div className="min-w-[500px] grid grid-cols-3 gap-10 space-x-5 justify-center max-md:hidden">
+      <div className="max-w-[1500px] min-w-[800px] grid grid-cols-3 gap-10 justify-center max-md:hidden">
         {ExploreData.map((data) => (
           <ExploreCard data={data} key={data.id} />
         ))}
