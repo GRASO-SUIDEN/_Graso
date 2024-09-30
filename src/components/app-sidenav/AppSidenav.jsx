@@ -1,8 +1,8 @@
 import "./appsidenav.css";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const DashboardSidenav = () => {
+const AppSidenav = () => {
   return (
     <div className="app-sidenav max-md:hidden">
       <h2 className="logo">GRASO</h2>
