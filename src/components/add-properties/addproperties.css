@@ -5,6 +5,7 @@
     background: #E5E7EB;
     width: 100%;
     height: auto;
+    animation:  rise 0.2s linear forwards;
 }
 .sub-head{
     width: 100%;
