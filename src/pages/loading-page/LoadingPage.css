@@ -20,7 +20,7 @@
 		box-shadow:inset 0 0 5px rgba(0,0,0,0.3), 0 5px 0 #ccc;
 		padding: 0 15px;
 		line-height: 100px;
-		animation:jumb 2s infinite;
+		animation:jumb 1.5s infinite;
 	}
 	@keyframes jumb {
 		0% {
@@ -49,10 +49,4 @@
 	}
 	.back span:nth-child(5) {
 		animation-delay:.4s;
-	}
-	.back span:nth-child(6) {
-		animation-delay:.5s;	
-	}
-	.back span:nth-child(7) {
-		animation-delay:.6s;
 	}
