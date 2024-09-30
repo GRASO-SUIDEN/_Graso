@@ -101,7 +101,7 @@ function DashboardCharts() {
           </select>
         </div>
         <div className="flex-grow max-md:w-full max-md:h-full">
-          <Line data={data} options={options} />
+          <Line data={data} options={options} height="500" />
         </div>
       </div>
 

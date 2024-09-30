@@ -12,8 +12,8 @@ function AppSidenav({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`app-sidenav z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
-        isOpen ? "-translate-x-0" : "-translate-x-full"
+      className={`app-sidenav max-md:z-50 max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
+        isOpen ? "fixed" : "hidden"
       } transition-all duration-300`}
     >
       <div className="flex justify-between">
