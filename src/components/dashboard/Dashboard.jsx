@@ -1,5 +1,6 @@
 import DashboardCharts from "./DashboardCharts";
 import DashboardSummary from "./DashboardSummary";
+import "./dashboard.css";
 
 const Dashboard = () => {
   return (

@@ -29,20 +29,7 @@
 }
 
 .app-sidenav ul li:hover {
-  background-color: #34495e;
+  background-color: #0d7a66;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-}
-
-.app-sidenav span {
-  opacity: 55%;
-}
-/* .active-nav{
-    opacity: 100%;
-} */
-
-@media (max-width: 768px) {
-  .app-sidenav {
-    display: none;
-  }
 }

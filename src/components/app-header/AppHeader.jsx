@@ -10,8 +10,8 @@ import { useEffect } from "react";
 
 import "./AppHeader.css";
 
-function Header() {
-   const currentAccount = useCurrentAccount();
+function Header({ setIsOpen }) {
+     const currentAccount = useCurrentAccount();
    const navigate = useNavigate();
 
    useEffect(() => {
@@ -23,7 +23,7 @@ function Header() {
   return (
     <div className="head flex items-center">
       <div className="head_menu-btn small-box">
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} onClick={() => setIsOpen(true)} />
       </div>
       <div className="head_menu-search">
         <input type="text" placeholder="Search..." />

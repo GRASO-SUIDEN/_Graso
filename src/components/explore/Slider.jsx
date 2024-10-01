@@ -1,4 +1,4 @@
-import { ExploreCard } from "./Explore";
+import ExploreCard from "./ExploreCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Mousewheel } from "swiper/modules";
 import "swiper/css/bundle";

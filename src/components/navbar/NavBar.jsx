@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
-import { FiAlignCenter } from "react-icons/fi";
-import { FiX } from "react-icons/fi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { FiX, FiAlignCenter } from "../../utils/icons";
 import NavList from "./NavList";
 
 function Navbar() {
