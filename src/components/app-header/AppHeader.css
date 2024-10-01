@@ -49,13 +49,19 @@
   height: 90%;
 }
 
-.connect-button button {
-  height: 40px !important;
-  display: flex;
-  flex-wrap: wrap;
+.Button_buttonVariants_x1s81q0 {
+  height: 10px !important;
 }
 
 .AccountDropdownMenu_menuContent__div2ql2 {
   width: 100% !important;
   text-align: center !important;
+  border: 1px solid gray !important;
+}
+
+@media (max-width: 902px) {
+  .connect-button button {
+    height: 40px !important;
+    width: 8rem;
+  }
 }
