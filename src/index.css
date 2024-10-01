@@ -8,15 +8,13 @@
   box-sizing: border-box;
 }
 
-
 .custom-connect-button button {
-  background-color: #24C2A5 !important;
+  background-color: #24c2a5 !important;
   color: white !important;
   border: none !important;
-
 }
 
 .custom-connect-button button:hover {
   background-color: white !important;
-  color: #24C2A5 !important;
+  color: #24c2a5 !important;
 }
