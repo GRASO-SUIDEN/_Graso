@@ -1,8 +1,19 @@
+import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
+import {  useNavigate } from "react-router-dom";
 import "./banner.css";
 import MainImage from "../../assets/image (2).webp";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Banner = () => {
+  const currentAccount = useCurrentAccount();
+  const navigate = useNavigate();
+
+    useEffect(() => {
+      if (currentAccount) {
+        console.log("Success!");
+        navigate("/app");
+      }
+    }, [currentAccount, navigate]);
   return (
     <div className="mt-10 banner">
       <div className="hero">
@@ -13,11 +24,14 @@ const Banner = () => {
             while giving individuals investors fractional ownership of real
             world assets.
           </p>
-          <div className="button-holder">
+          <div className="button-holder ">
             <button>Invest</button>
-            <button>
+            {/* <button>
               <Link to="/app">Develop</Link>
-            </button>
+            </button> */}
+            <div className="custom-connect-button">
+              <ConnectButton connectText="Develop" />
+            </div>
           </div>
         </div>
         <div className="main-img">
