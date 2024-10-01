@@ -6,21 +6,10 @@
     overflow-y: scroll;
     background-color: #F3F3F4;
 }
-.profile-wrapper .navbar {
-    position: absolute;
-    top: 7%;
-    right: 10%;
-    z-index: 100;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 10px;
-    display: none;
-}
 .profile-container{
     width: 100%;
     min-height: 150vh;
     position: relative;
-    animation:  rise 0.2s linear forwards;
 }
 .background-layer{
     position: absolute;
@@ -29,7 +18,6 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    padding: 10px;
 }
 header{
     width: 100%;
@@ -38,19 +26,15 @@ header{
     align-items: center;
     color: #fff;
     height: 32%;
-    background: linear-gradient(rgba(26, 26, 26, 0.6),rgba(26, 26, 26, 0.6)), url("https://github.com/chiscookeke11/Test-pagea/blob/main/profile-background.jpg?raw=true");
+    background: #000000;
     box-shadow: 0px 0px 3px 0px #3C485826;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 6px;
 }
-header h1{
-    font-family: League Spartan;
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 27.63px;
-    text-align: left;
+header h1 {
+  font-family: League Spartan;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 27.63px;
+  text-align: left;
 }
 .upper-layer{
     position: absolute;
@@ -63,7 +47,7 @@ header h1{
     justify-content: space-between;
     align-items: center;
     padding: 50px 30px;
-    z-index:10;
+    z-index: 999;
     gap: 20px;
 }
 .personal-details{
@@ -75,93 +59,52 @@ header h1{
     padding: 25px 15px;
     font-family: "League Spartan", sans-serif;
     max-width: 225px;
-    max-height: auto;
+    max-height: 775.3px;
     min-width: 200px;
     min-height: 650px;
     margin: 0px 10px;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-.profile-pic{
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    margin: 10px 0px;
+.profile-pic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px 0px;
 }
-.personal-details h2{
-    font-family: "League Spartan", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    text-align: center;
-    color: #161C2D;
+.personal-details h2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+  color: #161c2d;
 }
-.personal-details h4{
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 27.63px;
-    text-align: center;
-    color: #94A3B8;
+.personal-details h4 {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.63px;
+  text-align: center;
+  color: #94a3b8;
 }
-.personal-details a{
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 27.63px;
-    text-align: center;
-    color: #FF3B30;
+.personal-details a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 27.63px;
+  text-align: center;
+  color: #ff3b30;
 }
-.p-details{
-    width: 100%;
-    text-align: left;
-    margin: 30px 0 0 20px;
-    align-self: initial;
+.detail-list img{
+    width: 30px;
+    height: 30px;
 }
-.detail-boxes img{
-    width: 15px;
-    height: 15px;
-}
-.detail-boxes {
-    width: 100%;
-    padding: 20px 10px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.detail-boxes li{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: 5px 0;
-    padding: 3px 0;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-}
-.detail-boxes li span{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-.detail-boxes li span h1{
-    color: #16A34A;
-   font-size: 17px;
-   font-weight: 500;
-   line-height: 25.5px;
-   text-align: left;
-   margin-bottom: 0;
-}
-.detail-boxes li span small{
-    color: #94A3B8;
-    font-family: League Spartan;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-}
+
+
+
+
+
+
 
 
 
@@ -195,26 +138,24 @@ header h1{
     padding: 20px;
     border-radius: 6px;
     margin: 20px 0;
-    min-height: 170.88px;
-    max-height: auto;
+    max-height: 170.88px;
     width: 100%;
     box-shadow: 0px 0px 3px 0px #3C485826;
-    min-width:  340px;
 }
-.asset-list .summary h1{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-    text-align: left;
-    color: #000000;
-    margin: 7px 0;
+.asset-list .summary h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  color: #000000;
+  margin: 7px 0;
 }
-.asset-list p{
-    color: #94A3B8;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 27.63px;
-    text-align: left;
+.asset-list p {
+  color: #94a3b8;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.63px;
+  text-align: left;
 }
 .asset-list .assets{
     width: 100%;
@@ -224,65 +165,27 @@ header h1{
     max-width: 819px;
     height: auto;
     min-height: 50vh;
-    max-height: auto;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-.assets h1{
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
-    color: #161C2D;
+.assets h1 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #161c2d;
 }
-.assets p{
-    color: #00000075;
-    width: 100%;
-    height: auto;
-    position: relative;
+.assets p {
+  color: #00000075;
+  width: 100%;
+  height: auto;
+  position: relative;
 }
-.assets p::after{
-    content: "No assets yet";
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 30vh;
+.assets p::after {
+  content: "No assets yet";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 30vh;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:768px){
-    .personal-details{
-        background-color: #fff;
-        border-radius: 6px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 15px;
-        font-family: "League Spartan", sans-serif;
-        max-width: 225px;
-        max-height: auto;
-        min-width: 200px;
-        min-height: 650px;
-        margin: 0px 10px;
-        box-shadow: 0px 0px 3px 0px #3C485826;
-    }
-    .profile-wrapper .navbar {
-        display: block;
-    }
-}
-
-

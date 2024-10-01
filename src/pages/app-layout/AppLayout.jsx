@@ -13,6 +13,14 @@ function AppLayout() {
         <AppHeader setIsOpen={setIsOpen} />
         <Outlet />
       </div>
+      {isOpen ? (
+        <div
+          className="max-md:fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
