@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./addproperties.css";
 
 function AddProperties() {
@@ -14,9 +14,7 @@ function AddProperties() {
         <div className="sub-head">
           <h1>Explore land</h1>
           <h3>
-            Graso <span className="arrow"></span> {" > "}{" "}
-            <span>properties</span>
-            Graso <span className="arrow"></span> {" > "} <span>properties</span>
+            Graso <span className="arrow"></span> {" > "} <span>Add properties</span>
           </h3>
         </div>
 
@@ -44,7 +42,7 @@ function AddProperties() {
 
               <span>
                 <h1>Select property:</h1>
-
+                
                 <select
                   value={selectedProperty}
                   onChange={handlePropertyChange}
