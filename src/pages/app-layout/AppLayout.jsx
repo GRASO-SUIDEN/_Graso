@@ -15,7 +15,7 @@ function AppLayout() {
       </div>
       {isOpen ? (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="max-md:fixed inset-0 bg-black bg-opacity-50 z-30"
           onClick={() => setIsOpen(false)}
         ></div>
       ) : (
