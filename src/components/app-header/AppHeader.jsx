@@ -6,11 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./AppHeader.css";
 
-function Header() {
+function Header({ setIsOpen }) {
   return (
     <div className="head">
       <div className="head_menu-btn small-box">
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} onClick={() => setIsOpen(true)} />
       </div>
       <div className="head_menu-search">
         <input type="text" placeholder="Search..." />

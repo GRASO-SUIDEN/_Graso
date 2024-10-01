@@ -66,7 +66,30 @@ const AboutUs = () => {
       twitter: "https://x.com/ChiscoDbg69906",
       github: "https://github.com/chiscookeke11",
     },
-    
+    {
+      name: " Ene Paschaline Chimeremma  ",
+      role: "Social Media Manager",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/paschaline.jpg?raw=true",
+      linkedin: "https://github.com/Alex-dev63",
+      twitter: "https://x.com/Xan_dra27?t=h9KVYDU5luuZdZEeOSfViA&s=08",
+      github: "https://github.com/Alex-dev63",
+    },
+    {
+      name: " Nebolisa Ugochukwu Benedict  ",
+      role: "Frontend Developer",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/nebolisa.jpg?raw=true",
+      linkedin: "https://www.linkedin.com/in/ugochukwu-nebolisa-a818b6302",
+      twitter: "https://x.com/i_am_nebolisa",
+      github: "https://github.com/benedictfred",
+    },
+    {
+      name: " Ugbeda Genesis wisdom  ",
+      role: "Frontend Developer",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/genesis.jpg?raw=true",
+      linkedin: "https://www.linkedin.com/in/wisdom-genesis-frontend-web-developer",
+      twitter: "https://x.com/dev_genesi?t=9BtzgF9YZM8jg9G_Xzibzg&s=08",
+      github: "https://github.com/Genesisufedo",
+    },
   ];
 
   return (
@@ -171,8 +194,8 @@ const AboutUs = () => {
         {/* Contact Section */}
         <div className="contact">
           <form>
-            <h4># LET’S CONTACT</h4>
-            <h2>Contact With Us</h2>
+            <h4># CONTACT</h4>
+            <h2>Contact  Us</h2>
             <div className="form-details">
               <input type="text" placeholder="Name" required />
               <input type="text" placeholder="Email" required />

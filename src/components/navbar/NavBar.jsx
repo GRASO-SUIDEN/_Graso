@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiAlignCenter } from "react-icons/fi";
-import { FiX } from "react-icons/fi";
+import { FiX, FiAlignCenter } from "../../utils/icons";
 import { Link } from "react-router-dom";
 import NavList from "./NavList";
 
