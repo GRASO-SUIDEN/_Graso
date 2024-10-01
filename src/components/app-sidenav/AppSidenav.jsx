@@ -21,15 +21,15 @@ function AppSidenav({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`app-sidenav max-md:z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
+      className={`app-sidenav max-md:z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full ${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } transition-all duration-300 [&_li]:flex [&_li]:gap-2`}
+      } transition-transform duration-300 ease-in-out [&_li]:flex [&_li]:gap-2`}
     >
       <div className="flex justify-between">
         <h2 className="logo">GRASO</h2>
         <FiX
           size={30}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(false)}
           className="hidden max-md:flex"
         />
       </div>
