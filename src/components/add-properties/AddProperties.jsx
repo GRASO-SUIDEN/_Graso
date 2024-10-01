@@ -16,6 +16,7 @@ function AddProperties() {
           <h3>
             Graso <span className="arrow"></span> {" > "}{" "}
             <span>properties</span>
+            Graso <span className="arrow"></span> {" > "} <span>properties</span>
           </h3>
         </div>
 

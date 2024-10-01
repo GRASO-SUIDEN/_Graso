@@ -1,16 +1,10 @@
 import "./profile.css";
 function Profile() {
   return <div className="profile-wrapper">
- 
     <div className="profile-container">
 
 
       <div className="background-layer">
-      <nav class="navbar fixed-top bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Fixed top</a>
-  </div>
-</nav>
         <header><h1>Profile </h1></header>
       </div>
 
@@ -46,10 +40,10 @@ developer, team leader, and a project manager.</p>
             </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
+    
+  </div>;
 }
 
 export default Profile;
