@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -6,7 +6,7 @@
   margin-bottom: 16px;
 }
 .text {
-  /* background-color: aqua; */
+  background-color: aqua;
   width: 100%;
   align-items: center;
   display: flex;
@@ -40,4 +40,4 @@
     flex-direction: column;
     margin-bottom: 16px;
   }
-}
+} */

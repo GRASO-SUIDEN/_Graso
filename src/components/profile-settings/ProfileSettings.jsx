@@ -13,7 +13,7 @@ function ProfileSettings() {
       <div className="setting-container">
 
       <div className="personal-details">
-          <img src="https://github.com/chiscookeke11/Test-pagea/blob/main/carlo-img.jpg?raw=true" className='profile-pic' alt="Profile-pic" />
+          <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/55473d5b2efe6db5e27ab6bc6eb6244d83d3ad8d/camera.svg" className='profile-pic' alt="Profile-pic" />
           <h2>Calvin Carlo</h2>
           <h4>calvin@hotmail.com</h4>
           </div>
