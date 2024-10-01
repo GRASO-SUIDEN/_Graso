@@ -21,10 +21,14 @@ function AppSidenav({ isOpen, setIsOpen }) {
     setShowUserProfile(!showUserProfile);
   };
 
+  const handleItemClick = () => {
+    setIsOpen(false); // Close the sidenav when any list item is clicked
+  };
+
   return (
     <div
-      className={`app-sidenav max-md:z-50 max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
-        isOpen ? "fixed" : "hidden"
+      className={`app-sidenav block max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:transition-transform max-md:duration-300 transform z-50 ${
+        isOpen ? "max-md:translate-x-0" : "max-md:-translate-x-full"
       } [&_li]:flex [&_li]:gap-2`}
     >
       <div className="flex justify-between">
@@ -36,30 +40,30 @@ function AppSidenav({ isOpen, setIsOpen }) {
         />
       </div>
       <ul>
-        <Link to="dashboard">
+        <Link to="dashboard" onClick={handleItemClick}>
           <li>
             <ImStatsDots />
             <span>Dashboard</span>
           </li>
         </Link>
 
-        <Link to="explore-properties">
+        <Link to="explore-properties" onClick={handleItemClick}>
           <li>
             <MdHomeWork />
             <span>Explore Properties</span>
           </li>
         </Link>
-        <li>
+        <li onClick={handleItemClick}>
           <RiHomeHeartFill />
           <span>Transaction</span>
         </li>
-        <Link to="add-properties">
+        <Link to="add-properties" onClick={handleItemClick}>
           <li>
             <MdAddHome />
             <span>Add Properties</span>
           </li>
         </Link>
-        <li>
+        <li onClick={handleItemClick}>
           <IoChatbubbleOutline />
           <span>Chat</span>
         </li>
@@ -80,13 +84,15 @@ function AppSidenav({ isOpen, setIsOpen }) {
         </li>
         {showUserProfile && (
           <ul className="ml-4">
-            <Link to="user/profile">
+            <Link to="user/profile" onClick={handleItemClick}>
               <li>Profile</li>
             </Link>
-            <li>Profile Settings</li>
+            <Link to="user/profile-settings" onClick={handleItemClick}>
+              <li>Profile Settings</li>
+            </Link>
           </ul>
         )}
-        <li>
+        <li onClick={handleItemClick}>
           <IoMdExit />
           <span>Log Out</span>
         </li>

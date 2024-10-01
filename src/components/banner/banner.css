@@ -57,7 +57,7 @@
   animation: fadeIn 2s forwards;
   animation-delay: 900ms;
 }
-button {
+.button-holder button {
   width: 28%;
   min-width: 145px;
   max-width: 150px;

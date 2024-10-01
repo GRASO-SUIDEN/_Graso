@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
+import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
+import { useNavigate } from "react-router-dom";
 import { FiX, FiAlignCenter } from "../../utils/icons";
-import { Link } from "react-router-dom";
 import NavList from "./NavList";
 
 function Navbar() {
+  const currentAccount = useCurrentAccount();
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (currentAccount) {
+      console.log("Success!");
+      navigate("/app");
+    }
+  }, [currentAccount, navigate]);
 
   useEffect(
     function () {
@@ -48,13 +58,25 @@ function Navbar() {
           <NavList navLink="Portfolio" path="/portfolio" />
           <NavList navLink="Whitepaper" path="https://graso.gitbook.io/graso" />
           <NavList navLink="About Us" path="/about-us" />
+          <div className="custom-connect-button hidden max-sm:block">
+            <ConnectButton connectText="Get started" />
+          </div>
         </ul>
       </div>
 
-      <div className="max-md:flex max-md:-space-x-4 max-sm:space-x-0 max-sm:justify-end max-sm:-mr-8">
-        <button className="bg-[#24C2A5] text-white px-4 py-2 rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
-          <Link to="/app">Get started</Link>
-        </button>
+      <div className="max-md:flex  max-sm:justify-end">
+        {/* <button className="bg-[#24C2A5] text-white  rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
+          {/* <Link to={currentAccount ? "/app" : "/"}> */}
+        {/* <ConnectButton
+            
+              connectText="Get started"
+              className="w-full h-full bg-[#24C2A5] text-white"
+            /> */}
+        {/* </Link> */}
+        {/* </button>  */}
+        <div className="custom-connect-button max-sm:hidden">
+          <ConnectButton connectText="Get started" />
+        </div>
 
         <button
           className="z-10 text-center hidden max-md:flex max-md:justify-center max-md:items-center"
