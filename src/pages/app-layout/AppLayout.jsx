@@ -3,7 +3,7 @@ import AppSidenav from "../../components/app-sidenav/AppSidenav";
 import AppHeader from "../../components/app-header/AppHeader";
 function AppLayout() {
   return (
-    <div className="flex w-full h-[100vh]">
+    <div className="flex w-full h-[full]">
       <AppSidenav />
 
       <div className="flex flex-col flex-grow">
