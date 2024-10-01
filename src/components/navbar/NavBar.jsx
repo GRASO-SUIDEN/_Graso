@@ -64,7 +64,7 @@ function Navbar() {
         </ul>
       </div>
 
-      <div className="max-md:flex max-md:-space-x-4 max-sm:space-x-0 max-sm:justify-end max-sm:-mr-8">
+      <div className="max-md:flex  max-sm:justify-end">
         {/* <button className="bg-[#24C2A5] text-white  rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
           {/* <Link to={currentAccount ? "/app" : "/"}> */}
         {/* <ConnectButton

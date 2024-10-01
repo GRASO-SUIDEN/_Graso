@@ -11,15 +11,15 @@ import { useEffect } from "react";
 import "./AppHeader.css";
 
 function Header({ setIsOpen }) {
-     const currentAccount = useCurrentAccount();
-   const navigate = useNavigate();
+  const currentAccount = useCurrentAccount();
+  const navigate = useNavigate();
 
-   useEffect(() => {
-     if (!currentAccount) {
-       console.log("Success!");
-       navigate("/");
-     }
-   }, [currentAccount, navigate]);
+  useEffect(() => {
+    if (!currentAccount) {
+      console.log("Success!");
+      navigate("/");
+    }
+  }, [currentAccount, navigate]);
   return (
     <div className="head flex items-center">
       <div className="head_menu-btn small-box">

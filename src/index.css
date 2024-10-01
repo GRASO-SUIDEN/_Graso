@@ -12,6 +12,8 @@
   background-color: #24c2a5 !important;
   color: white !important;
   border: none !important;
+  width: 9rem;
+  height: 3rem;
 }
 
 .custom-connect-button button:hover {

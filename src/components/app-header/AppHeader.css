@@ -51,4 +51,6 @@
 
 .connect-button button {
   height: 40px !important;
+  display: flex;
+  flex-wrap: wrap;
 }
