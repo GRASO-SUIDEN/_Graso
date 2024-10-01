@@ -90,6 +90,38 @@ const AboutUs = () => {
       twitter: "https://x.com/dev_genesi?t=9BtzgF9YZM8jg9G_Xzibzg&s=08",
       github: "https://github.com/Genesisufedo",
     },
+    {
+      name: " Kosisochukwu Moronu ",
+      role: " Research Analyst",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/kosi.jpg?raw=true",
+      linkedin: "https://www.linkedin.com/in/kosisochukwu-moronu-17722b303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "https://x.com/Kosiengine",
+      github: "https://github.com/Kosisochukwu244",
+    },
+    {
+      name: " Nweke Anthony ",
+      role: "Backend Developer",
+      image: "",
+      linkedin: "https://www.linkedin.com/in/Anthonyslav1",
+      twitter: "https://x.com/Anthonyslav1",
+      github: "https://github.com/Anthonyslav1",
+    },
+    {
+      name: "  Egbo chikosolu Maryaugustina  ",
+      role: "Social media manager",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/chikosolu.jpg?raw=true",
+      linkedin: "https://www.linkedin.com/in/egbo-chikosolu-mary-augustina-aba558251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "https://x.com/Augustina__egbo?t=40D9E2C9B9DCPjd7zUvvEg&s=09",
+      github: "https://x.com/Augustina__egbo?t=40D9E2C9B9DCPjd7zUvvEg&s=09",
+    },
+    {
+      name: "  Obiefuna Chidiogo  ",
+      role: "Social media team",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/chidiogo.jpg?raw=true",
+      linkedin: "https://x.com/king_futures9?s=21",
+      twitter: "https://x.com/king_futures9?s=21",
+      github: "https://x.com/king_futures9?s=21",
+    },
   ];
 
   return (
