@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FiX, FiAlignCenter } from "../../utils/icons";
 import NavList from "./NavList";
 
 function Navbar() {
   const currentAccount = useCurrentAccount();
-   const navigate = useNavigate();
-   const location = useLocation();
-
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
-
-
     if (currentAccount) {
       console.log("Success!");
       navigate("/app");
     }
-
-
   }, [currentAccount, navigate]);
 
   useEffect(
@@ -64,6 +58,9 @@ function Navbar() {
           <NavList navLink="Portfolio" path="/portfolio" />
           <NavList navLink="Whitepaper" path="https://graso.gitbook.io/graso" />
           <NavList navLink="About Us" path="/about-us" />
+          <div className="custom-connect-button hidden max-sm:block">
+            <ConnectButton connectText="Get started" />
+          </div>
         </ul>
       </div>
 
@@ -77,7 +74,7 @@ function Navbar() {
             /> */}
         {/* </Link> */}
         {/* </button>  */}
-        <div className="custom-connect-button">
+        <div className="custom-connect-button max-sm:hidden">
           <ConnectButton connectText="Get started" />
         </div>
 
