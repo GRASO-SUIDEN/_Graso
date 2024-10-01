@@ -12,6 +12,8 @@
 .custom-connect-button button {
   background-color: #24C2A5 !important;
   color: white !important;
+  border: none !important;
+
 }
 
 .custom-connect-button button:hover {
