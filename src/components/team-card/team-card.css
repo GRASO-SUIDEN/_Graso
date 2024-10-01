@@ -1,14 +1,4 @@
-.card-box{
-	width: 100%;
-	min-height: 75vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap-reverse;
-	flex-direction: row;
-	padding: 20px 10px;
-	gap: 20px;
-}
+
 .card{
 	width: 280px;
 	background-color: white;
@@ -17,7 +7,7 @@
 	border-radius: 10px;
 	text-align: center;
 	overflow: hidden;
-	border: 1px solid #cfcfcf;;
+	border: 1px solid #cfcfcf;
 }
 .image-container{
 	width: 100%;

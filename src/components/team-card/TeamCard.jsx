@@ -1,93 +1,28 @@
-import React from 'react'
-import './team-card.css'
+import "./team-card.css";
 
- const TeamCard = () => {
+const TeamCard = ({ image, name, role, linkedin, twitter, github }) => {
   return (
-    <div className='card-box'>
-
-
-        <div class="card">
-		<div class="image-container">
-			<img src="https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true" alt="" />
-		</div>
-		<div class="content">
-			<h2 class="profile-name">Name</h2>
-			<p class="description">description...</p>
-		</div>
-		<div class="social-links">
-        <a href="#" className="linkedin">
-  <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/linkedin.svg" alt="socials" />
-</a>
-<a href="#" class="twitter">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/twitter-x.svg" alt="social" />
-			</a><a href="#" class="instagram">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/github%20(6).svg" alt="socials"/>
-			</a>
-		</div>
-	</div>
-
-
-	<div class="card">
-		<div class="image-container">
-			<img src="https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true" alt="" />
-		</div>
-		<div class="content">
-			<h2 class="profile-name">Name</h2>
-			<p class="description">description...</p>
-		</div>
-		<div class="social-links">
-        <a href="#" className="linkedin">
-  <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/linkedin.svg" alt="socials" />
-</a>
-<a href="#" class="twitter">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/twitter-x.svg" alt="social" />
-			</a><a href="#" class="instagram">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/github%20(6).svg" alt="socials"/>
-			</a>
-		</div>
-	</div>
-
-	<div class="card">
-		<div class="image-container">
-			<img src="https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true" alt="" />
-		</div>
-		<div class="content">
-			<h2 class="profile-name">Name</h2>
-			<p class="description">description...</p>
-		</div>
-		<div class="social-links">
-        <a href="#" className="linkedin">
-  <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/linkedin.svg" alt="socials" />
-</a>
-<a href="#" class="twitter">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/twitter-x.svg" alt="social" />
-			</a><a href="#" class="instagram">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/github%20(6).svg" alt="socials"/>
-			</a>
-		</div>
-	</div>
-
-
-	<div class="card">
-		<div class="image-container">
-			<img src="https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true" alt="" />
-		</div>
-		<div class="content">
-			<h2 class="profile-name">Name</h2>
-			<p class="description">description...</p>
-		</div>
-		<div class="social-links">
-        <a href="#" className="linkedin">
-  <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/linkedin.svg" alt="socials" />
-</a>
-<a href="#" class="twitter">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/twitter-x.svg" alt="social" />
-			</a><a href="#" class="instagram">
-				<img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/github%20(6).svg" alt="socials"/>
-			</a>
-		</div>
-	</div>
+    <div className="card">
+      <div className="image-container">
+        <img src={image} alt={name} />
+      </div>
+      <div className="content">
+        <h2 className="profile-name">{name}</h2>
+        <p className="description">{role}</p>
+      </div>
+      <div className="social-links">
+        <a href={linkedin} target="_blank" rel="noopener noreferrer" className="linkedin">
+          <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a href={twitter} target="_blank" rel="noopener noreferrer" className="twitter">
+          <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/twitter-x.svg" alt="Twitter" />
+        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer" className="github">
+          <img src="https://raw.githubusercontent.com/chiscookeke11/Test-pagea/e56603dfe7ff3825fbe39413af7ab4ff8dfd5ab2/github%20(6).svg" alt="GitHub" />
+        </a>
+      </div>
     </div>
-  )
-}
+  );
+};
+
 export default TeamCard;

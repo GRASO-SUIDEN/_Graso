@@ -30,7 +30,15 @@ function Footer() {
           <div className="flex flex-col space-y-2 w-1/3 min-w-[100px]">
             <h2 className="font-semibold">LEARN</h2>
             <div className="flex flex-col space-y-2 [&_p]:cursor-pointer">
-              <p>Whitepaper</p>
+              <p>
+                <a
+                  href="https://graso.gitbook.io/graso"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Whitepaper
+                </a>
+              </p>
               <p>Medium</p>
               <p>Blog</p>
               <p>Articles</p>
