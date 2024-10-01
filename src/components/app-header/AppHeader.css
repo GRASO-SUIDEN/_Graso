@@ -48,3 +48,9 @@
   width: 90%;
   height: 90%;
 }
+
+.connect-button button {
+  height: 40px !important;
+  display: flex;
+  flex-wrap: wrap;
+}

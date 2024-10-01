@@ -1,3 +1,6 @@
+.body{
+    background-color: #F3F3F4;
+}
 .profile-wrapper{
     height: 100vh;
     overflow-y: scroll;
@@ -26,12 +29,12 @@ header{
     background: #000000;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-header h1{
-    font-family: League Spartan;
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 27.63px;
-    text-align: left;
+header h1 {
+  font-family: League Spartan;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 27.63px;
+  text-align: left;
 }
 .upper-layer{
     position: absolute;
@@ -62,35 +65,35 @@ header h1{
     margin: 0px 10px;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-.profile-pic{
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    margin: 10px 0px;
+.profile-pic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px 0px;
 }
-.personal-details h2{
-    font-family: "League Spartan", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    text-align: center;
-    color: #161C2D;
+.personal-details h2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+  color: #161c2d;
 }
-.personal-details h4{
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 27.63px;
-    text-align: center;
-    color: #94A3B8;
+.personal-details h4 {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.63px;
+  text-align: center;
+  color: #94a3b8;
 }
-.personal-details a{
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 27.63px;
-    text-align: center;
-    color: #FF3B30;
+.personal-details a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 27.63px;
+  text-align: center;
+  color: #ff3b30;
 }
 .detail-list img{
     width: 30px;
@@ -139,20 +142,20 @@ header h1{
     width: 100%;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-.asset-list .summary h1{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-    text-align: left;
-    color: #000000;
-    margin: 7px 0;
+.asset-list .summary h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  color: #000000;
+  margin: 7px 0;
 }
-.asset-list p{
-    color: #94A3B8;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 27.63px;
-    text-align: left;
+.asset-list p {
+  color: #94a3b8;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.63px;
+  text-align: left;
 }
 .asset-list .assets{
     width: 100%;
@@ -164,25 +167,25 @@ header h1{
     min-height: 50vh;
     box-shadow: 0px 0px 3px 0px #3C485826;
 }
-.assets h1{
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
-    color: #161C2D;
+.assets h1 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #161c2d;
 }
-.assets p{
-    color: #00000075;
-    width: 100%;
-    height: auto;
-    position: relative;
+.assets p {
+  color: #00000075;
+  width: 100%;
+  height: auto;
+  position: relative;
 }
-.assets p::after{
-    content: "No assets yet";
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 30vh;
+.assets p::after {
+  content: "No assets yet";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 30vh;
 }
