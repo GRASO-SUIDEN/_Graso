@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FiX } from "react-icons/fi";
+import {
+  FiX,
+  ImStatsDots,
+  MdHomeWork,
+  MdAddHome,
+  RiHomeHeartFill,
+  IoChatbubbleOutline,
+  FaUserPen,
+  IoMdExit,
+} from "../../utils/icons";
 import "./appsidenav.css";
 
 function AppSidenav({ isOpen, setIsOpen }) {
@@ -12,9 +21,9 @@ function AppSidenav({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`app-sidenav max-md:z-50 max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
-        isOpen ? "fixed" : "hidden"
-      } transition-all duration-300`}
+      className={`app-sidenav max-md:z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      } transition-all duration-300 [&_li]:flex [&_li]:gap-2`}
     >
       <div className="flex justify-between">
         <h2 className="logo">GRASO</h2>
@@ -26,19 +35,37 @@ function AppSidenav({ isOpen, setIsOpen }) {
       </div>
       <ul>
         <Link to="dashboard">
-          <li>Dashboard</li>
+          <li>
+            <ImStatsDots />
+            <span>Dashboard</span>
+          </li>
         </Link>
 
         <Link to="explore-properties">
-          <li>Explore Properties</li>
+          <li>
+            <MdHomeWork />
+            <span>Explore Properties</span>
+          </li>
         </Link>
-        <li>Staking</li>
+        <li>
+          <RiHomeHeartFill />
+          <span>Transaction</span>
+        </li>
         <Link to="add-properties">
-          <li>Add Properties</li>
+          <li>
+            <MdAddHome />
+            <span>Add Properties</span>
+          </li>
         </Link>
-        <li>Chat</li>
+        <li>
+          <IoChatbubbleOutline />
+          <span>Chat</span>
+        </li>
 
-        <li onClick={toggleUserProfile}>User Profile</li>
+        <li onClick={toggleUserProfile}>
+          <FaUserPen />
+          <span>User Profile</span>
+        </li>
         {showUserProfile && (
           <ul className="ml-4">
             <Link to="user/profile">
@@ -48,10 +75,10 @@ function AppSidenav({ isOpen, setIsOpen }) {
           </ul>
         )}
 
-        <li>Blog</li>
-        <li>Pages</li>
-        <li>Authentication</li>
-        <li>Miscellaneous</li>
+        <li>
+          <IoMdExit />
+          <span>Log Out</span>
+        </li>
       </ul>
     </div>
   );

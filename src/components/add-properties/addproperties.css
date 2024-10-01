@@ -1,139 +1,140 @@
-.add-properties-wrapper{
-    overflow-y: scroll;
+.add-properties-wrapper {
+  overflow-y: scroll;
 }
-.add-properties{
-    background: #E5E7EB;
-    width: 100%;
-    height: auto;
-    animation:  rise 0.2s linear forwards;
+.add-properties {
+  background: #e5e7eb;
+  width: 100%;
+  height: auto;
+  animation: rise 0.2s linear forwards;
 }
-.sub-head{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+.sub-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
 }
-.sub-head h1{
-    font-family: "DM Sans", sans-serif;
-   font-size: 16px;
-   font-weight: 700;
-   line-height: 34.2px;
-   text-align: center;
-   color: #000000;
+.sub-head h1 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 34.2px;
+  text-align: center;
+  color: #000000;
 }
-.sub-head h3{
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 14px;
-    text-align: center;
-    display: flex;
-    gap: 5px;
-    color: #000000;
+.sub-head h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: center;
+  display: flex;
+  gap: 5px;
+  color: #000000;
 }
-.sub-head h3 span{
-    color: #24C2A5;
+.sub-head h3 span {
+  color: #24c2a5;
 }
-.input-container{
-    padding: 40px 20px;
-    width: 100%;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    height: auto;
+.input-container {
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  height: auto;
 }
-.input-box{
-    background-color: #fff;
-    border-radius: 6px;
-    font-family: "League Spartan", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
+.input-box {
+  background-color: #fff;
+  border-radius: 6px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
-.input-box h1{
-    color: #000000;
-    font-size: 18px;
-    width: 100%;
-    padding: 10px 10px;
+.input-box h1 {
+  color: #000000;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px 10px;
 }
-.input-box1{
-    max-width: 403px;
-    max-height: 319px;
-    min-width: 322px;
-    width: 40%;
-    padding: 24px;
-    min-width: 340px;
-    min-height: 370px;
+.input-box1 {
+  max-width: 403px;
+  max-height: 319px;
+  min-width: 322px;
+  width: 40%;
+  padding: 24px;
+  min-width: 340px;
+  min-height: 370px;
 }
-.input-box1 input{
-    width: 100%;
-    background-color: #E5E7EB;
-    max-width: 290px;
-    max-height: 112px;
-    height: 40vh;
-    padding: 24px;
-    border-radius: 4px;
-    border: 1px;
-    outline: none;
-    border: none;
+.input-box1 input {
+  width: 100%;
+  background-color: #e5e7eb;
+  max-width: 290px;
+  max-height: 112px;
+  height: 40vh;
+  padding: 24px;
+  border-radius: 4px;
+  border: 1px;
+  outline: none;
+  border: none;
 }
-.input-box1 ::placeholder{
-   font-size: 16px;
-   font-weight: 600;
-   line-height: 14.72px;
-   text-align: center;
+.input-box1 ::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 14.72px;
+  text-align: center;
 }
-.input-box button{
-    font-family: "League Spartan", sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-    background-color: #16A34A;
-    color: #ffffff;
-    transition: 0.3s ease-in-out;
+.input-box button {
+  font-family: "League Spartan", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  background-color: #16a34a;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
 }
-.input-box button:active{
-    transform: scale(0.9);
+.input-box button:active {
+  transform: scale(0.9);
 }
-.input-box2{
-    padding: 24px;
-    gap: 20px;
-    width: 40%;
-    padding: 24px;
-    min-width: 340px;
-    min-height: 398px;
-    max-height: auto;
-    max-width: 441px;
-    min-width: 330px;
-    height: auto;
-    margin-top: 4%; 
+.input-box2 {
+  padding: 24px;
+  gap: 20px;
+  width: 40%;
+  padding: 24px;
+  min-width: 340px;
+  min-height: 398px;
+  max-height: auto;
+  max-width: 441px;
+  min-width: 330px;
+  height: auto;
+  margin-top: 4%;
 }
-.input-box2 form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 15px;
+.input-box2 form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
 }
-.input-box2 input, .input-box2 select{
-    width: 100%;
-    background-color: #E5E7EB;
-    padding: 10px 18px;
-    border-radius: 4px;
-    border: 1px;
-    outline: none;
-    border: none;
-    text-align: left;
+.input-box2 input,
+.input-box2 select {
+  width: 100%;
+  background-color: #e5e7eb;
+  padding: 10px 18px;
+  border-radius: 4px;
+  border: 1px;
+  outline: none;
+  border: none;
+  text-align: left;
 }
-.input-box2 span{
-    margin: 10px 0;
+.input-box2 span {
+  margin: 10px 0;
 }
