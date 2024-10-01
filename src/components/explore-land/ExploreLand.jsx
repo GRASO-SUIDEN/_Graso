@@ -1,9 +1,10 @@
 import ExploreCard from "../explore/ExploreCard";
-import styles from "./ExploreLand.module.css";
+// import styles from "./ExploreLand.module.css";
+import { ExploreData } from "../../../data/ExploreData";
 
 function ExploreLand() {
   return (
-    <div>
+    <div className="h-full w-full overflow-auto pl-2">
       {/* <ul className="text">
         <li>
           <h1>Explore land</h1>
@@ -13,31 +14,13 @@ function ExploreLand() {
         </li>
       </ul> */}
 
-      <div className={styles.container}>
-        <div className="">
-          {" "}
-          <ExploreCard />{" "}
-        </div>
-        <div className={styles.item}>
-          {" "}
-          <ExploreCard />{" "}
-        </div>
-        <div className={styles.item}>
-          {" "}
-          <ExploreCard />{" "}
-        </div>
-        <div className={styles.item}>
-          {" "}
-          <ExploreCard />{" "}
-        </div>
-        <div className={styles.item}>
-          {" "}
-          <ExploreCard />{" "}
-        </div>
-        <div className={styles.item}>
-          {" "}
-          <ExploreCard />{" "}
-        </div>
+      <div className="flex flex-wrap gap-3">
+        {ExploreData.map((data) => (
+          <div className="" key={data.id}>
+            {" "}
+            <ExploreCard data={data} />{" "}
+          </div>
+        ))}
       </div>
     </div>
   );
