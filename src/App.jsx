@@ -6,6 +6,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import ExploreLand from "./components/explore-land/ExploreLand";
 import AddProperties from "./components/add-properties/AddProperties";
 import Profile from "./components/profile/Profile";
+import ProfileSettings from "./components/profile-settings/ProfileSettings";
 import AppLayout from "./pages/app-layout/AppLayout";
 import AboutUs from "./pages/about-us/AboutUs";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
@@ -34,6 +35,7 @@ function App() {
           <Route path="user">
             <Route index element={<Navigate to="profile" />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="profile-settings" element={<ProfileSettings />} />
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />

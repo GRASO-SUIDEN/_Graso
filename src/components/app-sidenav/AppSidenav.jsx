@@ -87,7 +87,9 @@ function AppSidenav({ isOpen, setIsOpen }) {
             <Link to="user/profile" onClick={handleItemClick}>
               <li>Profile</li>
             </Link>
-            <li onClick={handleItemClick}>Profile Settings</li>
+            <Link to="user/profile-settings" onClick={handleItemClick}>
+              <li>Profile Settings</li>
+            </Link>
           </ul>
         )}
         <li onClick={handleItemClick}>

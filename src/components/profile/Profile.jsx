@@ -1,6 +1,7 @@
-import './profile.css'
+import "./profile.css";
 function Profile() {
   return <div className="profile-wrapper">
+ 
  
     <div className="profile-container">
 
@@ -62,20 +63,17 @@ reach up to the project manager. In this journey, I understand all the procedure
 developer, team leader, and a project manager.</p>
 </div>
 
-<div className="assets">
-  <h1>My Assets :</h1>
-  <p></p>
-</div>
-
-
-          
+            <div className="assets">
+              <h1>My Assets :</h1>
+              <p></p>
+            </div>
+          </div>
         </div>
         
       </div>
       
     </div>
-    
-  </div>;
+  
 }
 
 export default Profile;

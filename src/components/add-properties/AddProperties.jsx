@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./addproperties.css";
 
 function AddProperties() {
@@ -42,7 +42,7 @@ function AddProperties() {
 
               <span>
                 <h1>Select property:</h1>
-                
+
                 <select
                   value={selectedProperty}
                   onChange={handlePropertyChange}
