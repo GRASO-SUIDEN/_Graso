@@ -5,6 +5,8 @@ import {
   ImStatsDots,
   MdHomeWork,
   MdAddHome,
+  MdKeyboardArrowUp,
+  MdKeyboardArrowDown,
   RiHomeHeartFill,
   IoChatbubbleOutline,
   FaUserPen,
@@ -21,7 +23,7 @@ function AppSidenav({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`app-sidenav max-md:z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full ${
+      className={`app-sidenav max-md:z-50 max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out [&_li]:flex [&_li]:gap-2`}
     >
@@ -62,9 +64,19 @@ function AppSidenav({ isOpen, setIsOpen }) {
           <span>Chat</span>
         </li>
 
-        <li onClick={toggleUserProfile}>
-          <FaUserPen />
-          <span>User Profile</span>
+        <li
+          onClick={toggleUserProfile}
+          className="flex justify-between items-center"
+        >
+          <div className="flex gap-2">
+            <FaUserPen />
+            <span>User Profile</span>
+          </div>
+          {showUserProfile ? (
+            <MdKeyboardArrowDown size={20} />
+          ) : (
+            <MdKeyboardArrowUp size={20} />
+          )}
         </li>
         {showUserProfile && (
           <ul className="ml-4">
@@ -74,7 +86,6 @@ function AppSidenav({ isOpen, setIsOpen }) {
             <li>Profile Settings</li>
           </ul>
         )}
-
         <li>
           <IoMdExit />
           <span>Log Out</span>
