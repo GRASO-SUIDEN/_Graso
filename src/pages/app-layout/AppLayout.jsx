@@ -6,7 +6,7 @@ function AppLayout() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex w-full h-[100vh]">
+    <div className="flex w-full h-[100%]">
       <AppSidenav isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex flex-col flex-grow">

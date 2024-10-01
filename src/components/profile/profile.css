@@ -1,7 +1,7 @@
 .profile-wrapper{
     height: 100vh;
     overflow-y: scroll;
-    background-color: #F3F3F4;
+    background-color: hsl(240, 4%, 95%);
 }
 .profile-container{
     width: 100%;
