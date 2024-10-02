@@ -4,7 +4,7 @@ import DashboardSummary from "./DashboardSummary";
 const Dashboard = () => {
   return (
     <section
-      className="h-screen flex flex-col flex-grow p-6 space-y-2 font-spartan overflow-y-scroll"
+      className="h-screen flex flex-col flex-grow p-6 space-y-2 font-spartan overflow-y-scroll scrollbar-hide"
       style={{ animation: "rise 0.3s linear forwards" }}
     >
       <div className="Dashboard-container">
