@@ -9,8 +9,8 @@ import {
 } from "react-icons/md";
 import { RiHomeHeartFill } from "react-icons/ri";
 import { IoChatbubbleOutline } from "react-icons/io5";
-import { FaUserPen } from "react-icons/fa6";
-import { IoMdExit } from "react-icons/io";
+import { FaUserPen, FaBell, FaUser } from "react-icons/fa6";
+import { IoMdExit, IoMdSearch } from "react-icons/io";
 
 export {
   FiX,
@@ -24,4 +24,7 @@ export {
   IoChatbubbleOutline,
   FaUserPen,
   IoMdExit,
+  IoMdSearch,
+  FaBell,
+  FaUser,
 };
