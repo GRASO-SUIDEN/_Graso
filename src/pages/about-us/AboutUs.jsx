@@ -31,7 +31,7 @@ const AboutUs = () => {
       role: "Smart Contract Developer",
       image: "https://github.com/chiscookeke11/Test-pagea/blob/main/danny.jpg?raw=true",
       linkedin: "https://www.linkedin.com/in/devdanny0",
-      twitter: "https://x.com/0xAfroTechBoss",
+      twitter: "https://x.com/dannyclassi_c",
       github: "https://github.com/Verifieddanny",
     },
     {
@@ -101,7 +101,7 @@ const AboutUs = () => {
     {
       name: " Nweke Anthony ",
       role: "Backend Developer",
-      image: "",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
       linkedin: "https://www.linkedin.com/in/Anthonyslav1",
       twitter: "https://x.com/Anthonyslav1",
       github: "https://github.com/Anthonyslav1",
@@ -116,13 +116,33 @@ const AboutUs = () => {
     },
     {
       name: "  Obiefuna Chidiogo  ",
-      role: "Social media team",
+      role: "Social media manager",
       image: "https://github.com/chiscookeke11/Test-pagea/blob/main/chidiogo.jpg?raw=true",
       linkedin: "https://x.com/king_futures9?s=21",
       twitter: "https://x.com/king_futures9?s=21",
       github: "https://x.com/king_futures9?s=21",
     },
+    {
+      name: " Charles Lemuel   ",
+      role: "UI/UX designer",
+      image: "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
+      // linkedin: "https://x.com/king_futures9?s=21",
+      // twitter: "https://x.com/king_futures9?s=21",
+      // github: "https://x.com/king_futures9?s=21",
+    },
+    {
+      name: " Madukairo Enenike ",
+      role: "Marketing Lead",
+      image: "https://pbs.twimg.com/profile_images/1780602576334962688/e_Cn33Oo_400x400.jpg",
+      linkedin: "https://linkedin.com/in/emenike-madukairo0511",
+      twitter: "https://x.com/emenike_sage",
+      github: "#",
+    },
   ];
+
+
+
+
 
   return (
     <div className="about-us-page">

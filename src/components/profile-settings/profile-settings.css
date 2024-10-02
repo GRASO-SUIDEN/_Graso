@@ -6,9 +6,9 @@
     flex-wrap: wrap;
 }
 .setting-container .personal-details{
-    max-height: 400px;
+    max-height: 280px;
     min-height: 100px;
-    height: 220px;
+    height: auto;
     min-width: 280px;
     margin: 15px 0;
 }
@@ -50,10 +50,14 @@
 .setting-container input{
     max-width: 372px;
     width: 100%;
-    padding: 8px 14px;
+    padding: 8px 10px 8px 40px;
     border-radius: 6px;
     outline: none;
     border: 1px solid #E5E7EB;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 15px 15px;
+    opacity: 90;
 }
 .description{
     width: 100%;
@@ -64,18 +68,21 @@
     border-radius: 6px;
     outline: none;
     border: 1px solid #E5E7EB;
-    padding: 20px;
+    padding: 20px 40px;
+    background-position: 10px center;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
 }
 .setting-container h1, .setting-container p{
     font-family: "League Spartan", sans-serif;;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 28px;
     text-align: left;
 }
 .setting-container button{
     font-family: "League Spartan", sans-serif;
-  font-size: 17px;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 24px;
   text-align: center;
