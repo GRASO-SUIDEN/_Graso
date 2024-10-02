@@ -281,4 +281,19 @@ header h1{
   .profile-wrapper .navbar {
       display: block;
   }
+  .upper-layer{
+  flex-wrap: wrap;
+}
+.upper-layer .personal-details{
+flex-wrap: wrap;
+width: 100%;
+min-width: 340px;
+max-width: 700px;
+}
+.personal-details ul{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+gap: 10px;
+}
 }
