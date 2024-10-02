@@ -48,9 +48,8 @@ function AddProperties() {
                   onChange={handlePropertyChange}
                 >
                   <option value="default">Select Property</option>
-                  <option value="house">House</option>
-                  <option value="apartment">Apartment</option>
                   <option value="land">Land</option>
+                  <option value="landedProperty">Landed Property</option>
                 </select>
               </span>
 

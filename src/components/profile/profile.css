@@ -46,8 +46,7 @@ header{
   border-radius: 6px;
 }
 header h1{
-  font-family: League Spartan;
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: 500;
   line-height: 27.63px;
   text-align: left;
@@ -91,21 +90,21 @@ header h1{
 }
 .personal-details h2{
   font-family: "League Spartan", sans-serif;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
   color: #161C2D;
 }
 .personal-details h4{
-  font-size: 17px;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 27.63px;
   text-align: center;
   color: #94A3B8;
 }
 .personal-details a{
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 27.63px;
   text-align: center;
@@ -148,7 +147,7 @@ header h1{
 }
 .detail-boxes li span h1{
   color: #16A34A;
- font-size: 17px;
+ font-size: 1rem;
  font-weight: 500;
  line-height: 25.5px;
  text-align: left;
@@ -157,7 +156,7 @@ header h1{
 .detail-boxes li span small{
   color: #94A3B8;
   font-family: League Spartan;
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -202,7 +201,7 @@ header h1{
   min-width:  340px;
 }
 .asset-list .summary h1{
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -211,9 +210,8 @@ header h1{
 }
 .asset-list p{
   color: #94A3B8;
-  font-size: 17px;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 27.63px;
   text-align: left;
 }
 .asset-list .assets{
@@ -229,7 +227,7 @@ header h1{
 }
 .assets h1{
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.2rem;
   line-height: 28px;
   color: #161C2D;
 }
@@ -268,7 +266,7 @@ header h1{
   .personal-details{
       background-color: #fff;
       border-radius: 6px;
-      display: none;
+      display: block;
       flex-direction: column;
       align-items: center;
       padding: 25px 15px;
@@ -283,4 +281,19 @@ header h1{
   .profile-wrapper .navbar {
       display: block;
   }
+  .upper-layer{
+  flex-wrap: wrap;
+}
+.upper-layer .personal-details{
+flex-wrap: wrap;
+width: 100%;
+min-width: 340px;
+max-width: 700px;
+}
+.personal-details ul{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+gap: 10px;
+}
 }
