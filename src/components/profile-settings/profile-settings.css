@@ -1,5 +1,5 @@
 .setting-container {
-  padding: 15px 0px;
+  padding: 15px 0px 50px 0px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -12,6 +12,7 @@
   height: auto;
   min-width: 280px;
   margin: 15px 0;
+  display: flex;
 }
 .form-settings {
   width: 100%;
@@ -132,4 +133,19 @@
 }
 .delete-box p {
   color: #94a3b8;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:768px){
+  .setting-container .personal-details{
+    margin: 15px auto;
+  }
 }

@@ -44,7 +44,7 @@ const Dashboard = () => {
             </span>
             <span className="image ml-auto">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector.png?raw=true"
+                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector%20(5).png?raw=true"
                 alt=""
               />
             </span>
@@ -56,7 +56,7 @@ const Dashboard = () => {
             </span>
             <span className="image ml-auto">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector.png?raw=true"
+                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector%20(6).png?raw=true"
                 alt=""
               />
             </span>
@@ -68,7 +68,7 @@ const Dashboard = () => {
             </span>
             <span className="image ml-auto">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector.png?raw=true"
+                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Vector%20(7).png?raw=true"
                 alt=""
               />
             </span>
