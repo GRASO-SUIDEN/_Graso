@@ -7,7 +7,7 @@ import Features from "../../components/features/Features";
 import Footer from "../../components/Footer";
 import Explore from "../../components/explore/Explore";
 import JoinUs from "../../components/JoinUs";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "../../utils/icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
