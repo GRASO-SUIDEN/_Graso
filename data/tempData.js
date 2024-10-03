@@ -1,4 +1,4 @@
-export const exploreData = [
+export const tempData = [
   {
     id: 1,
     name: "Eko Atlantic City",

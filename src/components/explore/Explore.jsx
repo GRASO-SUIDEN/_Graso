@@ -1,6 +1,6 @@
 import "./Explore.css";
 import Slider from "./Slider";
-import { exploreData } from "../../../data/exploreData";
+import { tempData } from "../../../data/tempData";
 import ExploreCard from "./ExploreCard";
 
 const Explore = () => {
@@ -18,7 +18,7 @@ const Explore = () => {
         </p>
       </div>
       <div className="max-w-[1500px] min-w-[800px] grid grid-cols-3 gap-10 justify-center max-md:hidden">
-        {exploreData.map((data) => (
+        {tempData.map((data) => (
           <ExploreCard data={data} key={data.id} />
         ))}
       </div>
