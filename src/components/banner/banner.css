@@ -246,47 +246,58 @@
   margin: 0;
 }
 .join-us-btn {
-  width: 28%;
-  min-width: 145px;
-  max-width: 150px;
-  padding: 16px 0px;
-  border-radius: 10px;
-  text-align: center;
-  min-height: 54px;
-  transition: 0.3s ease-in-out;
-  border: 1px solid #111111;
-  background: transparent;
-  color: #111111;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  font-family: "DM Sans", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 600;
-  transition: 0.3s ease-in-out;
+  width: 28% !important;
+  min-width: 145px !important;
+  max-width: 150px !important;
+  border-radius: 10px !important;
+  text-align: center !important;
+  min-height: 54px !important;
+  transition: 0.3s ease-in-out !important;
+  border: 1px solid #111111 !important;
+  background: transparent !important;
+  color: #111111 !important;
+  position: relative !important;
+  left: 18.5rem !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  transition: 0.3s ease-in-out !important;
+}
+.join-us-btn button {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: inherit !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  padding: 16px 0px !important;
+
+  
+  
 }
 .join-us-btn::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  background-color: #24c2a5;
-  height: 100%;
-  border-radius: inherit;
-  z-index: -1;
-  border: none;
-  transition: 0.3s ease-in-out;
+  position: absolute !important;
+  content: "" !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  background-color: #24c2a5 !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+  z-index: -1 !important;
+  border: none !important;
+  transition: 0.3s ease-in-out !important;
 }
 .join-us-btn:hover::before {
-  width: 100%;
+  width: 100% !important;
 }
 .join-us-btn:hover {
-  color: #ffffff;
-  transition: 0.3s ease-in-out;
+  color: #ffffff !important;
+  transition: 0.3s ease-in-out !important;
 }
 .join-us-btn:active {
-  transform: scale(0.9);
+  transform: scale(0.9) !important;
 }
 .join-us .text img {
   position: absolute;
