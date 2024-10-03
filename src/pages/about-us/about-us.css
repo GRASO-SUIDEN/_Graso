@@ -6,9 +6,11 @@
 @keyframes rise{
     0%{
         transform: translateY(100%);
+        opacity: 100;
     }
     100%{
         transform: translateY(0);
+        opacity: 1;
     }
 }
 .about-us-banner{
