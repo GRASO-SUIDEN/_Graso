@@ -5,6 +5,7 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: #f3f3f4;
+  padding-bottom: 50px;
 }
 
 .profile-wrapper::-webkit-scrollbar {
