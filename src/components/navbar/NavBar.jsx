@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <nav className="flex items-center fixed top-0 left-0 justify-between px-8 py-4 w-full bg-white bg-opacity-70 backdrop-blur-md z-50 font-[Montserrat]">
       <div className="logo w-[150px]   ">
-        <img src={grasoLogo} alt="Graso Logo" className=" h-[50px]" />
+        <img src={grasoLogo} alt="Graso Logo"  style={{width:100, height:45}} />
       </div>
       <div
         className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-[#f5f5f5] max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5]  ${
