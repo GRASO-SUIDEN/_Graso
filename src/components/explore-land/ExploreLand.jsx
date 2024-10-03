@@ -1,5 +1,5 @@
 import ExploreCard from "../explore/ExploreCard";
-import { tempData } from "../../../data/tempData";
+import { exploreData } from "../../../data/exploreData";
 
 function ExploreLand() {
   return (
@@ -15,7 +15,7 @@ function ExploreLand() {
       </div>
 
       <div className="grid grid-cols-3 2xl:grid-cols-4 justify-items-center gap-3 max-sm:grid-cols-1">
-        {tempData.map((data) => (
+        {exploreData.map((data) => (
           <ExploreCard data={data} key={data.id} />
         ))}
       </div>

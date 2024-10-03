@@ -1,5 +1,4 @@
-import { FiX } from "react-icons/fi";
-import { FiAlignCenter } from "react-icons/fi";
+import { FiX, FiAlignCenter, FiArrowDownRight } from "react-icons/fi";
 import { ImStatsDots } from "react-icons/im";
 import {
   MdHomeWork,
@@ -9,12 +8,13 @@ import {
 } from "react-icons/md";
 import { RiHomeHeartFill } from "react-icons/ri";
 import { IoChatbubbleOutline } from "react-icons/io5";
-import { FaUserPen, FaBell, FaUser } from "react-icons/fa6";
+import { FaUserPen, FaBell, FaUser, FaArrowRight } from "react-icons/fa6";
 import { IoMdExit, IoMdSearch } from "react-icons/io";
 
 export {
   FiX,
   FiAlignCenter,
+  FiArrowDownRight,
   ImStatsDots,
   MdHomeWork,
   MdAddHome,
@@ -27,4 +27,5 @@ export {
   IoMdSearch,
   FaBell,
   FaUser,
+  FaArrowRight,
 };

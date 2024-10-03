@@ -1,3 +1,4 @@
+import { FaArrowRight } from "../../utils/icons";
 import Transactions from "./Transactions";
 import house1 from "../../assets/house1.webp";
 import house2 from "../../assets/house2.webp";
@@ -7,8 +8,8 @@ import Map from "../../assets/Map.webp";
 
 function DashboardSummary() {
   return (
-    <div className="flex [&_h2]:text-[1.2rem] [&_h2]:font-bold [&_p]:text-[#94A3B8] border border-gray-100 h-full max-md:flex-col w-full">
-      <div className="w-[25%] border border-gray-100 max-md:w-full">
+    <div className="flex [&_h2]:text-[1.2rem] [&_h2]:font-bold  border border-gray-100 h-full max-md:flex-col w-full">
+      <div className="w-[25%] border border-gray-100 max-md:w-full [&_p]:text-[#94A3B8]">
         <div className="flex justify-between border-b border-gray-100 p-5">
           <h2>Area Map</h2>
           <p>Last update 5 days ago</p>
@@ -18,10 +19,12 @@ function DashboardSummary() {
         </div>
       </div>
 
-      <div className="w-[50%] max-md:w-full ">
+      <div className="w-[50%] max-md:w-full [&_p]:text-[#94A3B8]">
         <div className="w-full flex justify-between border-b border-gray-200  p-5">
           <h2>Recent Transactions</h2>
-          <p>View orders = </p>
+          <p className="flex justify-center items-center cursor-pointer">
+            View orders <FaArrowRight />{" "}
+          </p>
         </div>
         <table className="table-auto w-full">
           <thead>
@@ -54,9 +57,11 @@ function DashboardSummary() {
       </div>
 
       <div className="w-[25%] border border-gray-100 max-md:w-full">
-        <div className="flex justify-between border-b border-gray-100  p-5">
+        <div className="flex justify-between border-b border-gray-100  p-5 space-x-1 [&_p]:text-[#94A3B8]">
           <h2>Top Properties</h2>
-          <p>See More = </p>
+          <p className="flex justify-center items-center cursor-pointer">
+            See More <FaArrowRight />{" "}
+          </p>
         </div>
         <TopProperties />
         <TopProperties />
