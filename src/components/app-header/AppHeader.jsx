@@ -18,12 +18,12 @@ function Header({ setIsOpen }) {
   }, [currentAccount, navigate]);
 
   return (
-    <div className="flex items-center p-4 shadow-md">
+    <div className="flex justify-center items-center p-4 shadow-md">
       <div className="small-box hidden max-md:block">
         <FiAlignCenter size={30} onClick={() => setIsOpen(true)} />
       </div>
 
-      <div className="ml-auto flex justify-center items-center w-full ">
+      <div className="ml-auto flex justify-center items-center">
         <div className="small-box mx-2">
           <img src={sui} alt="Sui" className="w-8 h-8 rounded-full" />
         </div>

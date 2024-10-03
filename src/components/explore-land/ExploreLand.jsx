@@ -1,5 +1,5 @@
 import ExploreCard from "../explore/ExploreCard";
-import { ExploreData } from "../../../data/ExploreData";
+import { exploreData } from "../../../data/exploreData";
 
 function ExploreLand() {
   return (
@@ -10,12 +10,12 @@ function ExploreLand() {
       <div className="w-full flex justify-between mr-10 mb-5 ">
         <h1 className="ml-10 font-bold">Explore land</h1>
         <p className="font-bold">
-          Graso {">"} <span className="text-[#24C2A5]"> properties</span>
+          Graso {">"} <span className="text-[#24C2A5]"> Properties</span>
         </p>
       </div>
 
       <div className="grid grid-cols-3 2xl:grid-cols-4 justify-items-center gap-3 max-sm:grid-cols-1">
-        {ExploreData.map((data) => (
+        {exploreData.map((data) => (
           <ExploreCard data={data} key={data.id} />
         ))}
       </div>

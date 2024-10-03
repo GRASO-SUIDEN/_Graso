@@ -3,6 +3,7 @@ import house1 from "../../assets/house1.webp";
 import house2 from "../../assets/house2.webp";
 import house3 from "../../assets/house3.webp";
 import TopProperties from "./TopProperties";
+import Map from "../../assets/Map.webp";
 
 function DashboardSummary() {
   return (
@@ -12,7 +13,9 @@ function DashboardSummary() {
           <h2>Area Map</h2>
           <p>Last update 5 days ago</p>
         </div>
-        <div>Map</div>
+        <div>
+          <img src={Map} alt="Map" />
+        </div>
       </div>
 
       <div className="w-[50%] max-md:w-full ">

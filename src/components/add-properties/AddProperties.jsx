@@ -14,7 +14,8 @@ function AddProperties() {
         <div className="sub-head">
           <h1>Explore land</h1>
           <h3>
-            Graso <span className="arrow"></span> {" > "} <span>Add properties</span>
+            Graso <span className="arrow"></span> {" > "}{" "}
+            <span>Add properties</span>
           </h3>
         </div>
 
