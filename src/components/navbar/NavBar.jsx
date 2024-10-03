@@ -3,7 +3,7 @@ import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
 import { useNavigate } from "react-router-dom";
 import { FiX, FiAlignCenter } from "../../utils/icons";
 import NavList from "./NavList";
-import grasoLogo from "../../assets/grasoLogo.png"
+import grasoLogo from "../../assets/grasoLogo.png";
 
 function Navbar() {
   const currentAccount = useCurrentAccount();
@@ -39,14 +39,11 @@ function Navbar() {
     },
     [isOpen]
   );
-  
 
   return (
     <nav className="flex items-center fixed top-0 left-0 justify-between px-8 py-4 w-full bg-white bg-opacity-70 backdrop-blur-md z-50 font-[Montserrat]">
-       <div className="logo w-[150px]   ">
-      
-          <img src={grasoLogo} alt="Graso Logo" className=" h-[75px] " />
-      
+      <div className="logo w-[150px]   ">
+        <img src={grasoLogo} alt="Graso Logo" className=" h-[50px]" />
       </div>
       <div
         className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-[#f5f5f5] max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5]  ${
