@@ -13,7 +13,7 @@ function Header({ setIsOpen }) {
   useEffect(() => {
     if (!currentAccount) {
       console.log("Success!");
-      // navigate("/");
+      navigate("/");
     }
   }, [currentAccount, navigate]);
 
