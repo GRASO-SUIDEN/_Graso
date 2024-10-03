@@ -1,10 +1,11 @@
 .add-properties-wrapper {
   overflow-y: scroll;
-}
-.add-properties {
+  height: 100vh;
   background: #e5e7eb;
   width: 100%;
-  height: auto;
+  height: 100vh;
+}
+.add-properties {
   animation: rise 0.2s linear forwards;
 }
 .sub-head {

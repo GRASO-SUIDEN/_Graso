@@ -54,7 +54,7 @@ function Navbar() {
       >
         <ul className="flex space-x-8 text-lg max-md:flex max-md:flex-col max-md:justify-center max-md:items-center max-md:w-full max-md:space-x-0 max-md:space-y-4 max-md:mt-10">
           <NavList navLink="Home" path="/" />
-          <NavList navLink="Explore" path="/app" />
+          <NavList navLink="Explore" path="/explore" />
           <NavList navLink="Portfolio" path="/portfolio" />
           <NavList navLink="Whitepaper" path="https://graso.gitbook.io/graso" />
           <NavList navLink="About Us" path="/about-us" />

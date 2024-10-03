@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavList({ path = "", navLink }) {
   const isExternal = path.startsWith("http");
@@ -10,7 +10,7 @@ function NavList({ path = "", navLink }) {
           {navLink}
         </a>
       ) : (
-        <Link to={path}>{navLink}</Link>
+        <NavLink to={path}>{navLink}</NavLink>
       )}
       <span className="max-md:hidden absolute left-0 bottom-0 w-0 h-[3px] bg-[#24C2A5] transition-all duration-300 group-hover:w-full" />
     </li>

@@ -20,3 +20,7 @@
   background-color: white !important;
   color: #24c2a5 !important;
 }
+
+nav a.active {
+  color: #24c2a5;
+}

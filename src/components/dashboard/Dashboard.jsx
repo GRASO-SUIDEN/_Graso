@@ -3,7 +3,10 @@ import DashboardSummary from "./DashboardSummary";
 
 const Dashboard = () => {
   return (
-    <section className="h-screen flex flex-col flex-grow p-6 space-y-2 font-spartan overflow-auto">
+    <section
+      className="h-screen flex flex-col flex-grow p-6 space-y-2 font-spartan overflow-auto scrollbar-hide"
+      style={{ animation: "rise 0.3s linear forwards" }}
+    >
       <div className="Dashboard-container">
         <div className="greeting w-full">
           <h2 className="font-bold text-[1.2rem]">Hello, Lemuel</h2>

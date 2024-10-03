@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Navigate, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
 import LoadingPage from "./pages/loading-page/LoadingPage";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -10,6 +10,7 @@ import ProfileSettings from "./components/profile-settings/ProfileSettings";
 import AppLayout from "./pages/app-layout/AppLayout";
 import AboutUs from "./pages/about-us/AboutUs";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
+import ExplorePage from "./pages/explore-page/ExplorePage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={loading ? <LoadingPage /> : <HomePage />} />
+        <Route path="explore" element={<ExplorePage />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="app" element={<AppLayout />}>
           <Route index element={<Navigate replace to="dashboard" />} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import {
   FiX,
@@ -22,14 +22,14 @@ function AppSidenav({ isOpen, setIsOpen }) {
   };
 
   const handleItemClick = () => {
-    setIsOpen(false); // Close the sidenav when any list item is clicked
+    setIsOpen(false);
   };
 
   return (
     <div
       className={`app-sidenav block max-md:fixed max-md:left-0 max-md:top-0 max-md:w-[80%] max-md:h-full max-md:transition-transform max-md:duration-300 transform z-50 ${
         isOpen ? "max-md:translate-x-0" : "max-md:-translate-x-full"
-      } [&_li]:flex [&_li]:gap-2`}
+      } [&_li]:flex [&_li]:gap-2 font-spartan`}
     >
       <div className="flex justify-between">
         <h2 className="logo">GRASO</h2>
@@ -39,30 +39,30 @@ function AppSidenav({ isOpen, setIsOpen }) {
           className="hidden max-md:flex"
         />
       </div>
-      <ul>
-        <Link to="dashboard" onClick={handleItemClick}>
+      <ul className="text-gray-200">
+        <NavLink to="dashboard" onClick={handleItemClick}>
           <li>
             <ImStatsDots />
             <span>Dashboard</span>
           </li>
-        </Link>
+        </NavLink>
 
-        <Link to="explore-properties" onClick={handleItemClick}>
+        <NavLink to="explore-properties" onClick={handleItemClick}>
           <li>
             <MdHomeWork />
             <span>Explore Properties</span>
           </li>
-        </Link>
+        </NavLink>
         <li onClick={handleItemClick}>
           <RiHomeHeartFill />
           <span>Transaction</span>
         </li>
-        <Link to="add-properties" onClick={handleItemClick}>
+        <NavLink to="add-properties" onClick={handleItemClick}>
           <li>
             <MdAddHome />
             <span>Add Properties</span>
           </li>
-        </Link>
+        </NavLink>
         <li onClick={handleItemClick}>
           <IoChatbubbleOutline />
           <span>Chat</span>
@@ -84,12 +84,12 @@ function AppSidenav({ isOpen, setIsOpen }) {
         </li>
         {showUserProfile && (
           <ul className="ml-4">
-            <Link to="user/profile" onClick={handleItemClick}>
+            <NavLink to="user/profile" onClick={handleItemClick}>
               <li>Profile</li>
-            </Link>
-            <Link to="user/profile-settings" onClick={handleItemClick}>
+            </NavLink>
+            <NavLink to="user/profile-settings" onClick={handleItemClick}>
               <li>Profile Settings</li>
-            </Link>
+            </NavLink>
           </ul>
         )}
         <li onClick={handleItemClick}>
