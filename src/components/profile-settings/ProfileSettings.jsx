@@ -44,7 +44,7 @@ function ProfileSettings() {
         tx.pure.vector("u8", Array.from(encoder.encode(occupation))),
         tx.pure.vector("u8", Array.from(encoder.encode(description))),
         tx.pure.bool(true)],
-      target: `${realEstateICOPackageId}::real_state_ido::create_profile`
+      target: `${realEstateICOPackageId}::real_estate_ido::create_profile`
     });
 
     // tx.setGasBudget(50000000);
