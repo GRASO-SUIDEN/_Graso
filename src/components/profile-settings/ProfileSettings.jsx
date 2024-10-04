@@ -1,6 +1,68 @@
+import { Transaction } from "@mysten/sui/transactions";
+import {  useCurrentAccount } from "@mysten/dapp-kit";
+import { useSignAndExecuteTransaction, useSuiClient } from "@mysten/dapp-kit";
+import { useNetworkVariable } from "../../utils/networkConfig";
 import "./profile-settings.css";
+import { useState } from "react";
 
 function ProfileSettings() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [description, setDescription] = useState("");
+  const encoder = new TextEncoder();
+
+
+  const currentAccount = useCurrentAccount();
+  const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
+  
+  const suiClient = useSuiClient();
+  const { mutate: signAndExecute } = useSignAndExecuteTransaction({
+    execute: async ({ bytes, signature }) =>
+      await suiClient.executeTransactionBlock({
+        transactionBlock: bytes,
+        signature,
+        options: {
+          showRawEffects: true,
+          showEffects: true,
+        },
+      }),
+  });
+
+  const createProfile = () => {
+    if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
+      return;
+    }
+    const tx = new Transaction();
+    
+
+    tx.moveCall({
+      arguments: [ tx.pure.vector("u8", Array.from(encoder.encode(firstName))),  // Correct usage of pure.vector
+        tx.pure.vector("u8", Array.from(encoder.encode(lastName))),
+        tx.pure.vector("u8", Array.from(encoder.encode(email))),
+        tx.pure.vector("u8", Array.from(encoder.encode(occupation))),
+        tx.pure.vector("u8", Array.from(encoder.encode(description))),
+        tx.pure.bool(true)],
+      target: `${realEstateICOPackageId}::real_state_ido::create_profile`
+    });
+
+    // tx.setGasBudget(50000000);
+    // tx.setGasPrice(5000000);
+    signAndExecute(
+      {
+        transaction: tx,
+      },
+      {
+        onSuccess: async() => {
+          await refetch();
+        },
+      }
+    );
+  }
+
+
+
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
@@ -32,6 +94,7 @@ function ProfileSettings() {
                         type="text"
                         placeholder="First Name:"
                         required
+                        onChange={(e) =>  setFirstName(e.target.value)}
                         style={{
                           backgroundImage:
                             "url(https://raw.githubusercontent.com/chiscookeke11/Test-pagea/7ca18b59f75d204eae57a396e96faa486be860a6/firstname.svg)",
@@ -45,6 +108,7 @@ function ProfileSettings() {
                         type="text"
                         placeholder="Last Name"
                         required
+                        onChange={(e) => setLastName(e.target.value) }
                         style={{
                           backgroundImage:
                             "url(https://raw.githubusercontent.com/chiscookeke11/Test-pagea/7ca18b59f75d204eae57a396e96faa486be860a6/lastname.svg)",
@@ -58,6 +122,7 @@ function ProfileSettings() {
                         type="email"
                         placeholder="Email"
                         required
+                        onChange={(e) => setEmail(e.target.value)}
                         style={{
                           backgroundImage:
                             "url(https://raw.githubusercontent.com/chiscookeke11/Test-pagea/7ca18b59f75d204eae57a396e96faa486be860a6/envelope.svg)",
@@ -71,6 +136,7 @@ function ProfileSettings() {
                         type="text"
                         placeholder="Occupation"
                         required
+                        onChange={(e) => setOccupation(e.target.value)}
                         style={{
                           backgroundImage:
                             "url(https://raw.githubusercontent.com/chiscookeke11/Test-pagea/027744a31961da362f47071db998283ef6cdc65b/bookmark.svg)",
@@ -87,9 +153,10 @@ function ProfileSettings() {
                         backgroundImage:
                           "url(https://raw.githubusercontent.com/chiscookeke11/Test-pagea/7ca18b59f75d204eae57a396e96faa486be860a6/chat.svg)",
                       }}
+                      onChange={(e) => setDescription(e.target.value)}
                     ></textarea>
                   </span>
-                  <button>Save Changes</button>
+                  <button onClick={(e) => {e.preventDefault();createProfile();}}>Save Changes</button>
                 </form>
               </div>
 
