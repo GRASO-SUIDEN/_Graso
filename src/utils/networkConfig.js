@@ -11,19 +11,19 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
     devnet: {
       url: getFullnodeUrl("devnet"),
       variables: {
-        mintNftPackageId: DEVNET_MINT_NFT_PACKAGE_ID,
+        realEstateICOPackageId: DEVNET_MINT_NFT_PACKAGE_ID,
       },
     },
     testnet: {
       url: getFullnodeUrl("testnet"),
       variables: {
-        mintNftPackageId: TESTNET_MINT_NFT_PACKAGE_ID,
+        realEstateICOPackageId: TESTNET_MINT_NFT_PACKAGE_ID,
       },
     },
     mainnet: {
       url: getFullnodeUrl("mainnet"),
       variables: {
-        mintNftPackageId: MAINNET_MINT_NFT_PACKAGE_ID,
+        realEstateICOPackageId: MAINNET_MINT_NFT_PACKAGE_ID,
       },
     },
   });
