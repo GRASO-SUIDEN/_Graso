@@ -31,6 +31,9 @@ function ProfileSettings() {
   });
 
   const createProfile = () => {
+    if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
+      return;
+    }
     const tx = new Transaction();
     
 
@@ -44,7 +47,8 @@ function ProfileSettings() {
       target: `${realEstateICOPackageId}::real_state_ido::create_profile`
     });
 
-    tx.setGasBudget(10000000000);
+    // tx.setGasBudget(50000000);
+    // tx.setGasPrice(5000000);
     signAndExecute(
       {
         transaction: tx,
