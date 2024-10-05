@@ -29,9 +29,11 @@ const Banner = () => {
               <ConnectButton connectText="Invest" />
             </div>
 
+              <Link to="https://tnusbr02aa8.typeform.com/to/jcm0VFBm">
             <button>
-              <Link to="https://tnusbr02aa8.typeform.com/to/jcm0VFBm">Develop</Link>
+              Develop
             </button>
+              </Link>
         
           </div>
         </div>
