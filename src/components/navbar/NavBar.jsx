@@ -8,45 +8,45 @@ import grasoLogo from "../../assets/grasoLogo.png";
 function Navbar() {
   const currentAccount = useCurrentAccount();
   const navigate = useNavigate();
-
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (currentAccount) {
-      console.log("Success!");
+      console.log("Success!", currentAccount);
       navigate("/app");
     }
   }, [currentAccount, navigate]);
 
-  useEffect(
-    function () {
-      const handleScroll = () => {
-        if (isOpen) {
-          setIsOpen(false);
-        }
-      };
-
-      const handleClickOutside = (e) => {
-        if (e.target.closest("svg") || e.target.closest("nav")) return;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
         setIsOpen(false);
-      };
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("click", handleClickOutside);
+      }
+    };
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("click", handleClickOutside);
-      };
-    },
-    [isOpen]
-  );
+    const handleClickOutside = (e) => {
+      if (e.target.closest("svg") || e.target.closest("nav")) return;
+      setIsOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <nav className="flex items-center fixed top-0 left-0 justify-between px-8 py-4 w-full bg-white bg-opacity-70 backdrop-blur-md z-50 font-[Montserrat]">
-      <div className="logo w-[150px]   ">
-        <img src={grasoLogo} alt="Graso Logo"  style={{width:100, height:45}} />
+      <div className="logo w-[150px]">
+        <img
+          src={grasoLogo}
+          alt="Graso Logo"
+          style={{ width: 100, height: 45 }}
+        />
       </div>
       <div
-        className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-[#f5f5f5] max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5]  ${
+        className={`h-full flex-grow flex justify-center max-md:fixed max-md:top-0 max-md:left-0 w-full max-md:h-[50vh] max-md:bg-[#f5f5f5] max-sm:h-full max-md:transform max-md:transition-transform max-md:duration-300 max-md:-z-[5] ${
           isOpen
             ? "translate-y-0 opacity-100 max-md:backdrop-blur-md max-md:bg-opacity-90"
             : "max-md:-translate-y-[1000%]"
@@ -63,21 +63,10 @@ function Navbar() {
           </div>
         </ul>
       </div>
-
-      <div className="max-md:flex  max-sm:justify-end">
-        {/* <button className="bg-[#24C2A5] text-white  rounded-md font-semibold max-md:ml-10 active:scale-90 hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300 max-sm:hidden">
-          {/* <Link to={currentAccount ? "/app" : "/"}> */}
-        {/* <ConnectButton
-            
-              connectText="Get started"
-              className="w-full h-full bg-[#24C2A5] text-white"
-            /> */}
-        {/* </Link> */}
-        {/* </button>  */}
+      <div className="max-md:flex max-sm:justify-end">
         <div className="custom-connect-button max-sm:hidden">
           <ConnectButton connectText="Get started" />
         </div>
-
         <button
           className="z-10 text-center hidden max-md:flex max-md:justify-center max-md:items-center"
           onClick={() => setIsOpen(!isOpen)}

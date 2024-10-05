@@ -15,7 +15,6 @@ import {
 import "./appsidenav.css";
 import grasoLogo from "../../assets/grasoLogo.png";
 
-
 function AppSidenav({ isOpen, setIsOpen }) {
   const [showUserProfile, setShowUserProfile] = useState(false);
 
@@ -34,7 +33,7 @@ function AppSidenav({ isOpen, setIsOpen }) {
       } [&_li]:flex [&_li]:gap-2 font-spartan`}
     >
       <div className="flex justify-between">
-      <img src={grasoLogo} alt="Graso Logo"  style={{width:100, height:45, margin:15}}/>
+        <img src={grasoLogo} alt="Graso Logo" className="w-[75px] pb-2" />
         <FiX
           size={30}
           onClick={() => setIsOpen(false)}
