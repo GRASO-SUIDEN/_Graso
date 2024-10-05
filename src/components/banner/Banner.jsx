@@ -1,5 +1,5 @@
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import "./banner.css";
 import MainImage from "../../assets/image (2).webp";
 import { useEffect } from "react";
