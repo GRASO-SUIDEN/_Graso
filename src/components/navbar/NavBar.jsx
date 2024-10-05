@@ -63,7 +63,7 @@ function Navbar() {
           </div>
         </ul>
       </div>
-      <div className="max-md:flex max-sm:justify-end">
+      <div className="max-md:flex max-sm:justify-end max-md:space-x-5">
         <div className="custom-connect-button max-sm:hidden">
           <ConnectButton connectText="Get started" />
         </div>

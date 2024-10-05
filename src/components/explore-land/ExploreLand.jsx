@@ -1,9 +1,7 @@
 import ExploreCard from "../explore/ExploreCard";
-import { useProperties } from "../../contexts/PropertyContext";
+import { exploreData } from "../../../data/exploreData";
 
 function ExploreLand() {
-  const { properties } = useProperties();
-  console.log(properties);
   return (
     <div
       className="h-full w-full overflow-auto p-5 bg-gray-100 "
@@ -17,8 +15,8 @@ function ExploreLand() {
       </div>
 
       <div className="grid grid-cols-3 2xl:grid-cols-4 justify-items-center gap-3 max-sm:grid-cols-1">
-        {properties?.map((property, index) => (
-          <ExploreCard property={property} key={index} />
+        {exploreData?.map((data) => (
+          <ExploreCard data={data} key={data.id} />
         ))}
       </div>
     </div>
