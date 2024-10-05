@@ -30,37 +30,6 @@ function ProfileSettings() {
       }),
   });
 
-  const createProfile = () => {
-    if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
-      return;
-    }
-    const tx = new Transaction();
-    
-
-    tx.moveCall({
-      arguments: [ tx.pure.vector("u8", Array.from(encoder.encode(firstName))),  // Correct usage of pure.vector
-        tx.pure.vector("u8", Array.from(encoder.encode(lastName))),
-        tx.pure.vector("u8", Array.from(encoder.encode(email))),
-        tx.pure.vector("u8", Array.from(encoder.encode(occupation))),
-        tx.pure.vector("u8", Array.from(encoder.encode(description))),
-        tx.pure.bool(true)],
-      target: `${realEstateICOPackageId}::real_estate_ido::create_profile`
-    });
-
-    // tx.setGasBudget(50000000);
-    // tx.setGasPrice(5000000);
-    signAndExecute(
-      {
-        transaction: tx,
-      },
-      {
-        onSuccess: async() => {
-          await refetch();
-        },
-      }
-    );
-  }
-
 
 
   return (
@@ -253,6 +222,48 @@ function ProfileSettings() {
       </div>
     </div>
   );
+
+
+  const createProfile = () => {
+    if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
+      return;
+    }
+    const tx = new Transaction();
+    
+    /**
+     *         tx.pure.vector("u8", Array.from(encoder.encode(lastName))),
+        tx.pure.vector("u8", Array.from(encoder.encode(email))),
+        tx.pure.vector("u8", Array.from(encoder.encode(occupation))),
+        tx.pure.vector("u8", Array.from(encoder.encode(description))),
+
+     */
+
+    tx.moveCall({
+      target: `${realEstateICOPackageId}::real_estate_ido::create_profile`
+,
+      arguments: [ tx.pure.string(firstName),  // Correct usage of pure.vector
+        tx.pure.string(lastName),
+        tx.pure.string(email),
+        tx.pure.string(occupation),
+        tx.pure.string(description),
+        tx.pure.bool(true)]
+    });
+
+    // tx.setGasBudget(50000000);
+    // tx.setGasPrice(5000000);
+    signAndExecute(
+      {
+        transaction: tx,
+      },
+      {
+        onSuccess: async() => {
+          await refetch();
+        },
+      }
+    );
+  }
+
+
 }
 
 export default ProfileSettings;

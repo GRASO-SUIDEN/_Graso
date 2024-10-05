@@ -25,13 +25,14 @@ const Banner = () => {
             world assets.
           </p>
           <div className="button-holder ">
-            <button>Invest</button>
-            {/* <button>
-              <Link to="/app">Develop</Link>
-            </button> */}
-            <div className="custom-connect-button">
-              <ConnectButton connectText="Develop" />
+          <div className="custom-connect-button">
+              <ConnectButton connectText="Invest" />
             </div>
+
+            <button>
+              <Link to="https://tnusbr02aa8.typeform.com/to/jcm0VFBm">Develop</Link>
+            </button>
+        
           </div>
         </div>
         <div className="main-img">
