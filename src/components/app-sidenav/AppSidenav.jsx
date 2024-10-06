@@ -10,7 +10,6 @@ import {
   RiHomeHeartFill,
   IoChatbubbleOutline,
   FaUserPen,
-  IoMdExit,
 } from "../../utils/icons";
 import "./appsidenav.css";
 import dashBoardLogo from "../../assets/dashboardLogo3.png";
@@ -93,10 +92,6 @@ function AppSidenav({ isOpen, setIsOpen }) {
             </NavLink>
           </ul>
         )}
-        <li onClick={handleItemClick}>
-          <IoMdExit />
-          <span>Log Out</span>
-        </li>
       </ul>
     </div>
   );
