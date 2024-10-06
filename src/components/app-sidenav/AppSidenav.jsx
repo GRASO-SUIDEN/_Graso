@@ -32,14 +32,8 @@ function AppSidenav({ isOpen, setIsOpen }) {
         isOpen ? "max-md:translate-x-0" : "max-md:-translate-x-full"
       } [&_li]:flex [&_li]:gap-2 font-spartan`}
     >
-      <div className="flex justify-between">
-      <div className="logo w-[150px]">
-        <img
-          src={dashBoardLogo}
-          alt="Graso Logo"
-          style={{ width: 100, height: 80 }}
-        />
-      </div>
+      <div className="flex items-center justify-between">
+        <img src={dashBoardLogo} alt="Graso Logo" className="w-[75px]" />
         <FiX
           size={30}
           onClick={() => setIsOpen(false)}
