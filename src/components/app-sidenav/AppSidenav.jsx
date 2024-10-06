@@ -13,7 +13,7 @@ import {
   IoMdExit,
 } from "../../utils/icons";
 import "./appsidenav.css";
-import grasoLogo from "../../assets/grasoLogo.png";
+import dashBoardLogo from "../../assets/dashboardLogo3.png";
 
 function AppSidenav({ isOpen, setIsOpen }) {
   const [showUserProfile, setShowUserProfile] = useState(false);
@@ -33,7 +33,13 @@ function AppSidenav({ isOpen, setIsOpen }) {
       } [&_li]:flex [&_li]:gap-2 font-spartan`}
     >
       <div className="flex justify-between">
-        <h2 className="logo">GRASO</h2>
+      <div className="logo w-[150px]">
+        <img
+          src={dashBoardLogo}
+          alt="Graso Logo"
+          style={{ width: 100, height: 80 }}
+        />
+      </div>
         <FiX
           size={30}
           onClick={() => setIsOpen(false)}
