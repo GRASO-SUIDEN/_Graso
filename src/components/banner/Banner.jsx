@@ -1,5 +1,5 @@
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import "./banner.css";
 import MainImage from "../../assets/image (2).webp";
 import { useEffect } from "react";
@@ -25,13 +25,16 @@ const Banner = () => {
             world assets.
           </p>
           <div className="button-holder ">
-            <button>Invest</button>
-            {/* <button>
-              <Link to="/app">Develop</Link>
-            </button> */}
-            <div className="custom-connect-button">
-              <ConnectButton connectText="Develop" />
+          <div className="custom-connect-button">
+              <ConnectButton connectText="Invest" />
             </div>
+
+              <Link to="https://tnusbr02aa8.typeform.com/to/jcm0VFBm">
+            <button>
+              Develop
+            </button>
+              </Link>
+        
           </div>
         </div>
         <div className="main-img">

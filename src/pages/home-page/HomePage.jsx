@@ -65,7 +65,7 @@ const HomePage = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button>
+            <button style={{padding: 10}}>
               Learn more{" "}
               <FaArrowRight className="right-arrow" size={20} color="black" />
             </button>
