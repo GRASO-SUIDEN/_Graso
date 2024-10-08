@@ -10,11 +10,9 @@ import {
   RiHomeHeartFill,
   IoChatbubbleOutline,
   FaUserPen,
-  IoMdExit,
 } from "../../utils/icons";
 import "./appsidenav.css";
-import grasoLogo from "../../assets/grasoLogo.png";
-
+import dashBoardLogo from "../../assets/dashboardLogo3.png";
 
 function AppSidenav({ isOpen, setIsOpen }) {
   const [showUserProfile, setShowUserProfile] = useState(false);
@@ -33,8 +31,8 @@ function AppSidenav({ isOpen, setIsOpen }) {
         isOpen ? "max-md:translate-x-0" : "max-md:-translate-x-full"
       } [&_li]:flex [&_li]:gap-2 font-spartan`}
     >
-      <div className="flex justify-between">
-      <img src={grasoLogo} alt="Graso Logo"  style={{width:100, height:45, margin:15}}/>
+      <div className="flex items-center justify-between">
+        <img src={dashBoardLogo} alt="Graso Logo" className="w-[75px]" />
         <FiX
           size={30}
           onClick={() => setIsOpen(false)}
@@ -94,10 +92,6 @@ function AppSidenav({ isOpen, setIsOpen }) {
             </NavLink>
           </ul>
         )}
-        <li onClick={handleItemClick}>
-          <IoMdExit />
-          <span>Log Out</span>
-        </li>
       </ul>
     </div>
   );

@@ -1,13 +1,29 @@
 import { useState } from "react";
 import "./addproperties.css";
+import { useProperties } from "../../contexts/PropertyContext";
 
 function AddProperties() {
-  const [selectedProperty, setSelectedProperty] = useState("default");
+  const { addProperty } = useProperties();
+  const [description, setDescription] = useState("default");
+  const [file, setFile] = useState("");
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
 
-  const handlePropertyChange = (event) => {
-    setSelectedProperty(event.target.value);
-  };
+  function handleSubmit(e) {
+    e.preventDefault();
+    // if (!title || !description || !file || !price) return;
+    // const formData = new FormData();
+    // formData.append("title", title);
+    // formData.append("description", description);
+    // formData.append("price", price);
+    // formData.append("file", file, file.name);
 
+    // addProperty(formData);
+    // setDescription("");
+    // setFile("");
+    // setTitle("");
+    // setPrice("");
+  }
   return (
     <div className="add-properties-wrapper">
       <div className="add-properties">
@@ -30,23 +46,32 @@ function AddProperties() {
               className="image-input"
               accept="image/png, image/jpeg"
               placeholder="Supports JPG, PNG, Max file size: 10MB"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                setFile(file);
+              }}
             />
-            <button>Save Changes</button>
+            <button onClick={handleSubmit}>Save Changes</button>
           </div>
 
           <div className="input-box input-box2">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <span>
                 <h1>Title:</h1>
-                <input type="text" placeholder="Property Title:" />
+                <input
+                  type="text"
+                  placeholder="Property Title:"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
               </span>
 
               <span>
                 <h1>Select property:</h1>
 
                 <select
-                  value={selectedProperty}
-                  onChange={handlePropertyChange}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 >
                   <option value="default">Select Property</option>
                   <option value="land">Land</option>
@@ -56,7 +81,12 @@ function AddProperties() {
 
               <span>
                 <h1>Price:</h1>
-                <input type="text" placeholder="Price" />
+                <input
+                  type="text"
+                  placeholder="Price"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
               </span>
               <button>Add Property</button>
             </form>

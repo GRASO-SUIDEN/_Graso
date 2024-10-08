@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import "../components/banner/Banner";
 
 const JoinUs = () => {
-
   const currentAccount = useCurrentAccount();
   const navigate = useNavigate();
 
@@ -33,7 +32,7 @@ const JoinUs = () => {
         {/* <button className="join-us-btn" data-aos="zoom-in">
           Get started
         </button> */}
-        <div className="join-us-btn " data-aos="zoom-in">
+        <div className="join-us-btn" data-aos="zoom-in">
           <ConnectButton connectText="Get started" />
         </div>
         <img

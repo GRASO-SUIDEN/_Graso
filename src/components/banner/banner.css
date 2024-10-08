@@ -272,9 +272,6 @@
   color: inherit !important;
   box-shadow: none !important;
   padding: 16px 0px !important;
-
-  
-  
 }
 .join-us-btn::before {
   position: absolute !important;
@@ -319,5 +316,8 @@
   }
   .join-us .text p {
     font-size: 1.2rem;
+  }
+  .join-us-btn {
+    left: 5.3rem !important;
   }
 }
