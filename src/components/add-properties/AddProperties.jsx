@@ -8,22 +8,29 @@ function AddProperties() {
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // if (!title || !description || !file || !price) return;
+    // if (!title || !description || !file || !price || !startDate || !endDate) return;
     // const formData = new FormData();
     // formData.append("title", title);
     // formData.append("description", description);
     // formData.append("price", price);
     // formData.append("file", file, file.name);
+    // formData.append("startDate", startDate);
+    // formData.append("endDate", endDate);
 
     // addProperty(formData);
     // setDescription("");
     // setFile("");
     // setTitle("");
     // setPrice("");
+    // setStartDate("");
+    // setEndDate("");
   }
+
   return (
     <div className="add-properties-wrapper">
       <div className="add-properties">
@@ -88,6 +95,25 @@ function AddProperties() {
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </span>
+
+              <span>
+                <h1>Start Date:</h1>
+                <input
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </span>
+
+              <span>
+                <h1>End Date:</h1>
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </span>
+
               <button>Add Property</button>
             </form>
           </div>
