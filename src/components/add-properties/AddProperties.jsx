@@ -1,7 +1,3 @@
-import { Transaction } from "@mysten/sui/transactions";
-import {  useCurrentAccount } from "@mysten/dapp-kit";
-import { useSignAndExecuteTransaction, useSuiClient } from "@mysten/dapp-kit";
-import { useNetworkVariable } from "../../utils/networkConfig";
 import { useState } from "react";
 import "./addproperties.css";
 import { useProperties } from "../../contexts/PropertyContext";
@@ -12,74 +8,29 @@ function AddProperties() {
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  
-
-  const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
-  
-  const suiClient = useSuiClient();
-  const { mutate: signAndExecute } = useSignAndExecuteTransaction({
-    execute: async ({ bytes, signature }) =>
-      await suiClient.executeTransactionBlock({
-        transactionBlock: bytes,
-        signature,
-        options: {
-          showRawEffects: true,
-          showEffects: true,
-        },
-      }),
-  });
-
-  const createProfile = () => {
-    if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
-      return;
-    }
-
-    console.log ({firstName, lastName, email, occupation, description,});
-    const tx = new Transaction();
-    
-    tx.moveCall({
-      target: `${realEstateICOPackageId}::real_estate_ido::create_profile`
-,
-      arguments: [
-        tx.pure.address('0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8'),
-        tx.pure.string(firstName),
-        tx.pure.string(lastName),
-        tx.pure.string(email),
-        tx.pure.string(occupation),
-        tx.pure.string(description),
-        tx.pure.bool(true),
-      ]
-    });
-
-    tx.setGasBudget(20000000);
-
-    signAndExecute(
-      {
-        transaction: tx,
-      },
-      {
-        onSuccess: async() => {
-          console.log("Profile updated");
-        },
-      }
-    );
-  }
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // if (!title || !description || !file || !price) return;
+    // if (!title || !description || !file || !price || !startDate || !endDate) return;
     // const formData = new FormData();
     // formData.append("title", title);
     // formData.append("description", description);
     // formData.append("price", price);
     // formData.append("file", file, file.name);
+    // formData.append("startDate", startDate);
+    // formData.append("endDate", endDate);
 
     // addProperty(formData);
     // setDescription("");
     // setFile("");
     // setTitle("");
     // setPrice("");
+    // setStartDate("");
+    // setEndDate("");
   }
+
   return (
     <div className="add-properties-wrapper">
       <div className="add-properties">
@@ -144,6 +95,25 @@ function AddProperties() {
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </span>
+
+              <span>
+                <h1>Start Date:</h1>
+                <input
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </span>
+
+              <span>
+                <h1>End Date:</h1>
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </span>
+
               <button>Add Property</button>
             </form>
           </div>
