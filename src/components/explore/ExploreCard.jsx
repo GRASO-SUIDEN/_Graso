@@ -1,7 +1,6 @@
 import Timer from "../Timer";
 import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
-import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
 
 export default function ExploreCard({ data }) {
   return (
@@ -33,18 +32,9 @@ export default function ExploreCard({ data }) {
               <small className="font-semibold">Min.Entry</small>
               <h1 className="text-teal-500 font-semibold">2.95 SUI</h1>
             </div>
-            <ConnectButton connectText="INVEST" 
-                      style={{
-                      backgroundColor: "#24C2A5",
-                      color: "white",
-                      padding: "0.5rem 1.2rem",
-                      borderRadius: "999px",
-                      transition: "all 0.3s ease-in-out",
-                    }}
-
-                      />
-
-
+            <button className="bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300">
+              INVEST
+            </button>
           </div>
         </div>
       </div>
