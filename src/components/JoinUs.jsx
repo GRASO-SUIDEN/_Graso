@@ -11,7 +11,6 @@ const JoinUs = () => {
 
   useEffect(() => {
     if (currentAccount) {
-      console.log("Success!");
       navigate("/app");
     }
   }, [currentAccount, navigate]);
