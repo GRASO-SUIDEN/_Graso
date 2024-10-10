@@ -36,7 +36,7 @@ export default function ExploreCard({ data }) {
   }, [isModalOpen]);
 
   return (
-    <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h-[32rem] space-y-1 min-w-[250px]">
+    <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h2rem] space-y-1 min-w-[250px]">
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
         <div className="p-4 w-full h-full flex flex-col justify-between">
           <img src={landsite} className="w-full h-40 object-cover" />
