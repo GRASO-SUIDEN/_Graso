@@ -2,15 +2,41 @@ import { useState, useEffect, useRef } from "react";
 import Timer from "../Timer";
 import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
+
 
 export default function ExploreCard({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(false);
+  const [isHome, setIsHome] = useState(false);
   const modalRef = useRef(null);
+  const location = useLocation();
+  const currentAccount = useCurrentAccount();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    setIsHome(location.pathname === '/');
+  }, [location.pathname])
+  
+  useEffect(() => {
+    if (currentAccount) {
+      navigate("/app");
+    }
+  }, [currentAccount, navigate]);
+
+  
 
   
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  // const handleAvailabilityChange = () => {
+  //   if(isHomePage) {
+  //     setIsAvailable(true);
+  //   }
+  // };
 
   
   const handleClickOutside = (event) => {
@@ -73,11 +99,13 @@ export default function ExploreCard({ data }) {
             </button>
 
               {/* mobile view invest button */}
+              <Link to="/demo" className="md:hidden block">
               <button
-              className="block md:hidden bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
-            >
+              className="  bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
+              >
               INVEST
             </button>
+              </Link>
 
 
           </div>
@@ -90,7 +118,7 @@ export default function ExploreCard({ data }) {
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div
             ref={modalRef}
-            className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[90%] overflow-y-auto"
+            className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[90%] overflow-y-auto relative"
             style={{ pointerEvents: "auto" }}
           >
             <h2 className="text-xl font-bold mb-4">{data?.name} - Investment</h2>
@@ -122,6 +150,24 @@ export default function ExploreCard({ data }) {
               </ul>
             </div>
 
+            <span className="relative">
+                <h1>Price:</h1>
+                <input
+                  type="text"
+                  placeholder="Price"
+                  style={{  width: "100%",
+                    backgroundColor: "#e5e7eb",
+                    padding: "10px 18px",
+                    borderRadius: "4px",
+                    border: "1px",
+                    outline: "none",
+                    textAlign: "left"}}
+                
+                />
+                <img src={sui} alt="Sui" className="w-[1.5rem] h-[1.5rem] absolute right-1 top-[2rem]" />
+
+              </span>
+
             {/* Modal Actions */}
             <div className="mt-6 flex justify-between gap-4">
               <button
@@ -130,10 +176,23 @@ export default function ExploreCard({ data }) {
               >
                 Cancel
               </button>
-              <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]">
+          {!isHome ?   (
+
+           <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]" onClick={() =>setIsAvailable(true)}>
                 Confirm Investment
-              </button>
+              </button>) : (
+     <div className="buttonInvest">
+          <ConnectButton connectText="Confirm Investment" />
+        </div>
+              )}
             </div>
+
+            {isAvailable &&  (<div className="w-[80%] h-[10rem] absolute top-[15rem] left-[10%] drop-shadow-md rounded-md z-50 bg-[#1da88d] text-white text-xl font-semibold p-4 text-center justify-center  flex flex-col">
+     <div className="w-[2rem] h-[2rem] rounded-full bg-red-700 text-white font-bold text-2xl flex justify-center items-center mb-[2rem] cursor-pointer" onClick={() => setIsAvailable(false)}>X</div>
+        Investment still under construction 🏗️
+      </div>)
+      
+      }
           </div>
         </div>
       )}

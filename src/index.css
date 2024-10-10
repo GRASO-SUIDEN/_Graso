@@ -24,3 +24,16 @@
 nav a.active {
   color: #24c2a5;
 }
+
+
+.buttonInvest button {
+  padding: 0.5rem 1rem !important;  
+  background-color: #24c2a5 !important; 
+  color: white !important; 
+  border-radius: 0.5rem !important; 
+  transition: background-color 0.3s ease !important; 
+}
+
+.buttonInvest button:hover  {
+  background-color: #1da88d !important; 
+}
