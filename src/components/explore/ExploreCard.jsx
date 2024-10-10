@@ -72,10 +72,9 @@ export default function ExploreCard({ data }) {
               INVEST
             </button>
 
-              {/* Invest button triggers modal */}
+              {/* mobile view invest button */}
               <button
               className="block md:hidden bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
-            
             >
               INVEST
             </button>
