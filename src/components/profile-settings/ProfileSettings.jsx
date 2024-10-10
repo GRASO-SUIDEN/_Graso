@@ -11,10 +11,8 @@ function ProfileSettings() {
   const [email, setEmail] = useState("");
   const [occupation, setOccupation] = useState("");
   const [description, setDescription] = useState("");
-  const encoder = new TextEncoder();
 
 
-  const currentAccount = useCurrentAccount();
   const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
   
   const suiClient = useSuiClient();
@@ -35,7 +33,6 @@ function ProfileSettings() {
       return;
     }
 
-    console.log ({firstName, lastName, email, occupation, description,});
     const tx = new Transaction();
     
     tx.moveCall({

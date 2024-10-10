@@ -11,7 +11,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (currentAccount) {
-      console.log("Success!");
+      console.log(currentAccount);
       navigate("/app");
     }
   }, [currentAccount, navigate]);
