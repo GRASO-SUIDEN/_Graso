@@ -66,11 +66,21 @@ export default function ExploreCard({ data }) {
             </div>
             {/* Invest button triggers modal */}
             <button
-              className="bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
+              className="hidden md:block bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
               onClick={toggleModal}
             >
               INVEST
             </button>
+
+              {/* Invest button triggers modal */}
+              <button
+              className="block md:hidden bg-[#24c2a5] w-auto px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
+              onClick={toggleModal}
+            >
+              INVEST
+            </button>
+
+
           </div>
         </div>
       </div>
