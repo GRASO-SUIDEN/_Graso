@@ -193,7 +193,7 @@ export default function ExploreCard({ data }) {
 
             {isAvailable &&  (<div className="w-[80%] h-[10rem] absolute top-[15rem] left-[10%] drop-shadow-md rounded-md z-50 bg-[#1da88d] text-white text-xl font-semibold p-4 text-center justify-center  flex flex-col">
      <div className="w-[2rem] h-[2rem] rounded-full bg-red-700 text-white font-bold text-2xl flex justify-center items-center mb-[2rem] cursor-pointer" onClick={() => setIsAvailable(false)}>X</div>
-       {!isHome ?  "Investment still under construction 🏗️" : "Please connect wallet"}
+       {!isHome ?  "Investment page still under construction 🏗️" : "Please connect wallet"}
       </div>)
       
       }
