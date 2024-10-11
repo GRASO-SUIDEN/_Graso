@@ -11,10 +11,8 @@ function ProfileSettings() {
   const [email, setEmail] = useState("");
   const [occupation, setOccupation] = useState("");
   const [description, setDescription] = useState("");
-  const encoder = new TextEncoder();
 
 
-  const currentAccount = useCurrentAccount();
   const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
   
   const suiClient = useSuiClient();
@@ -34,28 +32,32 @@ function ProfileSettings() {
     if(firstName === "" || lastName === "" || email === "" || occupation === "" || description === "" ){
       return;
     }
+
     const tx = new Transaction();
     
-
     tx.moveCall({
-      arguments: [ tx.pure.vector("u8", Array.from(encoder.encode(firstName))),  // Correct usage of pure.vector
-        tx.pure.vector("u8", Array.from(encoder.encode(lastName))),
-        tx.pure.vector("u8", Array.from(encoder.encode(email))),
-        tx.pure.vector("u8", Array.from(encoder.encode(occupation))),
-        tx.pure.vector("u8", Array.from(encoder.encode(description))),
-        tx.pure.bool(true)],
       target: `${realEstateICOPackageId}::real_estate_ido::create_profile`
+,
+      arguments: [
+        tx.pure.address('0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8'),
+        tx.pure.string(firstName),
+        tx.pure.string(lastName),
+        tx.pure.string(email),
+        tx.pure.string(occupation),
+        tx.pure.string(description),
+        tx.pure.bool(true),
+      ]
     });
 
-    // tx.setGasBudget(50000000);
-    // tx.setGasPrice(5000000);
+    tx.setGasBudget(20000000);
+
     signAndExecute(
       {
         transaction: tx,
       },
       {
         onSuccess: async() => {
-          await refetch();
+          console.log("Profile updated");
         },
       }
     );

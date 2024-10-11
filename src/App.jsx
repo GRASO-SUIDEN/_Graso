@@ -12,7 +12,6 @@ import AboutUs from "./pages/about-us/AboutUs";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
 import ExplorePage from "./pages/explore-page/ExplorePage";
 import { PropertiesProvider } from "./contexts/PropertyContext";
-import { ProfileProvider } from "./contexts/ProfileContext";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,27 +26,25 @@ function App() {
 
   return (
     <PropertiesProvider>
-      <ProfileProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={loading ? <LoadingPage /> : <HomePage />} />
-            <Route path="explore" element={<ExplorePage />} />
-            <Route path="about-us" element={<AboutUs />} />
-            <Route path="app" element={<AppLayout />}>
-              <Route index element={<Navigate replace to="dashboard" />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="explore-properties" element={<ExploreLand />} />
-              <Route path="add-properties" element={<AddProperties />} />
-              <Route path="user">
-                <Route index element={<Navigate to="profile" />} />
-                <Route path="profile" element={<Profile />} />
-                <Route path="profile-settings" element={<ProfileSettings />} />
-              </Route>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={loading ? <LoadingPage /> : <HomePage />} />
+          <Route path="explore" element={<ExplorePage />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="app" element={<AppLayout />}>
+            <Route index element={<Navigate replace to="dashboard" />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="explore-properties" element={<ExploreLand />} />
+            <Route path="add-properties" element={<AddProperties />} />
+            <Route path="user">
+              <Route index element={<Navigate to="profile" />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="profile-settings" element={<ProfileSettings />} />
             </Route>
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </ProfileProvider>
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </PropertiesProvider>
   );
 }

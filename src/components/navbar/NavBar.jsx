@@ -12,19 +12,7 @@ function Navbar() {
 
   useEffect(() => {
     if (currentAccount) {
-      console.log("Success!", currentAccount);
-      async function generateNonce() {
-        const response = await fetch(
-          `https://web-production-6417.up.railway.app/generate_nonce?wallet_address=0x7b299e438e7312e14507a2dbda2bee64231755e3fbb6a218ba7d26f2751a83d2`,
-          {
-            method: "POST",
-          }
-        );
-        if (!response.ok) throw new Error("Failed to generate nonce");
-        const data = await response.json();
-        console.log(data.nonce);
-      }
-      generateNonce();
+      navigate("/app");
     }
   }, [currentAccount, navigate]);
 
