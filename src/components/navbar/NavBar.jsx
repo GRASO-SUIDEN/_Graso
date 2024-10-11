@@ -9,12 +9,47 @@ function Navbar() {
   const currentAccount = useCurrentAccount();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     if (currentAccount) {
-      console.log("Success!");
-      navigate("/app");
+      console.log("Success!", currentAccount);
+      async function generateNonce() {
+        const response = await fetch(
+          `https://web-production-6417.up.railway.app/generate_nonce?wallet_address=0x7b299e438e7312e14507a2dbda2bee64231755e3fbb6a218ba7d26f2751a83d2`,
+          {
+            method: "POST",
+          }
+        );
+        if (!response.ok) throw new Error("Failed to generate nonce");
+        const data = await response.json();
+        console.log(data.nonce);
+      }
+      generateNonce();
     }
   }, [currentAccount, navigate]);
+
+  useEffect(() => {
+    async function sign() {
+      const dats = {
+        wallet:
+          "0x7b299e438e7312e14507a2dbda2bee64231755e3fbb6a218ba7d26f2751a83d2",
+        nonce:
+          "8c56081b2c2f6dfb11d8c1f45ad9753bc2ad72f3d0263f7d7320266166dc1520",
+        signature:
+          "0x7b299e438e7312e14507a2dbda2bee64231755e3fbb6a218ba7d26f2751a83d2",
+      };
+      const res = await fetch(
+        "https://web-production-6417.up.railway.app/verify_signature",
+        {
+          method: "POST",
+          body: JSON.stringify(dats),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+    }
+    sign();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -272,7 +272,7 @@ const AboutUs = () => {
               slidesPerView={1}
               centeredSlides={true}
               grabCursor={true}
-              mousewheel={true}
+              mousewheel={false}
             >
               {teamMembers.map((member, index) => (
                 <SwiperSlide key={index} className="swiper-slide-centered">
