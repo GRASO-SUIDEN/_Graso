@@ -19,11 +19,11 @@ export default function ExploreCard({ data }) {
     setIsHome(location.pathname === '/');
   }, [location.pathname])
   
-  useEffect(() => {
-    if (currentAccount) {
-      navigate("/app");
-    }
-  }, [currentAccount, navigate]);
+  // useEffect(() => {
+  //   if (currentAccount) {
+  //     navigate("/app");
+  //   }
+  // }, [currentAccount, navigate]);
 
   
 
@@ -176,7 +176,11 @@ export default function ExploreCard({ data }) {
               >
                 Cancel
               </button>
-          {!isHome ?   (
+
+              <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]" onClick={() =>setIsAvailable(true)}>
+                Confirm Investment
+              </button>
+          {/* {!isHome ?   (
 
            <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]" onClick={() =>setIsAvailable(true)}>
                 Confirm Investment
@@ -184,12 +188,12 @@ export default function ExploreCard({ data }) {
      <div className="buttonInvest">
           <ConnectButton connectText="Confirm Investment" />
         </div>
-              )}
+              )} */}
             </div>
 
             {isAvailable &&  (<div className="w-[80%] h-[10rem] absolute top-[15rem] left-[10%] drop-shadow-md rounded-md z-50 bg-[#1da88d] text-white text-xl font-semibold p-4 text-center justify-center  flex flex-col">
      <div className="w-[2rem] h-[2rem] rounded-full bg-red-700 text-white font-bold text-2xl flex justify-center items-center mb-[2rem] cursor-pointer" onClick={() => setIsAvailable(false)}>X</div>
-        Investment still under construction 🏗️
+       {!isHome ?  "Investment still under construction 🏗️" : "Please connect wallet"}
       </div>)
       
       }

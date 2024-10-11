@@ -14,11 +14,12 @@ export default function InvestmentPage({ data }) {
   const previousRoute = location.state?.from;  // Access the 'from' state passed during navigation
   const isHomePage = previousRoute === '/';
 
-  useEffect(() => {
-    if (currentAccount) {
-      navigate("/app");
-    }
-  }, [currentAccount, navigate]);
+
+  // useEffect(() => {
+  //   if (currentAccount && !isHomePage) {
+  //     navigate("/app");
+  //   }
+  // }, [currentAccount, navigate]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 "> 
@@ -78,7 +79,7 @@ export default function InvestmentPage({ data }) {
           >
             Cancel
           </button>
-          {!isHomePage ? (
+          {/* {isHomePage ? (
             <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]" onClick={() => setIsAvailable(true)}>
               Confirm Investment
             </button>
@@ -86,20 +87,19 @@ export default function InvestmentPage({ data }) {
             <div className="buttonInvest">
               <ConnectButton connectText="Confirm Investment" />
             </div>
-          )}
+          )} */}
+            <button className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]" onClick={() => setIsAvailable(true)}>
+              Confirm Investment
+            </button>
         </div>
 
-        {isAvailable && (
-          <div className="w-[80%] h-[10rem] absolute top-[15rem] left-[10%] drop-shadow-md rounded-md z-50 bg-[#1da88d] text-white text-xl font-semibold p-4 text-center justify-center flex flex-col">
-            <div
-              className="w-[2rem] h-[2rem] rounded-full bg-red-700 text-white font-bold text-2xl flex justify-center items-center mb-[2rem] cursor-pointer"
-              onClick={() => setIsAvailable(false)}
-            >
-              X
-            </div>
-            Investment still under construction 🏗️
-          </div>
-        )}
+     
+        {isAvailable &&  (<div className="w-[80%] h-[10rem] absolute top-[15rem] left-[10%] drop-shadow-md rounded-md z-50 bg-[#1da88d] text-white text-xl font-semibold p-4 text-center justify-center  flex flex-col">
+     <div className="w-[2rem] h-[2rem] rounded-full bg-red-700 text-white font-bold text-2xl flex justify-center items-center mb-[2rem] cursor-pointer" onClick={() => setIsAvailable(false)}>X</div>
+       {currentAccount ?  "Investment still under construction 🏗️" : "Please connect wallet"}
+      </div>)
+      
+      }
       </div>
     </div>
   );
