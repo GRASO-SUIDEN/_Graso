@@ -13,6 +13,7 @@ import PageNotFound from "./pages/page-not-found/PageNotFound";
 import ExplorePage from "./pages/explore-page/ExplorePage";
 import { PropertiesProvider } from "./contexts/PropertyContext";
 import InvestmentPage from "./components/explore/InvestmentPage";
+import ScrollToTop from "./scroll";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,8 +27,10 @@ function App() {
   }, []);
 
   return (
+   
     <PropertiesProvider>
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route index element={loading ? <LoadingPage /> : <HomePage />} />
           <Route path="explore" element={<ExplorePage />} />
