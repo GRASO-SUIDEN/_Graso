@@ -1,8 +1,8 @@
 import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
 import {  Link, useNavigate } from "react-router-dom";
 import "./banner.css";
-import MainImage from "../../assets/image (2).webp";
 import { useEffect } from "react";
+import { image } from "../images";
 
 const Banner = () => {
   const currentAccount = useCurrentAccount();
@@ -37,7 +37,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="main-img">
-          <img src={MainImage} alt="" />
+          <img src={image.MainImage} alt="" />
           <div className="label">
             <h4>STREAM</h4>
             <p>Lagos, Nigeria</p>
@@ -46,7 +46,7 @@ const Banner = () => {
 
         <div className="asset-card assetcard1">
           <img
-            src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_827.jpg?raw=true"
+            src={image.bannerimg2}
             alt="asset-card"
           />
           <h4>JOS ESTATE</h4>
@@ -54,7 +54,7 @@ const Banner = () => {
         </div>
         <div className="asset-card assetcard2">
           <img
-            src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_985.jpg?raw=true"
+            src={image.bannerimg3}
             alt="asset-card"
           />
           <h4>MONEYLAND</h4>
@@ -62,7 +62,7 @@ const Banner = () => {
         </div>
         <div className="asset-card assetcard3">
           <img
-            src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045951_309.jpg?raw=true"
+            src={image.bannerimg1}
             alt="asset-card"
           />
           <h4>EVERCLEAR</h4>
@@ -70,7 +70,7 @@ const Banner = () => {
         </div>
         <div className="asset-card assetcard4">
           <img
-            src="https://github.com/chiscookeke11/Test-pagea/blob/main/IMG_20240923_045950_912.jpg?raw=true"
+            src={image.bannerimg4}
             alt="asset-card"
           />
           <h4>HOLA</h4>
