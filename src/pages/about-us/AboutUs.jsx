@@ -214,13 +214,13 @@ const AboutUs = () => {
           <div className="image">
             <div className="back-img">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/image%2021%20(1).png?raw=true"
+                src={image.missionimgbig}
                 alt="image"
               />
             </div>
             <div className="top-image">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Rectangle%206%20(1).png?raw=true"
+                src={image.missionimgsml}
                 alt="image"
               />
             </div>

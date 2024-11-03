@@ -9,6 +9,8 @@ import topimg1 from '../assets/img1shadowtop.png'
 import bottomimg1 from "../assets/rs-bg-elem3.png"
 import bottomimg2 from "../assets/rs-bg-elem4.png"
 import topimg2 from "../assets/rs-bg-elem2.png"
+import missionimgbig from "../assets/missionimgbig.png"
+import missionimgsml from "../assets/missionimgsml.png"
 
 
 
@@ -24,4 +26,6 @@ export const image = {
     bottomimg1,
     topimg2,
     bottomimg2,
+    missionimgbig,
+    missionimgsml,
 }
