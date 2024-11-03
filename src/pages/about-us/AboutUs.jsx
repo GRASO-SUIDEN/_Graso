@@ -31,15 +31,6 @@ const AboutUs = () => {
       github: "https://github.com/AfroTechBoss",
     },
     {
-      name: " Nwachukwu Daniel Chigozirim ",
-      role: "Smart Contract Developer",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/danny.jpg?raw=true",
-      linkedin: "https://www.linkedin.com/in/devdanny0",
-      twitter: "https://x.com/dannyclassi_c",
-      github: "https://github.com/Verifieddanny",
-    },
-    {
       name: " Uzoma Favour Uchechukwumere",
       role: "Community Manager",
       image:
@@ -58,6 +49,37 @@ const AboutUs = () => {
       twitter: "https://x.com/jonathan_ify?t=Daab5uN71i3RdBv3rHKPAw&s=09",
       github: "https://github.com/datadudejon",
     },
+    
+    {
+      name: " Madukairo Enenike ",
+      role: "Marketing Lead",
+      image:
+        "https://pbs.twimg.com/profile_images/1780602576334962688/e_Cn33Oo_400x400.jpg",
+      linkedin: "https://linkedin.com/in/emenike-madukairo0511",
+      twitter: "https://x.com/emenike_sage",
+      github: "#",
+    },
+    
+    {
+      name: " Kosisochukwu Moronu ",
+      role: " Research Analyst",
+      image:
+        "https://github.com/chiscookeke11/Test-pagea/blob/main/kosi.jpg?raw=true",
+      linkedin:
+        "https://www.linkedin.com/in/kosisochukwu-moronu-17722b303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "https://x.com/Kosiengine",
+      github: "https://github.com/Kosisochukwu244",
+    },
+    
+    {
+      name: " Charles Lemuel   ",
+      role: "UI/UX designer",
+      image:
+        "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
+      // linkedin: "https://x.com/king_futures9?s=21",
+      // twitter: "https://x.com/king_futures9?s=21",
+      // github: "https://x.com/king_futures9?s=21",
+    },
     {
       name: "Okorie Victor Onyekachi ",
       role: "Graphic Designer",
@@ -75,15 +97,6 @@ const AboutUs = () => {
       linkedin: "https://github.com/chiscookeke11",
       twitter: "https://x.com/ChiscoDbg69906",
       github: "https://github.com/chiscookeke11",
-    },
-    {
-      name: " Ene Paschaline Chimeremma  ",
-      role: "Social Media Manager",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/paschaline.jpg?raw=true",
-      linkedin: "https://github.com/Alex-dev63",
-      twitter: "https://x.com/Xan_dra27?t=h9KVYDU5luuZdZEeOSfViA&s=08",
-      github: "https://github.com/Alex-dev63",
     },
     {
       name: " Nebolisa Ugochukwu Benedict  ",
@@ -105,25 +118,6 @@ const AboutUs = () => {
       github: "https://github.com/Genesisufedo",
     },
     {
-      name: " Kosisochukwu Moronu ",
-      role: " Research Analyst",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/kosi.jpg?raw=true",
-      linkedin:
-        "https://www.linkedin.com/in/kosisochukwu-moronu-17722b303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      twitter: "https://x.com/Kosiengine",
-      github: "https://github.com/Kosisochukwu244",
-    },
-    {
-      name: " Nweke Anthony ",
-      role: "Backend Developer",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
-      linkedin: "https://www.linkedin.com/in/Anthonyslav1",
-      twitter: "https://x.com/Anthonyslav1",
-      github: "https://github.com/Anthonyslav1",
-    },
-    {
       name: "  Egbo chikosolu Maryaugustina  ",
       role: "Social media manager",
       image:
@@ -134,32 +128,34 @@ const AboutUs = () => {
       github: "https://x.com/Augustina__egbo?t=40D9E2C9B9DCPjd7zUvvEg&s=09",
     },
     {
-      name: "  Obiefuna Chidiogo  ",
-      role: "Social media manager",
+      name: " Ene Paschaline Chimeremma  ",
+      role: "Social Media Manager",
       image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/chidiogo.jpg?raw=true",
-      linkedin: "https://x.com/king_futures9?s=21",
-      twitter: "https://x.com/king_futures9?s=21",
-      github: "https://x.com/king_futures9?s=21",
+        "https://github.com/chiscookeke11/Test-pagea/blob/main/paschaline.jpg?raw=true",
+      linkedin: "https://github.com/Alex-dev63",
+      twitter: "https://x.com/Xan_dra27?t=h9KVYDU5luuZdZEeOSfViA&s=08",
+      github: "https://github.com/Alex-dev63",
+    },
+    
+    {
+      name: " Nwachukwu Daniel Chigozirim ",
+      role: "Smart Contract Developer",
+      image:
+        "https://github.com/chiscookeke11/Test-pagea/blob/main/danny.jpg?raw=true",
+      linkedin: "https://www.linkedin.com/in/devdanny0",
+      twitter: "https://x.com/dannyclassi_c",
+      github: "https://github.com/Verifieddanny",
     },
     {
-      name: " Charles Lemuel   ",
-      role: "UI/UX designer",
+      name: " Nweke Anthony ",
+      role: "Backend Developer",
       image:
         "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
-      // linkedin: "https://x.com/king_futures9?s=21",
-      // twitter: "https://x.com/king_futures9?s=21",
-      // github: "https://x.com/king_futures9?s=21",
+      linkedin: "https://www.linkedin.com/in/Anthonyslav1",
+      twitter: "https://x.com/Anthonyslav1",
+      github: "https://github.com/Anthonyslav1",
     },
-    {
-      name: " Madukairo Enenike ",
-      role: "Marketing Lead",
-      image:
-        "https://pbs.twimg.com/profile_images/1780602576334962688/e_Cn33Oo_400x400.jpg",
-      linkedin: "https://linkedin.com/in/emenike-madukairo0511",
-      twitter: "https://x.com/emenike_sage",
-      github: "#",
-    },
+    
   ];
 
   return (
