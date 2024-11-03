@@ -17,7 +17,7 @@ const JoinUs = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 500,
       offset: 200,
       once: true,
     });
