@@ -10,6 +10,7 @@ import TeamCard from "../../components/team-card/TeamCard";
 import "./about-us.css";
 import "aos/dist/aos.css";
 import "swiper/css/bundle";
+import { image } from "../../components/images";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -181,13 +182,13 @@ const AboutUs = () => {
             <div className="image2">
               <div className="shadow top">
                 <img
-                  src="https://github.com/chiscookeke11/Test-pagea/blob/main/rs-bg-elem%20(1).png?raw=true"
+                  src={image.topimg1}
                   alt="image"
                 />
               </div>
               <div className="shadow bottom">
                 <img
-                  src="https://github.com/chiscookeke11/Test-pagea/blob/main/rs-bg-elem.png?raw=true"
+                  src={image.bottomimg1}
                   alt="image"
                 />
               </div>
@@ -195,14 +196,13 @@ const AboutUs = () => {
             <div className="image1">
               <div className="shadow top">
                 <img
-                  src="https://github.com/chiscookeke11/Test-pagea/blob/main/Graso%20(4)/rs-bg-elem.png?raw=true"
+                  src={image.topimg2}
                   alt="image"
                 />
               </div>
               <div className="shadow bottom">
                 <img
-                  src="https://github.com/chiscookeke11/Test-pagea/blob/main/Graso%20(5)/rs-bg-elem.png?raw=true"
-                  alt="image"
+                  src={image.bottomimg2}                  alt="image"
                 />
               </div>
             </div>
@@ -214,13 +214,13 @@ const AboutUs = () => {
           <div className="image">
             <div className="back-img">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/image%2021.png?raw=true"
+                src="https://github.com/chiscookeke11/Test-pagea/blob/main/image%2021%20(1).png?raw=true"
                 alt="image"
               />
             </div>
             <div className="top-image">
               <img
-                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Rectangle%206.png?raw=true"
+                src="https://github.com/chiscookeke11/Test-pagea/blob/main/Rectangle%206%20(1).png?raw=true"
                 alt="image"
               />
             </div>
