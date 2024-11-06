@@ -11,6 +11,7 @@ import "./about-us.css";
 import "aos/dist/aos.css";
 import "swiper/css/bundle";
 import { image } from "../../components/images";
+import Contact from "../../components/contact/Contact";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -287,28 +288,7 @@ const AboutUs = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="contact">
-          <form>
-            <h4># CONTACT</h4>
-            <h2>Contact Us</h2>
-            <div className="form-details">
-              <input type="text" placeholder="Name" required />
-              <input type="text" placeholder="Email" required />
-              <input type="tel" placeholder="Phone" required />
-              <input type="text" placeholder="Subject" required />
-            </div>
-            <input
-              type="text"
-              placeholder="Message"
-              className="message"
-              required
-            />
-            <button>
-              Send Message{" "}
-              <FaArrowRight className="right-arrow" size={17} color="white" />
-            </button>
-          </form>
-        </div>
+       <Contact/>
       </div>
       <JoinUs />
       <Footer />
