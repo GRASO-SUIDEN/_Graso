@@ -76,6 +76,22 @@ export default function ExploreCard({ data }) {
             <progress max="15" value="7.5" />
           </div>
 
+          <button
+            className="mt-4 hidden md:block bg-[#24c2a5] w-full px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
+            onClick={toggleMapModal}
+          >
+            View on Map
+          </button>
+          <Link
+            to={`/map/${data.id}`}
+            className="mt-4 md:hidden block"
+            state={{ mapData: data }}
+          >
+            <button className="w-full bg-[#24c2a5] px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300">
+              View on Map
+            </button>
+          </Link>
+
           <div className="flex justify-between items-center gap-4 pt-4">
             <div>
               <small className="font-semibold">Min.Entry</small>
@@ -93,21 +109,7 @@ export default function ExploreCard({ data }) {
               </button>
             </Link>
           </div>
-          <button
-            className="mt-4 hidden md:block bg-[#24c2a5] w-full px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300"
-            onClick={toggleMapModal}
-          >
-            View on Map
-          </button>
-          <Link
-            to={`/map/${data.id}`}
-            className="mt-4 md:hidden block"
-            state={{ mapData: data }}
-          >
-            <button className="w-full bg-[#24c2a5] px-4 py-2 rounded-full text-white hover:border-solid hover:bg-white hover:text-[#24C2A5] transition-all duration-300">
-              View on Map
-            </button>
-          </Link>
+         
         </div>
       </div>
       <Timer />
