@@ -225,7 +225,7 @@ function AddProperties() {
                 />
               </span>
 
-              <div className="map-container">
+              {/* <div className="map-container">
                 <h1>Fix Property Location on map:</h1>
                 <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
                 <div className="coordinates-input">
@@ -248,7 +248,7 @@ function AddProperties() {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <button type="submit">Add Property</button>
             </form>

@@ -3,8 +3,6 @@
   height: 100vh;
   background: #e5e7eb;
   width: 100%;
-  /* padding-bottom:  50px; */
-  height: 100vh;
   background-color: #16a34a;
 }
 .add-properties {
@@ -39,9 +37,11 @@
   color: #24c2a5;
 }
 .input-container {
-  padding: 40px 20px;
+  padding: 40px 10px;
   width: 100%;
   display: flex;
+  min-height: 100vh;
+  height: auto;
   /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
