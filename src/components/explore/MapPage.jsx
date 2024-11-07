@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import Navbar from '../navbar/NavBar';
 
 export default function MapPage() {
   const location = useLocation();
@@ -10,7 +9,7 @@ export default function MapPage() {
 
   return (
     <>
-      <Navbar />
+    
       <div className="w-full p-4 map_page">
         <button 
           onClick={() => navigate(-1)} 

@@ -44,7 +44,6 @@ nav a.active {
   justify-content: center;
   align-items: left;
   flex-direction: column;
-  padding-top: 20%;
   min-height:100vh;
   height: auto;
 }
