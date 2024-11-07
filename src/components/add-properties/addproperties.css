@@ -140,6 +140,6 @@
   border: none;
   text-align: left;
 }
-.input-box2 span {
+.input-box2 span, .coordinates {
   margin: 10px 0;
 }

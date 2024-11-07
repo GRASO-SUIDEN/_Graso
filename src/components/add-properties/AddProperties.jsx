@@ -1,9 +1,12 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Transaction } from "@mysten/sui/transactions";
-import {  useCurrentAccount } from "@mysten/dapp-kit";
-import { useSignAndExecuteTransaction, useSuiClient } from "@mysten/dapp-kit";
-import { useNetworkVariable } from "../../utils/networkConfig"
+import { useCurrentAccount, useSignAndExecuteTransaction, useSuiClient } from "@mysten/dapp-kit";
+import { useNetworkVariable } from "../../utils/networkConfig";
 import { useProperties } from "../../contexts/PropertyContext";
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { OpenStreetMapProvider, GeoSearchControl } from 'leaflet-geosearch';
+import 'leaflet-geosearch/dist/geosearch.css';
 import "./addproperties.css";
 
 function AddProperties() {
@@ -14,23 +17,64 @@ function AddProperties() {
   const [price, setPrice] = useState(0);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  
+  const [lat, setLat] = useState('');
+  const [lng, setLng] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const mapRef = useRef(null);
+  const mapInstanceRef = useRef(null);
+  const searchControlRef = useRef(null);
 
   const currentAccount = useCurrentAccount();
   const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
 
   const suiClient = useSuiClient();
-  const { mutate: signAndExecute } = useSignAndExecuteTransaction({
-    execute: async ({ bytes, signature }) =>
-      await suiClient.executeTransactionBlock({
-        transactionBlock: bytes,
-        signature,
-        options: {
-          showRawEffects: true,
-          showEffects: true,
-        },
-      }),
-  });
+  const { mutate: signAndExecute } = useSignAndExecuteTransaction();
+
+  useEffect(() => {
+    if (mapRef.current && !mapInstanceRef.current) {
+      mapInstanceRef.current = L.map(mapRef.current).setView([6.8667, 7.3833], 13); // Centered on Nsukka
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(mapInstanceRef.current);
+
+      const provider = new OpenStreetMapProvider();
+      searchControlRef.current = new GeoSearchControl({
+        provider: provider,
+        style: 'bar',
+        showMarker: true,
+        showPopup: false,
+        autoClose: true,
+        retainZoomLevel: false,
+        animateZoom: true,
+        keepResult: true,
+        searchLabel: 'Search for location'
+      });
+
+      mapInstanceRef.current.addControl(searchControlRef.current);
+
+      mapInstanceRef.current.on('click', function(e) {
+        const latitude = e.latlng.lat.toFixed(6);
+        const longitude = e.latlng.lng.toFixed(6);
+        setLat(latitude);
+        setLng(longitude);
+      });
+
+      mapInstanceRef.current.on('geosearch/showlocation', function(e) {
+        setLat(e.location.y.toFixed(6));
+        setLng(e.location.x.toFixed(6));
+      });
+    }
+
+    return () => {
+      if (mapInstanceRef.current) {
+        if (searchControlRef.current) {
+          mapInstanceRef.current.removeControl(searchControlRef.current);
+        }
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, []);
 
   const convertToUnixTimestamp = (dateString) => {
     return Math.floor(new Date(dateString).getTime() / 1000);
@@ -47,10 +91,10 @@ function AddProperties() {
     setEndDate(date);
     console.log("End Date (Unix Timestamp):", convertToUnixTimestamp(date));
   };
-  
+
   const createIdo = () => {
     let isFractional;
-    if(file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" ){
+    if(file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === ""){
       return;
     }
 
@@ -63,8 +107,7 @@ function AddProperties() {
     const tx = new Transaction();
     
     tx.moveCall({
-      target: `${realEstateICOPackageId}::real_estate_ido::create_ido`
-,
+      target: `${realEstateICOPackageId}::real_estate_ido::create_ido`,
       arguments: [
         tx.pure.address('0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8'),
         tx.pure.address('0x8116b754b460db1c881bc9a98601a825a216d2ec07337ce27de3e23dc75a0a87'),
@@ -77,6 +120,8 @@ function AddProperties() {
         tx.pure.bool(isFractional),
         tx.pure.string(`a ${description} called ${title} valued at ${price}`),
         tx.pure.string(`on sui`),
+        tx.pure.string(lat),
+        tx.pure.string(lng),
       ]
     });
 
@@ -88,7 +133,7 @@ function AddProperties() {
       },
       {
         onSuccess: async() => {
-          console.log("Profile updated");
+          console.log("Property added");
         },
       }
     );
@@ -96,22 +141,7 @@ function AddProperties() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // if (!title || !description || !file || !price || !startDate || !endDate) return;
-    // const formData = new FormData();
-    // formData.append("title", title);
-    // formData.append("description", description);
-    // formData.append("price", price);
-    // formData.append("file", file, file.name);
-    // formData.append("startDate", startDate);
-    // formData.append("endDate", endDate);
-
-    // addProperty(formData);
-    // setDescription("");
-    // setFile("");
-    // setTitle("");
-    // setPrice("");
-    // setStartDate("");
-    // setEndDate("");
+    createIdo();
   }
 
   return (
@@ -128,7 +158,7 @@ function AddProperties() {
         <div className="input-container">
           <div className="input-box input-box1">
             <h1>
-              Upload your property image here, please click “Upload Image”
+              Upload your property image here, please click "Upload Image"
               Button.
             </h1>
             <input
@@ -139,9 +169,8 @@ function AddProperties() {
               onChange={(e) => {
                 const file = e.target.files[0];
                 setFile(file);
-              }}
+              }}  required
             />
-            <button onClick={handleSubmit}>Save Changes</button>
           </div>
 
           <div className="input-box input-box2">
@@ -158,7 +187,6 @@ function AddProperties() {
 
               <span>
                 <h1>Select property:</h1>
-
                 <select
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -184,7 +212,7 @@ function AddProperties() {
                 <input
                   type="date"
                   value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
+                  onChange={handleStartDateChange}
                 />
               </span>
 
@@ -193,11 +221,36 @@ function AddProperties() {
                 <input
                   type="date"
                   value={endDate}
-                  onChange={(e) => setEndDate(e.target.value)}
+                  onChange={handleEndDateChange}
                 />
               </span>
 
-              <button onClick={(e) => {e.preventDefault(); createIdo();}}>Add Property</button>
+              <div className="map-container">
+                <h1>Fix Property Location on map:</h1>
+                <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
+                <div className="coordinates-input">
+                  <div className="coordinates">
+                    <label htmlFor="latitude">Latitude</label>
+                    <input
+                      id="latitude"
+                      value={lat}
+                      onChange={(e) => setLat(e.target.value)}
+                      placeholder="Click on the map" readOnly required
+                    />
+                  </div>
+                  <div className="coordinates">
+                    <label htmlFor="longitude">Longitude</label>
+                    <input
+                      id="longitude"
+                      value={lng}
+                      onChange={(e) => setLng(e.target.value)}
+                      placeholder="Click on the map" readOnly required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit">Add Property</button>
             </form>
           </div>
         </div>

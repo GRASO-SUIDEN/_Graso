@@ -206,7 +206,7 @@ export default function ExploreCard({ data }) {
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div
             ref={modalRef}
-            className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[90%] overflow-y-auto relative"
+            className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[auto] overflow-y-auto relative"
             style={{ pointerEvents: "auto" }}
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Location</h2>
