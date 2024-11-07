@@ -36,13 +36,13 @@
   color: #24c2a5;
 }
 .input-container {
-  padding: 40px 20px;
+  padding: 40px 10px;
   width: 100%;
   display: flex;
   min-height: 100vh;
   height: auto;
   /* align-items: center; */
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
   height: auto;
