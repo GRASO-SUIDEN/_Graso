@@ -226,29 +226,34 @@ function AddProperties() {
               </span>
 
               <div className="map-wrapper">
-                <h1>Fix Property Location on map:</h1>
-                <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
-                <div className="coordinates-input">
-                  <div className="coordinates">
-                    <label htmlFor="latitude">Latitude</label>
-                    <input
-                      id="latitude"
-                      value={lat}
-                      onChange={(e) => setLat(e.target.value)}
-                      placeholder="Click on the map" readOnly required
-                    />
-                  </div>
-                  <div className="coordinates">
-                    <label htmlFor="longitude">Longitude</label>
-                    <input
-                      id="longitude"
-                      value={lng}
-                      onChange={(e) => setLng(e.target.value)}
-                      placeholder="Click on the map" readOnly required
-                    />
-                  </div>
-                </div>
-              </div>
+  <h1>Fix Property Location on map:</h1>
+  <div ref={mapRef} className="map" style={{ height: '400px', width: '100%' }}></div>
+  <div className="coordinates-input">
+    <div className="coordinates">
+      <label htmlFor="latitude">Latitude</label>
+      <input
+        id="latitude"
+        value={lat}
+        onChange={(e) => setLat(e.target.value)}
+        placeholder="Click on the map"
+        readOnly
+        required
+      />
+    </div>
+    <div className="coordinates">
+      <label htmlFor="longitude">Longitude</label>
+      <input
+        id="longitude"
+        value={lng}
+        onChange={(e) => setLng(e.target.value)}
+        placeholder="Click on the map"
+        readOnly
+        required
+      />
+    </div>
+  </div>
+</div>
+
 
               <button type="submit">Add Property</button>
             </form>
