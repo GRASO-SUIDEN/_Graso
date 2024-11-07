@@ -3,7 +3,6 @@
   height: 100vh;
   background: #e5e7eb;
   width: 100%;
-  background-color: red;
 }
 .add-properties {
   animation: rise 0.2s linear forwards;
@@ -47,7 +46,7 @@
   flex-wrap: wrap;
   gap: 50px;
   height: auto;
-  background-color: green;
+  background-color: #e5e7eb;
 }
 .input-box {
   background-color: #fff;
@@ -144,4 +143,9 @@
 }
 .input-box2 span, .coordinates {
   margin: 10px 0;
+}
+.map-container{
+  width: 100%;
+  background-color: green;
+  min-width: inherit;
 }
