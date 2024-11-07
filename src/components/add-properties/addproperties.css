@@ -36,18 +36,19 @@
   color: #24c2a5;
 }
 .input-container {
-  padding: 40px 10px;
+  padding: 40px 20px;
   width: 100%;
   display: flex;
   min-height: 100vh;
   height: auto;
   /* align-items: center; */
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 50px;
   height: auto;
   background-color: #e5e7eb;
   margin: 0;
+  min-width: 350px;
 }
 .input-box {
   background-color: #fff;
@@ -147,7 +148,6 @@
 }
 .map-wrapper{
   width: 100%;
-  background-color: orange;
   margin: 10px 0;
   padding: 10px;
   display: flex;
