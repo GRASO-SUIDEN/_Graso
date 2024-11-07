@@ -37,3 +37,17 @@ nav a.active {
 .buttonInvest button:hover  {
   background-color: #1da88d !important; 
 }
+.map_page{
+  width: 100%;
+  background: linear-gradient(135deg, #24c2a5 0%, #0d7a66 80%);
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  padding-top: 20%;
+  min-height:100vh;
+  height: auto;
+}
+.map_page button {
+  align-self: flex-start;
+}
