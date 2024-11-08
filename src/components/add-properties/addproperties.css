@@ -156,28 +156,41 @@
   flex-direction: column;
   align-self: center;
 }
-.map-wrapper {
+.add-properties-wrapper {
   max-width: 100%;
   overflow-x: hidden;
-  padding: 1rem;
 }
 
-.map {
-  width: 100%; /* Ensures the map doesn’t overflow */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-box {
+  width: 100%;
+}
+
+.map-wrapper {
+  width: 100%;
 }
 
 .coordinates-input {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .coordinates {
-  flex: 1 1 45%; /* Adjust to make each input take up 45% width on small screens */
+  flex: 1 1 45%;
+  min-width: 150px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .coordinates {
-    flex: 1 1 100%; /* Full width on smaller screens */
+    flex: 1 1 100%;
   }
 }

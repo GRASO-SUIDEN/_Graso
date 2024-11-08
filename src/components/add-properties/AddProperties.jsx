@@ -169,7 +169,8 @@ function AddProperties() {
               onChange={(e) => {
                 const file = e.target.files[0];
                 setFile(file);
-              }}  required
+              }}
+              required
             />
           </div>
 
@@ -182,6 +183,7 @@ function AddProperties() {
                   placeholder="Property Title:"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  required
                 />
               </span>
 
@@ -190,6 +192,7 @@ function AddProperties() {
                 <select
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
                 >
                   <option value="">Select Property</option>
                   <option value="land">Land</option>
@@ -200,10 +203,11 @@ function AddProperties() {
               <span>
                 <h1>Price:</h1>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Price"
                   value={price}
                   onChange={(e) => setPrice(Number(e.target.value))}
+                  required
                 />
               </span>
 
@@ -213,6 +217,7 @@ function AddProperties() {
                   type="date"
                   value={startDate}
                   onChange={handleStartDateChange}
+                  required
                 />
               </span>
 
@@ -222,38 +227,38 @@ function AddProperties() {
                   type="date"
                   value={endDate}
                   onChange={handleEndDateChange}
+                  required
                 />
               </span>
 
-              {/* <div className="map-wrapper">
-  <h1>Fix Property Location on map:</h1>
-  <div ref={mapRef} className="map" style={{ height: '400px', width: '100%' }}></div>
-  <div className="coordinates-input">
-    <div className="coordinates">
-      <label htmlFor="latitude">Latitude</label>
-      <input
-        id="latitude"
-        value={lat}
-        onChange={(e) => setLat(e.target.value)}
-        placeholder="Click on the map"
-        readOnly
-        required
-      />
-    </div>
-    <div className="coordinates">
-      <label htmlFor="longitude">Longitude</label>
-      <input
-        id="longitude"
-        value={lng}
-        onChange={(e) => setLng(e.target.value)}
-        placeholder="Click on the map"
-        readOnly
-        required
-      />
-    </div>
-  </div>
-</div> */}
-
+              <div className="map-wrapper">
+                <h1>Fix Property Location on map:</h1>
+                <div ref={mapRef} className="map" style={{ height: '300px', width: '100%', maxWidth: '100%' }}></div>
+                <div className="coordinates-input">
+                  <div className="coordinates">
+                    <label htmlFor="latitude">Latitude</label>
+                    <input
+                      id="latitude"
+                      value={lat}
+                      onChange={(e) => setLat(e.target.value)}
+                      placeholder="Click on the map"
+                      readOnly
+                      required
+                    />
+                  </div>
+                  <div className="coordinates">
+                    <label htmlFor="longitude">Longitude</label>
+                    <input
+                      id="longitude"
+                      value={lng}
+                      onChange={(e) => setLng(e.target.value)}
+                      placeholder="Click on the map"
+                      readOnly
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
 
               <button type="submit">Add Property</button>
             </form>
