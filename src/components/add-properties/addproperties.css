@@ -146,51 +146,52 @@
 .input-box2 span, .coordinates {
   margin: 10px 0;
 }
-.map-wrapper{
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-self: center;
-}
-.add-properties-wrapper {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.input-box {
-  width: 100%;
-}
-
-.map-wrapper {
-  width: 100%;
-}
-
-.coordinates-input {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.coordinates {
-  flex: 1 1 45%;
-  min-width: 150px;
-}
 
 @media (max-width: 768px) {
   .coordinates {
     flex: 1 1 100%;
   }
+  .map-wrapper{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+  }
+  .add-properties-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-box {
+    width: 100%;
+  }
+  
+  .map-wrapper {
+    width: 100%;
+  }
+  
+  .coordinates-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .coordinates {
+    flex: 1 1 45%;
+    min-width: 150px;
+  }
+  
 }

@@ -19,7 +19,6 @@ function AddProperties() {
   const [endDate, setEndDate] = useState("");
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const searchControlRef = useRef(null);
@@ -32,7 +31,7 @@ function AddProperties() {
 
   useEffect(() => {
     if (mapRef.current && !mapInstanceRef.current) {
-      mapInstanceRef.current = L.map(mapRef.current).setView([6.8667, 7.3833], 13); // Centered on Nsukka
+      mapInstanceRef.current = L.map(mapRef.current).setView([6.8667, 7.3833], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(mapInstanceRef.current);
@@ -83,13 +82,11 @@ function AddProperties() {
   const handleStartDateChange = (e) => {
     const date = e.target.value;
     setStartDate(date);
-    console.log("Start Date (Unix Timestamp):", convertToUnixTimestamp(date));
   };
 
   const handleEndDateChange = (e) => {
     const date = e.target.value;
     setEndDate(date);
-    console.log("End Date (Unix Timestamp):", convertToUnixTimestamp(date));
   };
 
   const createIdo = () => {
@@ -172,11 +169,12 @@ function AddProperties() {
               }}
               required
             />
+            <button onClick={() => console.log("Image uploaded")}>Save Changes</button>
           </div>
 
           <div className="input-box input-box2">
             <form onSubmit={handleSubmit}>
-              <span>
+              <span className="coordinates">
                 <h1>Title:</h1>
                 <input
                   type="text"
@@ -187,7 +185,7 @@ function AddProperties() {
                 />
               </span>
 
-              <span>
+              <span className="coordinates">
                 <h1>Select property:</h1>
                 <select
                   value={description}
@@ -200,7 +198,7 @@ function AddProperties() {
                 </select>
               </span>
 
-              <span>
+              <span className="coordinates">
                 <h1>Price:</h1>
                 <input
                   type="number"
@@ -211,7 +209,7 @@ function AddProperties() {
                 />
               </span>
 
-              <span>
+              <span className="coordinates">
                 <h1>Start Date:</h1>
                 <input
                   type="date"
@@ -221,7 +219,7 @@ function AddProperties() {
                 />
               </span>
 
-              <span>
+              <span className="coordinates">
                 <h1>End Date:</h1>
                 <input
                   type="date"
@@ -233,7 +231,7 @@ function AddProperties() {
 
               <div className="map-wrapper">
                 <h1>Fix Property Location on map:</h1>
-                <div ref={mapRef} className="map" style={{ height: '300px', width: '100%', maxWidth: '100%' }}></div>
+                <div ref={mapRef} className="map" style={{ height: '400px', width: '100%' }}></div>
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
