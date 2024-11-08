@@ -75,6 +75,12 @@ function AddProperties() {
     };
   }, []);
 
+  useEffect(() => {
+    if (mapInstanceRef.current) {
+      mapInstanceRef.current.invalidateSize();
+    }
+  }, [mapInstanceRef.current]);
+
   const convertToUnixTimestamp = (dateString) => {
     return Math.floor(new Date(dateString).getTime() / 1000);
   };
@@ -229,9 +235,9 @@ function AddProperties() {
                 />
               </span>
 
-              <div className="map-wrapper">
+              <div className="coordinates">
                 <h1>Fix Property Location on map:</h1>
-                <div ref={mapRef} className="map" style={{ height: '400px', width: '100%' }}></div>
+                <div ref={mapRef} style={{ height: '300px', width: '100%', maxWidth: '100%' }}></div>
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
