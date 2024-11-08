@@ -237,7 +237,7 @@ function AddProperties() {
 
               <div className="coordinates">
                 <h1>Fix Property Location on map:</h1>
-                {/* <div ref={mapRef} style={{ height: '300px', width: '100%', maxWidth: '100%' }}></div> */}
+                <span ref={mapRef} style={{ display: 'block', height: '300px', width: '100%', maxWidth: '100%' }}></span>
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
