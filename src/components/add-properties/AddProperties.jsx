@@ -23,6 +23,7 @@ function AddProperties() {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const searchControlRef = useRef(null);
+  const markerRef = useRef(null);
 
   const currentAccount = useCurrentAccount();
   const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
@@ -57,11 +58,13 @@ function AddProperties() {
         const longitude = e.latlng.lng.toFixed(6);
         setLat(latitude);
         setLng(longitude);
+        updateMarker(e.latlng);
       });
 
       mapInstanceRef.current.on('geosearch/showlocation', function(e) {
         setLat(e.location.y.toFixed(6));
         setLng(e.location.x.toFixed(6));
+        updateMarker(e.location);
       });
     }
 
@@ -81,6 +84,14 @@ function AddProperties() {
       mapInstanceRef.current.invalidateSize();
     }
   }, [isMapModalOpen]);
+
+  const updateMarker = (latlng) => {
+    if (markerRef.current) {
+      markerRef.current.setLatLng(latlng);
+    } else {
+      markerRef.current = L.marker(latlng).addTo(mapInstanceRef.current);
+    }
+  };
 
   const convertToUnixTimestamp = (dateString) => {
     return Math.floor(new Date(dateString).getTime() / 1000);
