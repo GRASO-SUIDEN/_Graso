@@ -19,6 +19,7 @@ function AddProperties() {
   const [endDate, setEndDate] = useState("");
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const searchControlRef = useRef(null);
@@ -30,7 +31,7 @@ function AddProperties() {
   const { mutate: signAndExecute } = useSignAndExecuteTransaction();
 
   useEffect(() => {
-    if (mapRef.current && !mapInstanceRef.current) {
+    if (isMapModalOpen && mapRef.current && !mapInstanceRef.current) {
       mapInstanceRef.current = L.map(mapRef.current).setView([6.8667, 7.3833], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
@@ -73,13 +74,13 @@ function AddProperties() {
         mapInstanceRef.current = null;
       }
     };
-  }, []);
+  }, [isMapModalOpen]);
 
   useEffect(() => {
     if (mapInstanceRef.current) {
       mapInstanceRef.current.invalidateSize();
     }
-  }, [mapInstanceRef.current]);
+  }, [isMapModalOpen]);
 
   const convertToUnixTimestamp = (dateString) => {
     return Math.floor(new Date(dateString).getTime() / 1000);
@@ -236,8 +237,8 @@ function AddProperties() {
               </span>
 
               <div className="coordinates">
-                <h1>Fix Property Location on map:</h1>
-                <span ref={mapRef} style={{ display: 'block', height: '300px', width: '100%', maxWidth: '100%' }}></span>
+                <h1>Property Location:</h1>
+                <button type="button" onClick={() => setIsMapModalOpen(true)}>Open Map</button>
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
@@ -269,6 +270,15 @@ function AddProperties() {
           </div>
         </div>
       </div>
+
+      {isMapModalOpen && (
+        <div className="map-modal">
+          <div className="map-modal-content">
+            <button onClick={() => setIsMapModalOpen(false)}>Close Map</button>
+            <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
