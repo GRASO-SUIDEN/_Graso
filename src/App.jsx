@@ -12,6 +12,7 @@ import AboutUs from "./pages/about-us/AboutUs";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
 import ExplorePage from "./pages/explore-page/ExplorePage";
 import { PropertiesProvider } from "./contexts/PropertyContext";
+import InvestmentPage from "./components/explore/InvestmentPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,7 @@ function App() {
               <Route path="profile-settings" element={<ProfileSettings />} />
             </Route>
           </Route>
+          <Route path="demo" element={<InvestmentPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,7 +1,5 @@
-import { useProfile } from "../../contexts/ProfileContext";
 import "./profile.css";
 function Profile() {
-  const { userProfile } = useProfile();
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
