@@ -20,4 +20,12 @@ progress {
 .swiper-button-next,
 .swiper-button-prev {
   color: #24c2a5 !important;
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+  }
 }

@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Timer from "../Timer";
 import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
+import { Link, useLocation } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -14,8 +13,6 @@ export default function ExploreCard({ data }) {
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const modalRef = useRef(null);
   const location = useLocation();
-  const currentAccount = useCurrentAccount();
-  const navigate = useNavigate();
 
   useEffect(() => {
     setIsHome(location.pathname === "/");

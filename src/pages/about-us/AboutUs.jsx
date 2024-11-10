@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import AOS from "aos";
-import { FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Mousewheel } from "swiper/modules";
 import Navbar from "../../components/navbar/NavBar";
@@ -50,7 +49,7 @@ const AboutUs = () => {
       twitter: "https://x.com/jonathan_ify?t=Daab5uN71i3RdBv3rHKPAw&s=09",
       github: "https://github.com/datadudejon",
     },
-    
+
     {
       name: " Madukairo Enenike ",
       role: "Marketing Lead",
@@ -60,7 +59,7 @@ const AboutUs = () => {
       twitter: "https://x.com/emenike_sage",
       github: "#",
     },
-    
+
     {
       name: " Kosisochukwu Moronu ",
       role: " Research Analyst",
@@ -71,7 +70,7 @@ const AboutUs = () => {
       twitter: "https://x.com/Kosiengine",
       github: "https://github.com/Kosisochukwu244",
     },
-    
+
     {
       name: " Charles Lemuel   ",
       role: "UI/UX designer",
@@ -137,7 +136,7 @@ const AboutUs = () => {
       twitter: "https://x.com/Xan_dra27?t=h9KVYDU5luuZdZEeOSfViA&s=08",
       github: "https://github.com/Alex-dev63",
     },
-    
+
     {
       name: " Nwachukwu Daniel Chigozirim ",
       role: "Smart Contract Developer",
@@ -156,7 +155,6 @@ const AboutUs = () => {
       twitter: "https://x.com/Anthonyslav1",
       github: "https://github.com/Anthonyslav1",
     },
-    
   ];
 
   return (
@@ -178,29 +176,18 @@ const AboutUs = () => {
           <div className="about-us-banner-img">
             <div className="image2">
               <div className="shadow top">
-                <img
-                  src={image.topimg1}
-                  alt="image"
-                />
+                <img src={image.topimg1} alt="image" />
               </div>
               <div className="shadow bottom">
-                <img
-                  src={image.bottomimg1}
-                  alt="image"
-                />
+                <img src={image.bottomimg1} alt="image" />
               </div>
             </div>
             <div className="image1">
               <div className="shadow top">
-                <img
-                  src={image.topimg2}
-                  alt="image"
-                />
+                <img src={image.topimg2} alt="image" />
               </div>
               <div className="shadow bottom">
-                <img
-                  src={image.bottomimg2}                  alt="image"
-                />
+                <img src={image.bottomimg2} alt="image" />
               </div>
             </div>
           </div>
@@ -210,16 +197,10 @@ const AboutUs = () => {
         <div className="mission">
           <div className="image">
             <div className="back-img">
-              <img
-                src={image.missionimgbig}
-                alt="image"
-              />
+              <img src={image.missionimgbig} alt="image" />
             </div>
             <div className="top-image">
-              <img
-                src={image.missionimgsml}
-                alt="image"
-              />
+              <img src={image.missionimgsml} alt="image" />
             </div>
           </div>
           <div className="text">
@@ -260,16 +241,25 @@ const AboutUs = () => {
           <div className="swiper-container mt-4">
             <Swiper
               modules={[Navigation, Autoplay, Mousewheel]}
-              navigation
+              navigation={true}
               autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
               }}
               spaceBetween={30}
-              slidesPerView={1}
+              breakpoints={{
+                768: {
+                  slidesPerView: 1,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  navigation: true,
+                },
+              }}
               centeredSlides={true}
               grabCursor={true}
               mousewheel={false}
+              loop={true}
             >
               {teamMembers.map((member, index) => (
                 <SwiperSlide key={index} className="swiper-slide-centered">
@@ -288,7 +278,7 @@ const AboutUs = () => {
         </div>
 
         {/* Contact Section */}
-       <Contact/>
+        <Contact />
       </div>
       <JoinUs />
       <Footer />
