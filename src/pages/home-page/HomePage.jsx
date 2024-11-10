@@ -10,6 +10,7 @@ import JoinUs from "../../components/JoinUs";
 import { FaArrowRight } from "../../utils/icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { image } from "../../components/images";
 
 const HomePage = () => {
   useEffect(() => {
@@ -33,7 +34,7 @@ const HomePage = () => {
           </span>
           <span className="top-card">
             <img
-              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-47.jpg?raw=true"
+              src={image.topimg}
               alt="top-card"
             />
             <h2>HOLA</h2>
@@ -41,8 +42,7 @@ const HomePage = () => {
           </span>
           <span className="bottom-card">
             <img
-              src="https://github.com/chiscookeke11/Test-pagea/blob/main/photo_2024-09-23_03-03-36.jpg?raw=true"
-              alt="bottom-card"
+              src={image.bottomimg}              alt="bottom-card"
             />
             <h2>STREAM</h2>
             <h5>Delta, Nigeria</h5>

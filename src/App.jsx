@@ -13,6 +13,8 @@ import PageNotFound from "./pages/page-not-found/PageNotFound";
 import ExplorePage from "./pages/explore-page/ExplorePage";
 import { PropertiesProvider } from "./contexts/PropertyContext";
 import InvestmentPage from "./components/explore/InvestmentPage";
+import ScrollToTop from "./scroll";
+import MapPage from "./components/explore/MapPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,12 +28,15 @@ function App() {
   }, []);
 
   return (
+   
     <PropertiesProvider>
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route index element={loading ? <LoadingPage /> : <HomePage />} />
           <Route path="explore" element={<ExplorePage />} />
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="/map/:id" element={<MapPage />} />
           <Route path="app" element={<AppLayout />}>
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />

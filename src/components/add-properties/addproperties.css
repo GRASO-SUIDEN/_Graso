@@ -3,8 +3,6 @@
   height: 100vh;
   background: #e5e7eb;
   width: 100%;
-  padding-bottom:  50px;
-  height: 100vh;
 }
 .add-properties {
   animation: rise 0.2s linear forwards;
@@ -38,14 +36,19 @@
   color: #24c2a5;
 }
 .input-container {
-  padding: 40px 20px;
+  padding: 40px 10px;
   width: 100%;
   display: flex;
+  min-height: 100vh;
+  height: auto;
   /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
   height: auto;
+  background-color: #e5e7eb;
+  margin: 0;
+  min-width: 350px;
 }
 .input-box {
   background-color: #fff;
@@ -140,6 +143,78 @@
   border: none;
   text-align: left;
 }
-.input-box2 span {
+.input-box2 span, .coordinates {
   margin: 10px 0;
+}
+
+.coordinates {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.coordinates input,
+.coordinates select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.coordinates-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.coordinates-input .coordinates {
+  flex: 1 1 45%;
+  min-width: 150px;
+}
+.map-modal-content button{
+  font-family: "League Spartan", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 24px;
+  max-width: 140px;
+  text-align: center;
+  background-color: red;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+@media (max-width: 768px) {
+  .coordinates-input .coordinates {
+    flex: 1 1 100%;
+  }
+}
+.map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.map-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.map-modal-content button {
+  margin-bottom: 10px;
+}
+
+
+.leaflet-container {
+  max-width: 100%;
+  height: 300px !important;
 }

@@ -23,7 +23,7 @@ function Footer() {
               <p>Discord</p>
               <p>Telegram</p>
               <p>WhatsApp</p>
-              <p>Twitter</p>
+              <a href="https://x.com/GrasoOrg" target="_blank"   rel="noopener noreferrer" > <p>Twitter</p></a>
             </div>
           </div>
 

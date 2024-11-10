@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const PropertiesContext = createContext();
-const BASE_URL = "https://web-production-6417.up.railway.app";
+const BASE_URL = "http://web-production-6417.up.railway.app";
 
 function PropertiesProvider({ children }) {
   const [properties, setProperties] = useState();
