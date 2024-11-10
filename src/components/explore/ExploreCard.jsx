@@ -2,10 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import Timer from "../Timer";
 import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import { Link, useLocation } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 export default function ExploreCard({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,12 +13,10 @@ export default function ExploreCard({ data }) {
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const modalRef = useRef(null);
   const location = useLocation();
-  const currentAccount = useCurrentAccount();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    setIsHome(location.pathname === '/');
-  }, [location.pathname])
+    setIsHome(location.pathname === "/");
+  }, [location.pathname]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -56,7 +53,11 @@ export default function ExploreCard({ data }) {
     <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h2rem] space-y-1 min-w-[250px]">
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
         <div className="p-4 w-full h-full flex flex-col justify-between">
-          <img src={landsite} className="w-full h-40 object-cover" alt={data.name} />
+          <img
+            src={landsite}
+            className="w-full h-40 object-cover"
+            alt={data.name}
+          />
           <div className="flex-grow">
             <h1 className="font-bold pt-4 text-2xl">{data.name}</h1>
             <h2 className="text-gray-400">{data.location}</h2>
@@ -109,7 +110,6 @@ export default function ExploreCard({ data }) {
               </button>
             </Link>
           </div>
-         
         </div>
       </div>
       <Timer />
@@ -123,7 +123,11 @@ export default function ExploreCard({ data }) {
             style={{ pointerEvents: "auto" }}
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Investment</h2>
-            <img src={landsite} alt="Property" className="w-full h-40 object-cover rounded-lg mb-4" />
+            <img
+              src={landsite}
+              alt="Property"
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
 
             {/* Property Details */}
             <div className="space-y-2">
@@ -146,8 +150,13 @@ export default function ExploreCard({ data }) {
               <h3 className="font-bold text-lg">Why Invest?</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
                 <li>High demand in the area for residential properties.</li>
-                <li>Expected rise in property value over the next few years.</li>
-                <li>Environmentally friendly construction with green energy systems.</li>
+                <li>
+                  Expected rise in property value over the next few years.
+                </li>
+                <li>
+                  Environmentally friendly construction with green energy
+                  systems.
+                </li>
               </ul>
             </div>
 
@@ -163,10 +172,14 @@ export default function ExploreCard({ data }) {
                   borderRadius: "4px",
                   border: "1px",
                   outline: "none",
-                  textAlign: "left"
+                  textAlign: "left",
                 }}
               />
-              <img src={sui} alt="Sui" className="w-[1.5rem] h-[1.5rem] absolute right-1 top-[2rem]" />
+              <img
+                src={sui}
+                alt="Sui"
+                className="w-[1.5rem] h-[1.5rem] absolute right-1 top-[2rem]"
+              />
             </span>
 
             {/* Modal Actions */}
@@ -194,7 +207,9 @@ export default function ExploreCard({ data }) {
                 >
                   X
                 </div>
-                {!isHome ? "Investment page still under construction 🏗️" : "Please connect wallet"}
+                {!isHome
+                  ? "Investment page still under construction 🏗️"
+                  : "Please connect wallet"}
               </div>
             )}
           </div>
@@ -211,7 +226,12 @@ export default function ExploreCard({ data }) {
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Location</h2>
             <div className="h-[400px] w-full mb-4">
-              <MapContainer center={[data.coordinates.lat, data.coordinates.lng]} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
+              <MapContainer
+                center={[data.coordinates.lat, data.coordinates.lng]}
+                zoom={13}
+                scrollWheelZoom={false}
+                style={{ height: "100%", width: "100%" }}
+              >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
