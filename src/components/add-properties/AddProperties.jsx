@@ -66,7 +66,7 @@ function AddProperties() {
         updateMarker(e.latlng);
       });
 
-      mapInstanceRef.current.on('geosearch/showlocation', function (e) {
+      mapInstanceRef.current.on('geosearch/showlocation', function(e) {
         setLat(e.location.y.toFixed(6));
         setLng(e.location.x.toFixed(6));
         updateMarker(e.location);
@@ -114,7 +114,7 @@ function AddProperties() {
 
   const createIdo = () => {
     let isFractional;
-    if (file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === "") {
+    if(file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === ""){
       return;
     }
 
@@ -271,8 +271,7 @@ function AddProperties() {
 
               <div className="coordinates">
                 <h1>Property Location:</h1>
-                <button className="open-map" type="button" onClick={() => setIsMapModalOpen(true)}>Open Map</button>
-
+                <button type="button" onClick={() => setIsMapModalOpen(true)}>Open Map</button>
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
