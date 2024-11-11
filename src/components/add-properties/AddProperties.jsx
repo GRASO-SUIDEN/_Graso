@@ -1,24 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Transaction } from "@mysten/sui/transactions";
-import { useCurrentAccount, useSignAndExecuteTransaction, useSuiClient } from "@mysten/dapp-kit";
+import {
+  useCurrentAccount,
+  useSignAndExecuteTransaction,
+  useSuiClient,
+} from "@mysten/dapp-kit";
 import { useNetworkVariable } from "../../utils/networkConfig";
-import { useProperties } from "../../contexts/PropertyContext";
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import { OpenStreetMapProvider, GeoSearchControl } from 'leaflet-geosearch';
-import 'leaflet-geosearch/dist/geosearch.css';
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
+import "leaflet-geosearch/dist/geosearch.css";
 import "./addproperties.css";
 
 function AddProperties() {
-  const { addProperty } = useProperties();
   const [description, setDescription] = useState("");
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [lat, setLat] = useState('');
-  const [lng, setLng] = useState('');
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -33,22 +35,25 @@ function AddProperties() {
 
   useEffect(() => {
     if (isMapModalOpen && mapRef.current && !mapInstanceRef.current) {
-      mapInstanceRef.current = L.map(mapRef.current).setView([6.8667, 7.3833], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+      mapInstanceRef.current = L.map(mapRef.current).setView(
+        [6.8667, 7.3833],
+        13
+      );
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
       }).addTo(mapInstanceRef.current);
 
       const provider = new OpenStreetMapProvider();
       searchControlRef.current = new GeoSearchControl({
         provider: provider,
-        style: 'bar',
+        style: "bar",
         showMarker: true,
         showPopup: false,
         autoClose: true,
         retainZoomLevel: false,
         animateZoom: true,
         keepResult: true,
-        searchLabel: 'Search for location'
+        searchLabel: "Search for location",
       });
 
       mapInstanceRef.current.addControl(searchControlRef.current);
@@ -124,8 +129,12 @@ function AddProperties() {
     tx.moveCall({
       target: `${realEstateICOPackageId}::real_estate_ido::create_ido`,
       arguments: [
-        tx.pure.address('0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8'),
-        tx.pure.address('0x8116b754b460db1c881bc9a98601a825a216d2ec07337ce27de3e23dc75a0a87'),
+        tx.pure.address(
+          "0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8"
+        ),
+        tx.pure.address(
+          "0x8116b754b460db1c881bc9a98601a825a216d2ec07337ce27de3e23dc75a0a87"
+        ),
         tx.pure.string(title),
         tx.pure.string(file.name),
         tx.pure.string(description),
@@ -137,7 +146,7 @@ function AddProperties() {
         tx.pure.string(`on sui`),
         tx.pure.string(lat),
         tx.pure.string(lng),
-      ]
+      ],
     });
 
     tx.setGasBudget(20000000);
@@ -152,7 +161,7 @@ function AddProperties() {
         },
       }
     );
-  }
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -173,7 +182,7 @@ function AddProperties() {
         <div className="input-container">
           <div className="input-box input-box1">
             <h1>
-              Upload your property image here, please click "Upload Image"
+              Upload your property image here, please click {"Upload Image"}
               Button.
             </h1>
             <input
@@ -187,7 +196,9 @@ function AddProperties() {
               }}
               required
             />
-            <button onClick={() => console.log("Image uploaded")}>Save Changes</button>
+            <button onClick={() => console.log("Image uploaded")}>
+              Save Changes
+            </button>
           </div>
 
           <div className="input-box input-box2">
@@ -298,7 +309,7 @@ function AddProperties() {
         <div className="map-modal">
           <div className="map-modal-content">
             <button onClick={() => setIsMapModalOpen(false)}>Close Map</button>
-            <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
+            <div ref={mapRef} style={{ height: "400px", width: "100%" }}></div>
           </div>
         </div>
       )}

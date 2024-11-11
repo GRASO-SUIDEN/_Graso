@@ -32,7 +32,11 @@ const ExploreCardModal = ({ data, onClose }) => {
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[90%] overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">{data?.name} - Investment</h2>
-        <img src={landsite} alt="Property" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <img
+          src={landsite}
+          alt="Property"
+          className="w-full h-40 object-cover rounded-lg mb-4"
+        />
 
         {/* Property Details */}
         <div className="space-y-2">
@@ -56,7 +60,9 @@ const ExploreCardModal = ({ data, onClose }) => {
           <ul className="list-disc list-inside text-gray-600 space-y-1">
             <li>High demand in the area for residential properties.</li>
             <li>Expected rise in property value over the next few years.</li>
-            <li>Environmentally friendly construction with green energy systems.</li>
+            <li>
+              Environmentally friendly construction with green energy systems.
+            </li>
           </ul>
         </div>
 
