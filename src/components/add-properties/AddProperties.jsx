@@ -53,7 +53,7 @@ function AddProperties() {
 
       mapInstanceRef.current.addControl(searchControlRef.current);
 
-      mapInstanceRef.current.on('click', function(e) {
+      mapInstanceRef.current.on('click', function (e) {
         const latitude = e.latlng.lat.toFixed(6);
         const longitude = e.latlng.lng.toFixed(6);
         setLat(latitude);
@@ -61,7 +61,7 @@ function AddProperties() {
         updateMarker(e.latlng);
       });
 
-      mapInstanceRef.current.on('geosearch/showlocation', function(e) {
+      mapInstanceRef.current.on('geosearch/showlocation', function (e) {
         setLat(e.location.y.toFixed(6));
         setLng(e.location.x.toFixed(6));
         updateMarker(e.location);
@@ -109,18 +109,18 @@ function AddProperties() {
 
   const createIdo = () => {
     let isFractional;
-    if(file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === ""){
+    if (file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === "") {
       return;
     }
 
-    if(description === "land"){
+    if (description === "land") {
       isFractional = false;
     } else {
       isFractional = true;
     }
 
     const tx = new Transaction();
-    
+
     tx.moveCall({
       target: `${realEstateICOPackageId}::real_estate_ido::create_ido`,
       arguments: [
@@ -147,7 +147,7 @@ function AddProperties() {
         transaction: tx,
       },
       {
-        onSuccess: async() => {
+        onSuccess: async () => {
           console.log("Property added");
         },
       }
@@ -221,11 +221,22 @@ function AddProperties() {
                 <input
                   type="number"
                   placeholder="Price"
-                  value={price}
-                  onChange={(e) => setPrice(Number(e.target.value))}
+                  value={price || ""}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    if (value > 0 || e.target.value === "") {
+                      setPrice(e.target.value === "" ? "" : value);
+                    }
+                  }}
                   required
                 />
               </span>
+
+              <span className="coordinates">
+                <h1>Description</h1>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                </span>
+
 
               <span className="coordinates">
                 <h1>Start Date:</h1>
@@ -249,7 +260,8 @@ function AddProperties() {
 
               <div className="coordinates">
                 <h1>Property Location:</h1>
-                <button type="button" onClick={() => setIsMapModalOpen(true)}>Open Map</button>
+                <button className="open-map" type="button" onClick={() => setIsMapModalOpen(true)}>Open Map</button>
+
                 <div className="coordinates-input">
                   <div className="coordinates">
                     <label htmlFor="latitude">Latitude</label>
