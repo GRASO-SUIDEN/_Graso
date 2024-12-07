@@ -20,8 +20,9 @@ export const clientTransactions = {
     ) => {
         const transaction = new Transaction();
         transaction.moveCall({
-            target: `${PACKAGE_ID}::sui_den::create_property`,
-            arguments: [transaction.object(MANAGER_ID),
+            target: `${PACKAGE_ID}::real_estate_ido::create_property`,
+            arguments: [
+                transaction.object(MANAGER_ID),
                 transaction.pure.string(title),
                 transaction.pure.string(description),
                 transaction.pure.string(propertyType),
@@ -40,7 +41,7 @@ export const clientTransactions = {
         const transaction = new Transaction();
         const [coin] = transaction.splitCoins(transaction.gas, [transaction.pure.u64(amount)]);
         transaction.moveCall({
-            target: `${PACKAGE_ID}::sui_den::contribute`,
+            target: `${PACKAGE_ID}::real_estate_ido::contribute`,
             arguments: [transaction.object(propertyInfo), coin, transaction.object("0x6")]
         });
 
@@ -50,7 +51,7 @@ export const clientTransactions = {
     withdraw: (propertyId: string) => {
         const transaction = new Transaction();
         transaction.moveCall({
-            target: `${PACKAGE_ID}::sui_den::withdraw`,
+            target: `${PACKAGE_ID}::real_estate_ido::withdraw`,
             arguments: [transaction.object(propertyId), transaction.object("0x6")]
         });
 
@@ -60,7 +61,7 @@ export const clientTransactions = {
     finalizePropertyCampaign: (propertyId: string) => {
         const transaction = new Transaction();
         transaction.moveCall({
-            target: `${PACKAGE_ID}::sui_den::finalize_property_campaign`,
+            target: `${PACKAGE_ID}::real_estate_ido::finalize_property_campaign`,
             arguments: [
                 transaction.object(propertyId),
                 transaction.object("0x6")
@@ -76,10 +77,10 @@ export const clientTransactions = {
 export class GrasoQueries {
     private keypair: Ed25519Keypair;
     private client: SuiClient;
-    private Address;
+    private Address: any;
 
     constructor() {
-        const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
+        const privateKey = import.meta.env.VITE_PRIVATE_KEY;
         if (!privateKey) {
             throw new Error("Please set your private key in a .env file");
         }
@@ -129,7 +130,7 @@ export class GrasoQueries {
     async getPropertyInfo(propertyId: string) {
         const txn = new Transaction();
         txn.moveCall({
-            target: `${PACKAGE_ID}::sui_den::get_property_info`,
+            target: `${PACKAGE_ID}::real_estate_ido::get_property_info`,
             arguments: [txn.object(propertyId)],
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
@@ -156,7 +157,7 @@ export class GrasoQueries {
     async getContributors(propertyId: string) {
         const txn = new Transaction();
         txn.moveCall({
-            target: `${PACKAGE_ID}::sui_den::get_contributors`,
+            target: `${PACKAGE_ID}::real_estate_ido::get_contributors`,
             arguments: [txn.object(propertyId)],
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
@@ -179,7 +180,7 @@ export class GrasoQueries {
     async getAllProperties(){
         const txn = new Transaction();
         txn.moveCall({
-            target: `${PACKAGE_ID}::sui_den::get_all_properties`,
+            target: `${PACKAGE_ID}::real_estate_ido::get_all_properties`,
             arguments: [txn.object(MANAGER_ID)],
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
@@ -204,7 +205,7 @@ export class GrasoQueries {
     async isContributor(propertyId: string, address: string) {
         const txn = new Transaction();
         txn.moveCall({
-            target: `${PACKAGE_ID}::sui_den::is_contributor`,
+            target: `${PACKAGE_ID}::real_estate_ido::is_contributor`,
             arguments: [txn.object(propertyId), txn.pure.address(address)],
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
@@ -221,7 +222,7 @@ export class GrasoQueries {
         if(projectInfo && Number(projectInfo.deadline) * 1000 < Date.now() && projectInfo.isActive) {
             const txn = new Transaction();
             txn.moveCall({
-                target: `${PACKAGE_ID}::sui_den::finalize_property_campaign`,
+                target: `${PACKAGE_ID}::real_estate_ido::finalize_property_campaign`,
                 arguments: [
                     txn.object(propertyId),
                     txn.object("0x6")

@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useSignAndExecuteTransaction } from '@mysten/dapp-kit';
+import { createProperty } from "../../utils";
+import { useNavigate } from "react-router-dom";
 import { Transaction } from "@mysten/sui/transactions";
 import {
   useCurrentAccount,
-  useSignAndExecuteTransaction,
   useSuiClient,
 } from "@mysten/dapp-kit";
 import { useNetworkVariable } from "../../utils/networkConfig";
@@ -13,6 +15,9 @@ import "leaflet-geosearch/dist/geosearch.css";
 import "./addproperties.css";
 
 function AddProperties() {
+  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
+  const navigate = useNavigate();
+
   const [description, setDescription] = useState("");
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
@@ -21,17 +26,19 @@ function AddProperties() {
   const [endDate, setEndDate] = useState("");
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
+	const [cid, setCid] = useState("");
+  const [propertytype, setPropertytype] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [_digest, setDigest] = useState('');
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const searchControlRef = useRef(null);
   const markerRef = useRef(null);
+  const inputFile = useRef(null);
+
 
   const currentAccount = useCurrentAccount();
-  const realEstateICOPackageId = useNetworkVariable("realEstateICOPackageId");
-
-  const suiClient = useSuiClient();
-  const { mutate: signAndExecute } = useSignAndExecuteTransaction();
 
   useEffect(() => {
     if (isMapModalOpen && mapRef.current && !mapInstanceRef.current) {
@@ -98,9 +105,7 @@ function AddProperties() {
     }
   };
 
-  const convertToUnixTimestamp = (dateString) => {
-    return Math.floor(new Date(dateString).getTime() / 1000);
-  };
+
 
   const handleStartDateChange = (e) => {
     const date = e.target.value;
@@ -112,61 +117,82 @@ function AddProperties() {
     setEndDate(date);
   };
 
-  const createIdo = () => {
-    let isFractional;
-    if(file === "" || title === "" || price <= 0 || startDate === "" || endDate === "" || description === "" || lat === "" || lng === ""){
-      return;
-    }
+  const uploadFile = async (fileToUpload) => {
+		try {
+			setUploading(true);
+			const formData = new FormData();
+			formData.append("file", fileToUpload, `${fileToUpload.name}`);
+			const request = await fetch("/api/files", {
+				method: "POST",
+				body: formData,
+			});
+			const response = await request.json();
+			console.log(response);
+			setCid(response?.IpfsHash);
+            if (response?.IpfsHash) {
+               setCid(response?.IpfsHash);
+                console.log(response?.IpfsHash);
+            }
+            
+            
+			setUploading(false);
+		} catch (e) {
+			console.log(e);
+			setUploading(false);
+			alert("Trouble uploading file");
+		}
+	};
 
-    if (description === "land") {
-      isFractional = false;
-    } else {
-      isFractional = true;
-    }
+  const handleChange = (e) => {
+		setFile(e.target.files[0]);
+		uploadFile(e.target.files[0]);
+	};
 
-    const tx = new Transaction();
-
-    tx.moveCall({
-      target: `${realEstateICOPackageId}::real_estate_ido::create_ido`,
-      arguments: [
-        tx.pure.address(
-          "0xc07806106468ad7e77577db4f8d0827a46ad1fd43632eb8231f431601620dde8"
-        ),
-        tx.pure.address(
-          "0x8116b754b460db1c881bc9a98601a825a216d2ec07337ce27de3e23dc75a0a87"
-        ),
-        tx.pure.string(title),
-        tx.pure.string(file.name),
-        tx.pure.string(description),
-        tx.pure.u64(price),
-        tx.pure.u64(convertToUnixTimestamp(startDate)),
-        tx.pure.u64(convertToUnixTimestamp(endDate)),
-        tx.pure.bool(isFractional),
-        tx.pure.string(`a ${description} called ${title} valued at ${price}`),
-        tx.pure.string(`on sui`),
-        tx.pure.string(lat),
-        tx.pure.string(lng),
-      ],
-    });
-
-    tx.setGasBudget(20000000);
-
-    signAndExecute(
-      {
-        transaction: tx,
-      },
-      {
-        onSuccess: async () => {
-          console.log("Property added");
-        },
-      }
-    );
-  };
-
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    createIdo();
-  }
+    const deadlineTimestamp = Math.floor(new Date(endDate).getTime() / 1000);
+    console.log({
+      title,
+           description,
+           cid,
+           propertytype,
+           price,
+           deadlineTimestamp,
+           lat,
+           lng
+    });
+    
+    try {
+       
+        const trx = await createProperty(
+           title,
+           description,
+           cid,
+           propertytype,
+           price,
+           deadlineTimestamp,
+           lat,
+           lng
+        );
+
+        signAndExecuteTransaction({
+            transaction: trx,
+            chain: 'sui:testnet',
+        }, {
+            onSuccess: ({digest}) => {
+                console.log("Transaction successful:", digest);
+                navigate('/app/explore-properties');
+                setDigest(digest);
+            },
+            onError: (error) => {
+                console.error('Error creating Project:', error);
+            }
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
 
   return (
     <div className="add-properties-wrapper">
@@ -187,17 +213,16 @@ function AddProperties() {
             </h1>
             <input
               type="file"
+              ref={inputFile}
               className="image-input"
               accept="image/png, image/jpeg"
               placeholder="Supports JPG, PNG, Max file size: 10MB"
-              onChange={(e) => {
-                const file = e.target.files[0];
-                setFile(file);
-              }}
+              onChange={handleChange}
               required
             />
-            <button onClick={() => console.log("Image uploaded")}>
-              Save Changes
+            <button onClick={() => inputFile.current.click()}>
+              
+              {uploading ? "Uploading..." : "Save Changes"}
             </button>
           </div>
 
@@ -218,7 +243,7 @@ function AddProperties() {
                 <h1>Select property:</h1>
                 <select
                   value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(e) => setPropertytype(e.target.value)}
                   required
                 >
                   <option value="">Select Property</option>
@@ -245,7 +270,7 @@ function AddProperties() {
 
               <span className="coordinates">
                 <h1>Description</h1>
-                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                <textarea name="description" id="description" cols="30" rows="5" onChange={(e) => setDescription(e.target.value) }></textarea>
                 </span>
 
 
@@ -298,7 +323,7 @@ function AddProperties() {
                 </div>
               </div>
 
-              <button type="submit">Add Property</button>
+              <button type="submit" onClick={handleSubmit}>Add Property</button>
             </form>
           </div>
         </div>
