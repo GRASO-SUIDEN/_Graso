@@ -1,6 +1,6 @@
 import { pinata } from "../../config";
 
-export async function uploadFile(request: any) {
+export async function uploadFileToPinata(request: any) {
   try {
     const data = await request.formData();
     const file = data.get("file");

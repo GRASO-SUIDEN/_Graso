@@ -1,18 +1,27 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Timer from "../Timer";
-import landsite from "../../assets/landsite.jpg";
+// import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
 import { Link, useLocation } from "react-router-dom";
+import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { contributeToCampaign, getProjectInfo } from "../../utils";
 
 export default function ExploreCard({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
+  const [contributionAmount, setContributionAmount] = useState("");
   const [isHome, setIsHome] = useState(false);
+  const [isContributing, setIsContributing] = useState(false);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const modalRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
+  const [_digest, setDigest] = useState("");
+
 
   useEffect(() => {
     setIsHome(location.pathname === "/");
@@ -31,6 +40,40 @@ export default function ExploreCard({ data }) {
       setIsModalOpen(false);
       setIsMapModalOpen(false);
     }
+  };
+
+  const handleContribute = async (e) => {
+    e.preventDefault();
+    if (!contributionAmount) return;
+
+    setIsContributing(true);
+
+    // Convert contributionAmount to a BigInt
+    const amountInMicroSUI = BigInt(Number(contributionAmount) * 1e9);
+
+    const txn = await contributeToCampaign(
+      data.id,
+      Number(amountInMicroSUI)
+    );
+    signAndExecuteTransaction(
+      {
+        transaction: txn,
+        chain: "sui:testnet",
+      },
+      {
+        onSuccess: async (result) => {
+          const updatedCampaign = await getProjectInfo(data.id);
+          setCampaign(updatedCampaign);
+          setContributionAmount("");
+          setDigest(result.digest);
+          setIsContributing(false);
+          navigate("/dashboard");
+        },
+        onError: (error) => {
+          console.error("Error contributing:", error);
+        },
+      }
+    );
   };
 
   useEffect(() => {
@@ -54,13 +97,16 @@ export default function ExploreCard({ data }) {
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
         <div className="p-4 w-full h-full flex flex-col justify-between">
           <img
-            src={landsite}
+            // src={landsite}
+            src={`https://gateway.pinata.cloud/ipfs/${data.image}?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
             className="w-full h-40 object-cover"
-            alt={data.name}
+            alt={data.title}
           />
           <div className="flex-grow">
-            <h1 className="font-bold pt-4 text-2xl">{data.name}</h1>
-            <h2 className="text-gray-400">{data.location}</h2>
+            <h1 className="font-bold pt-4 text-2xl">{data.title}</h1>
+            <h2 className="text-gray-400">{`Longitude: ${data.longitude}`}</h2>
+            <h2 className="text-gray-400">{`Latitude: ${data.latitude}`}</h2>
+            
             <small className="font-sans leading-1 text-xs font-small">
               {data.description}
             </small>
@@ -74,7 +120,7 @@ export default function ExploreCard({ data }) {
                 <h2>200,000</h2>
               </div>
             </div>
-            <progress max="15" value="7.5" />
+            <progress max="15" value={(Number(data.currentAmount) / Number(data.price)).toFixed(1)} />
           </div>
 
           <button
@@ -112,7 +158,7 @@ export default function ExploreCard({ data }) {
           </div>
         </div>
       </div>
-      <Timer />
+      <Timer dateTimestamp={Number(data.deadline)} />
 
       {/* Investment Modal */}
       {isModalOpen && (
@@ -124,7 +170,7 @@ export default function ExploreCard({ data }) {
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Investment</h2>
             <img
-              src={landsite}
+              src={`https://gateway.pinata.cloud/ipfs/${data.image}?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
               alt="Property"
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
@@ -163,8 +209,12 @@ export default function ExploreCard({ data }) {
             <span className="relative">
               <h1>Price:</h1>
               <input
-                type="text"
+                type="number"
+                value={contributionAmount}
+                onChange={(e) => setContributionAmount(e.target.value)}
                 placeholder="Price"
+                min="0"
+                step="0.01"
                 style={{
                   width: "100%",
                   backgroundColor: "#e5e7eb",
@@ -193,7 +243,8 @@ export default function ExploreCard({ data }) {
 
               <button
                 className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]"
-                onClick={() => setIsAvailable(true)}
+                onClick={handleContribute}
+                disabled={isContributing || !contributionAmount}
               >
                 Confirm Investment
               </button>
@@ -224,10 +275,10 @@ export default function ExploreCard({ data }) {
             className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[auto] overflow-y-auto relative"
             style={{ pointerEvents: "auto" }}
           >
-            <h2 className="text-xl font-bold mb-4">{data.name} - Location</h2>
+            <h2 className="text-xl font-bold mb-4">{data.title} - Location</h2>
             <div className="h-[400px] w-full mb-4">
               <MapContainer
-                center={[data.coordinates.lat, data.coordinates.lng]}
+                center={[data.latitude, data.longitude]}
                 zoom={13}
                 scrollWheelZoom={false}
                 style={{ height: "100%", width: "100%" }}
@@ -236,11 +287,11 @@ export default function ExploreCard({ data }) {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[data.coordinates.lat, data.coordinates.lng]}>
+                <Marker position={[data.latitude, data.longitude]}>
                   <Popup>
-                    {data.name}
+                    {data.title}
                     <br />
-                    {data.location}
+                    {data.latitude} {data.longitude}
                   </Popup>
                 </Marker>
               </MapContainer>

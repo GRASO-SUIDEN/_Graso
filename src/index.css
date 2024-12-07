@@ -24,7 +24,8 @@
 nav a.active {
   color: #24c2a5;
 }
-
+/*  
+*/
 
 .buttonInvest button {
   padding: 0.5rem 1rem !important;  
@@ -36,17 +37,4 @@ nav a.active {
 
 .buttonInvest button:hover  {
   background-color: #1da88d !important; 
-}
-.map_page{
-  width: 100%;
-  background: linear-gradient(135deg, #24c2a5 0%, #0d7a66 80%);
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  min-height:100vh;
-  height: auto;
-}
-.map_page button {
-  align-self: flex-start;
 }

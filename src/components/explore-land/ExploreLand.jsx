@@ -1,8 +1,39 @@
+import { useState, useEffect } from "react";
+import { useCurrentAccount } from "@mysten/dapp-kit";
+import LoadingPage from "../../pages/loading-page/LoadingPage";
 import landsite from "../../assets/landsite.jpg";
 import ExploreCard from "../explore/ExploreCard";
-import { exploreData } from "../../../data/exploreData";
+// import { exploreData } from "../../../data/exploreData";
+import { getAllProperties } from "../../utils";
 
 function ExploreLand() {
+  const currentAccount = useCurrentAccount();
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      if (!currentAccount) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const data = await getAllProperties();
+        setProperties(data);
+      } catch (error) {
+        console.log("error fetching projects", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, [currentAccount]);
+
+  if(loading) {
+    return (
+      <LoadingPage />
+    )
+  }
   return (
     <div
       className="h-full w-full overflow-auto p-5 bg-gray-100 "
@@ -16,7 +47,7 @@ function ExploreLand() {
       </div>
 
       <div className="grid grid-cols-3 2xl:grid-cols-4 justify-items-center gap-3 max-sm:grid-cols-1">
-        {exploreData?.map((data) => (
+        {properties?.map((data) => (
           <ExploreCard data={data} key={data.id} />
         ))}
       </div>
