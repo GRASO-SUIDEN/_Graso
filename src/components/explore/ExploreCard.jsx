@@ -1,18 +1,27 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Timer from "../Timer";
-import landsite from "../../assets/landsite.jpg";
+// import landsite from "../../assets/landsite.jpg";
 import sui from "../../assets/sui.png";
 import { Link, useLocation } from "react-router-dom";
+import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { contributeToCampaign, getProjectInfo } from "../../utils";
 
 export default function ExploreCard({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
+  const [contributionAmount, setContributionAmount] = useState("");
   const [isHome, setIsHome] = useState(false);
+  const [isContributing, setIsContributing] = useState(false);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const modalRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
+  const [_digest, setDigest] = useState("");
+
 
   useEffect(() => {
     setIsHome(location.pathname === "/");
@@ -31,6 +40,40 @@ export default function ExploreCard({ data }) {
       setIsModalOpen(false);
       setIsMapModalOpen(false);
     }
+  };
+
+  const handleContribute = async (e) => {
+    e.preventDefault();
+    if (!contributionAmount) return;
+
+    setIsContributing(true);
+
+    // Convert contributionAmount to a BigInt
+    const amountInMicroSUI = BigInt(Number(contributionAmount) * 1e9);
+
+    const txn = await contributeToCampaign(
+      data.id,
+      Number(amountInMicroSUI)
+    );
+    signAndExecuteTransaction(
+      {
+        transaction: txn,
+        chain: "sui:testnet",
+      },
+      {
+        onSuccess: async (result) => {
+          const updatedCampaign = await getProjectInfo(data.id);
+          setCampaign(updatedCampaign);
+          setContributionAmount("");
+          setDigest(result.digest);
+          setIsContributing(false);
+          navigate("/dashboard");
+        },
+        onError: (error) => {
+          console.error("Error contributing:", error);
+        },
+      }
+    );
   };
 
   useEffect(() => {
@@ -127,7 +170,7 @@ export default function ExploreCard({ data }) {
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Investment</h2>
             <img
-              src={landsite}
+              src={`https://gateway.pinata.cloud/ipfs/${data.image}?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
               alt="Property"
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
@@ -166,8 +209,12 @@ export default function ExploreCard({ data }) {
             <span className="relative">
               <h1>Price:</h1>
               <input
-                type="text"
+                type="number"
+                value={contributionAmount}
+                onChange={(e) => setContributionAmount(e.target.value)}
                 placeholder="Price"
+                min="0"
+                step="0.01"
                 style={{
                   width: "100%",
                   backgroundColor: "#e5e7eb",
@@ -196,7 +243,8 @@ export default function ExploreCard({ data }) {
 
               <button
                 className="px-4 py-2 bg-[#24c2a5] text-white rounded-lg hover:bg-[#1da88d]"
-                onClick={() => setIsAvailable(true)}
+                onClick={handleContribute}
+                disabled={isContributing || !contributionAmount}
               >
                 Confirm Investment
               </button>
