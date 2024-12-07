@@ -1,4 +1,0 @@
-export const DEVNET_MINT_NFT_PACKAGE_ID = "0xNFT";
-export const TESTNET_MINT_NFT_PACKAGE_ID =
-  "0x19a0977def5eb1ebcf39f17781fd0c5e2d9e38156e66ecd9cb6b01328ee1f053";
-export const MAINNET_MINT_NFT_PACKAGE_ID = "0xNFT";
