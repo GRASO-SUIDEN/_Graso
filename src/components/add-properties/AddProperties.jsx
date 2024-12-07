@@ -13,6 +13,7 @@ import "leaflet/dist/leaflet.css";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
 import "leaflet-geosearch/dist/geosearch.css";
 import "./addproperties.css";
+import { uploadFileToPinata } from "../../utils/api/files/route";
 
 function AddProperties() {
   const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
@@ -118,31 +119,33 @@ function AddProperties() {
   };
 
   const uploadFile = async (fileToUpload) => {
-		try {
-			setUploading(true);
-			const formData = new FormData();
-			formData.append("file", fileToUpload, `${fileToUpload.name}`);
-			const request = await fetch("/api/files", {
-				method: "POST",
-				body: formData,
-			});
-			const response = await request.json();
-			console.log(response);
-			setCid(response?.IpfsHash);
-            if (response?.IpfsHash) {
-               setCid(response?.IpfsHash);
-                console.log(response?.IpfsHash);
-            }
-            
-            
-			setUploading(false);
-		} catch (e) {
-			console.log(e);
-			setUploading(false);
-			alert("Trouble uploading file");
-		}
-	};
-
+    try {
+      setUploading(true);
+  
+      // Prepare a simulated request object with formData
+      const formData = new FormData();
+      formData.append("file", fileToUpload, `${fileToUpload.name}`);
+  
+      // Simulating the request object that `uploadFileToPinata` expects
+      const simulatedRequest = {
+        formData: async () => formData, // Create a function returning the formData
+      };
+  
+      // Call the uploadFileToPinata function with the simulated request
+      const response = await uploadFileToPinata(simulatedRequest);
+  
+      if (response?.data?.IpfsHash) {
+        setCid(response?.data?.IpfsHash);
+      } else {
+        console.error("Upload failed", response);
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    } finally {
+      setUploading(false);
+    }
+  };
+  
   const handleChange = (e) => {
 		setFile(e.target.files[0]);
 		uploadFile(e.target.files[0]);
@@ -151,16 +154,6 @@ function AddProperties() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const deadlineTimestamp = Math.floor(new Date(endDate).getTime() / 1000);
-    console.log({
-      title,
-           description,
-           cid,
-           propertytype,
-           price,
-           deadlineTimestamp,
-           lat,
-           lng
-    });
     
     try {
        
@@ -180,7 +173,6 @@ function AddProperties() {
             chain: 'sui:testnet',
         }, {
             onSuccess: ({digest}) => {
-                console.log("Transaction successful:", digest);
                 navigate('/app/explore-properties');
                 setDigest(digest);
             },
