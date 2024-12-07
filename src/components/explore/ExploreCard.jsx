@@ -54,13 +54,16 @@ export default function ExploreCard({ data }) {
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
         <div className="p-4 w-full h-full flex flex-col justify-between">
           <img
-            src={landsite}
+            // src={landsite}
+            src={`https://gateway.pinata.cloud/ipfs/${data.image}?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
             className="w-full h-40 object-cover"
-            alt={data.name}
+            alt={data.title}
           />
           <div className="flex-grow">
-            <h1 className="font-bold pt-4 text-2xl">{data.name}</h1>
-            <h2 className="text-gray-400">{data.location}</h2>
+            <h1 className="font-bold pt-4 text-2xl">{data.title}</h1>
+            <h2 className="text-gray-400">{`Longitude: ${data.longitude}`}</h2>
+            <h2 className="text-gray-400">{`Latitude: ${data.latitude}`}</h2>
+            
             <small className="font-sans leading-1 text-xs font-small">
               {data.description}
             </small>
@@ -74,7 +77,7 @@ export default function ExploreCard({ data }) {
                 <h2>200,000</h2>
               </div>
             </div>
-            <progress max="15" value="7.5" />
+            <progress max="15" value={(Number(data.currentAmount) / Number(data.price)).toFixed(1)} />
           </div>
 
           <button
@@ -112,7 +115,7 @@ export default function ExploreCard({ data }) {
           </div>
         </div>
       </div>
-      <Timer />
+      <Timer dateTimestamp={Number(data.deadline)} />
 
       {/* Investment Modal */}
       {isModalOpen && (
@@ -224,10 +227,10 @@ export default function ExploreCard({ data }) {
             className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md h-[auto] overflow-y-auto relative"
             style={{ pointerEvents: "auto" }}
           >
-            <h2 className="text-xl font-bold mb-4">{data.name} - Location</h2>
+            <h2 className="text-xl font-bold mb-4">{data.title} - Location</h2>
             <div className="h-[400px] w-full mb-4">
               <MapContainer
-                center={[data.coordinates.lat, data.coordinates.lng]}
+                center={[data.latitude, data.longitude]}
                 zoom={13}
                 scrollWheelZoom={false}
                 style={{ height: "100%", width: "100%" }}
@@ -236,11 +239,11 @@ export default function ExploreCard({ data }) {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[data.coordinates.lat, data.coordinates.lng]}>
+                <Marker position={[data.latitude, data.longitude]}>
                   <Popup>
-                    {data.name}
+                    {data.title}
                     <br />
-                    {data.location}
+                    {data.latitude} {data.longitude}
                   </Popup>
                 </Marker>
               </MapContainer>

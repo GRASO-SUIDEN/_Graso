@@ -17,14 +17,14 @@ export default function MapPage() {
         >
           Back
         </button>
-        <h1 className="text-2xl text-white font-bold mb-4">{mapData.name} - Location</h1>
+        <h1 className="text-2xl text-white font-bold mb-4">{mapData.title} - Location</h1>
         <div className="h-[calc(100vh-100px)] w-full">
-          <MapContainer center={[mapData.coordinates.lat, mapData.coordinates.lng]} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
+          <MapContainer center={[mapData.latitude, mapData.longitude]} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[mapData.coordinates.lat, mapData.coordinates.lng]}>
+            <Marker position={[mapData.latitude, mapData.longitude]}>
               <Popup>
                 {mapData.name}
                 <br />

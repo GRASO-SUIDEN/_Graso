@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { FaStopwatch } from "react-icons/fa6";
 
-const Timer = () => {
+const Timer = ({ dateTimestamp }) => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
   const [timerSeconds, setTimerSeconds] = useState("00");
 
-  let interval = useRef();
-  const startTimer = () => {
-    const countdownDate = new Date(" November 25, 2024 00:00:00").getTime();
+  const intervalRef = useRef(null);
 
-    interval = setInterval(() => {
+  const startTimer = () => {
+    const countdownDate = new Date(dateTimestamp * 1000).getTime();
+
+    intervalRef.current = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
+
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -22,19 +24,29 @@ const Timer = () => {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       if (distance < 0) {
-        //stop our timer
-        clearInterval(interval.current);
+        // Stop the timer when the countdown is complete
+        clearInterval(intervalRef.current);
+        setTimerDays("00");
+        setTimerHours("00");
+        setTimerMinutes("00");
+        setTimerSeconds("00");
       } else {
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
+        // Update the timer
+        setTimerDays(days < 10 ? `0${days}` : days);
+        setTimerHours(hours < 10 ? `0${hours}` : hours);
+        setTimerMinutes(minutes < 10 ? `0${minutes}` : minutes);
+        setTimerSeconds(seconds < 10 ? `0${seconds}` : seconds);
       }
     }, 1000);
   };
+
   useEffect(() => {
-    startTimer();
-  });
+    if (dateTimestamp) {
+      startTimer();
+    }
+    return () => clearInterval(intervalRef.current); // Cleanup the interval on unmount
+  }, [dateTimestamp]);
+
   return (
     <div className="w-full flex justify-around items-center p-1">
       <div>
@@ -42,22 +54,10 @@ const Timer = () => {
       </div>
       <div className="flex justify-center items-center space-x-2 text-white font-semibold">
         <FaStopwatch />
-        <span>
-          {timerDays < 10 ? "0" : ""}
-          {timerDays}D
-        </span>
-        <span>
-          {timerHours < 10 ? "0" : ""}
-          {timerHours}H
-        </span>
-        <span>
-          {timerMinutes < 10 ? "0" : ""}
-          {timerMinutes}M
-        </span>
-        <span>
-          {timerSeconds < 10 ? "0" : ""}
-          {timerSeconds}S
-        </span>
+        <span>{timerDays}D</span>
+        <span>{timerHours}H</span>
+        <span>{timerMinutes}M</span>
+        <span>{timerSeconds}S</span>
       </div>
     </div>
   );
