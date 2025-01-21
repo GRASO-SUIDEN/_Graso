@@ -5,7 +5,7 @@ import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";
 import { SuiClient, getFullnodeUrl } from "@mysten/sui/client";
 import { decodeSuiPrivateKey } from "@mysten/sui/cryptography";
 
-const { PACKAGE_ID, MANAGER_ID } = contractAddresses;
+const { PACKAGE_ID, MANAGER_ID, TREASURY_CAP } = contractAddresses;
 
 export const clientTransactions = {
     createProperty: (
@@ -42,7 +42,7 @@ export const clientTransactions = {
         const [coin] = transaction.splitCoins(transaction.gas, [transaction.pure.u64(amount)]);
         transaction.moveCall({
             target: `${PACKAGE_ID}::real_estate_ido::contribute`,
-            arguments: [transaction.object(propertyInfo), coin, transaction.object("0x6")]
+            arguments: [transaction.object(propertyInfo), coin, transaction.object("0x6"), transaction.object(TREASURY_CAP)]
         });
 
         return transaction;
