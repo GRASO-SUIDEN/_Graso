@@ -16,6 +16,7 @@ export default function ExploreCard({ data }) {
   const [isHome, setIsHome] = useState(false);
   const [isContributing, setIsContributing] = useState(false);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+  const [isShowingFullDescription, setIsShowingFullDescription] = useState(false);
   const modalRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -92,6 +93,12 @@ export default function ExploreCard({ data }) {
     };
   }, [isModalOpen, isMapModalOpen]);
 
+  const truncateDescription = (text) => {
+    if (!text) return '';
+    if (text.length <= 100) return text;
+    return text.slice(0, 100) + '...';
+  };
+
   return (
     <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h2rem] space-y-1 min-w-[250px]">
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
@@ -107,9 +114,39 @@ export default function ExploreCard({ data }) {
             <h2 className="text-gray-400">{`Longitude: ${data.longitude}`}</h2>
             <h2 className="text-gray-400">{`Latitude: ${data.latitude}`}</h2>
             
-            <small className="font-sans leading-1 text-xs font-small">
-              {data.description}
-            </small>
+            <div className="relative">
+              <div className={`relative ${isShowingFullDescription ? '' : 'h-[90px]'} overflow-hidden`}>
+                <small className="font-sans leading-1 text-xs font-small">
+                  {truncateDescription(data.description)}
+                </small>
+                {data.description.length > 100 && (
+                  <button 
+                    onClick={() => setIsShowingFullDescription(!isShowingFullDescription)}
+                    className="text-[#24c2a5] text-xs hover:underline ml-1"
+                  >
+                    See More
+                  </button>
+                )}
+              </div>
+              
+              {isShowingFullDescription && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="bg-white p-6 rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto">
+                    <small className="font-sans leading-1 text-sm">
+                      {data.description}
+                    </small>
+                    <div className="mt-4 flex justify-end">
+                      <button 
+                        onClick={() => setIsShowingFullDescription(false)}
+                        className="text-[#24c2a5] hover:underline"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="mt-3">
