@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f00946b0-c752-498e-a148-89a04d52a5b2)# GRASO
+# GRASO
 
 Graso is a decentralized platform powered by the Sui Network, providing developers and individual investors access to the real estate market. By leveraging blockchain technology, it ensures transparency, security, and efficiency in property transactions. Supported by the Sui on Campus initiative. [Learn More](https://graso.gitbook.io)
 
@@ -103,7 +103,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Email:** afrotechboss@yahoo.com
 - **GitHub:** [AfroTechBoss](https://github.com/AfroTechBoss)
 - **Twitter:** [@0xAfroTechBoss](https://x.com/0xAfroTechBoss)
-```
+
 
 **Notes:**
 
