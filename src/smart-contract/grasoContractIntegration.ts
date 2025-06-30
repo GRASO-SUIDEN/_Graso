@@ -79,19 +79,19 @@ export class GrasoQueries {
     private client: SuiClient;
     private Address: any;
 
-    constructor() {
-        const privateKey = import.meta.env.VITE_PRIVATE_KEY;
-        if (!privateKey) {
-            throw new Error("Please set your private key in a .env file");
-        }
-        
-        this.keypair = Ed25519Keypair.fromSecretKey(decodeSuiPrivateKey(privateKey).secretKey);
-        this.client = new SuiClient({ url: getFullnodeUrl("testnet") });
-        this.Address = bcs.bytes(32).transform({
-            input: (val: string) => fromHex(val),
-            output: (val) => toHex(val),
-        });
-    }
+    // constructor() {
+    //     const privateKey = import.meta.env.VITE_PRIVATE_KEY;
+    //     if (!privateKey) {
+    //         throw new Error("Please set your private key in a .env file");
+    //     }
+
+    //     this.keypair = Ed25519Keypair.fromSecretKey(decodeSuiPrivateKey(privateKey).secretKey);
+    //     this.client = new SuiClient({ url: getFullnodeUrl("testnet") });
+    //     this.Address = bcs.bytes(32).transform({
+    //         input: (val: string) => fromHex(val),
+    //         output: (val) => toHex(val),
+    //     });
+    // }
 
     private async devInspectTransactionBlock(transaction: Transaction) {
         try {
@@ -161,7 +161,7 @@ export class GrasoQueries {
             arguments: [txn.object(propertyId)],
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
-        
+
         if (returnValues && returnValues[0]) {
             const Contributor = bcs.struct('Contributor', {
                 address: this.Address,
@@ -210,8 +210,8 @@ export class GrasoQueries {
         });
         const returnValues = await this.devInspectTransactionBlock(txn);
 
-        return returnValues && returnValues[0] 
-        ? bcs.bool().parse(Uint8Array.from(returnValues[0][0][0])) 
+        return returnValues && returnValues[0]
+        ? bcs.bool().parse(Uint8Array.from(returnValues[0][0][0]))
         : false;
 
     }
@@ -232,5 +232,5 @@ export class GrasoQueries {
         }
         return false;
         }
-    
+
 }

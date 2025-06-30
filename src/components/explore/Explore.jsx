@@ -1,7 +1,7 @@
 import "./Explore.css";
 import Slider from "./Slider";
 import { exploreData } from "../../../data/exploreData";
-import ExploreCard from "./ExploreCard";
+import HomeExploreCard from "./HomeExploreCard";
 
 const Explore = () => {
   return (
@@ -14,12 +14,12 @@ const Explore = () => {
           Discover the best live & upcoming land
         </h2>
         <p className=" text-center ">
-        
+
         </p>
       </div>
       <div className="max-w-[1500px] min-w-[800px] grid grid-cols-3 gap-10 justify-center max-md:hidden">
         {exploreData.map((data) => (
-          <ExploreCard data={data} key={data.id} />
+          <HomeExploreCard data={data} key={data.id} />
         ))}
       </div>
       <Slider />
