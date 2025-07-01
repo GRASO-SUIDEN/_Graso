@@ -113,14 +113,14 @@ export default function ExploreCard({ data }) {
             <h1 className="font-bold pt-4 text-2xl">{data.title}</h1>
             <h2 className="text-gray-400">{`Longitude: ${data.longitude}`}</h2>
             <h2 className="text-gray-400">{`Latitude: ${data.latitude}`}</h2>
-            
+
             <div className="relative">
               <div className={`relative ${isShowingFullDescription ? '' : 'h-[90px]'} overflow-hidden`}>
                 <small className="font-sans leading-1 text-xs font-small">
                   {truncateDescription(data.description)}
                 </small>
                 {data.description.length > 100 && (
-                  <button 
+                  <button
                     onClick={() => setIsShowingFullDescription(!isShowingFullDescription)}
                     className="text-[#24c2a5] text-xs hover:underline ml-1"
                   >
@@ -128,7 +128,7 @@ export default function ExploreCard({ data }) {
                   </button>
                 )}
               </div>
-              
+
               {isShowingFullDescription && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                   <div className="bg-white p-6 rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -136,7 +136,7 @@ export default function ExploreCard({ data }) {
                       {data.description}
                     </small>
                     <div className="mt-4 flex justify-end">
-                      <button 
+                      <button
                         onClick={() => setIsShowingFullDescription(false)}
                         className="text-[#24c2a5] hover:underline"
                       >

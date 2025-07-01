@@ -6,6 +6,8 @@ export const exploreData = [
     description:
       "A reclaimed land project in Lagos, offering modern infrastructure, luxury apartments, and commercial spaces.",
     coordinates: { lat: 6.4274, lng: 3.4142 },
+    target: 13000,
+    currentAmount: 1000,
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const exploreData = [
     description:
       "The seat of government in Abuja, a high-profile location with potential for long-term appreciation.",
     coordinates: { lat: 9.0556, lng: 7.4914 },
+    target: 3000,
+    currentAmount: 1000,
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ export const exploreData = [
     description:
       "A historical landmark in Edo State, known for its cultural significance and tourism potential.",
     coordinates: { lat: 6.3349, lng: 5.6037 },
+    target: 700,
+    currentAmount: 100,
   },
   {
     id: 4,
@@ -30,6 +36,8 @@ export const exploreData = [
     description:
       "A popular estate in Port Harcourt, known for its mix of residential and commercial properties.",
     coordinates: { lat: 4.8242, lng: 7.0336 },
+    target: 90000,
+    currentAmount: 1000,
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ export const exploreData = [
     description:
       "An exclusive island development with high-end villas and amenities, known for its exclusivity and privacy.",
     coordinates: { lat: 6.4474, lng: 3.4215 },
+    target: 900000,
+    currentAmount: 100000,
   },
   {
     id: 6,
@@ -46,5 +56,7 @@ export const exploreData = [
     description:
       "A rapidly developing estate with modern infrastructure and a growing community.",
     coordinates: { lat: 9.0893, lng: 7.4383 },
+    target: 17000,
+    currentAmount: 1000,
   },
 ];
