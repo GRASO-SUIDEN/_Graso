@@ -13,9 +13,8 @@ const truncateDescription = (text, limit = 100) => {
 const HomeExploreCard = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
-  const [isShowingFullDescription, setIsShowingFullDescription] = useState(false);
-  const [contributionAmount, setContributionAmount] = useState("");
   const [isAvailable, setIsAvailable] = useState(false);
+  const assetImage = "../../src/assets/exploreCardImg.svg";
 
   const modalRef = useRef(null);
   const isHome = true;
@@ -23,27 +22,26 @@ const HomeExploreCard = ({ data }) => {
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMapModal = () => setIsMapModalOpen(!isMapModalOpen);
 
-
   return (
     <div className="flex flex-col justify-between rounded-t-[2.1rem] rounded-b-3xl bg-[#24C2A5] w-[20rem] h-[32rem] space-y-1 min-w-[250px]">
       <div className="bg-white rounded-b-3xl rounded-t-[2rem] flex-grow overflow-hidden">
         <div className="p-4 w-full h-full flex flex-col justify-between">
           <img
-            src={"../../src/assets/exploreCardImg.svg"}
+            src={assetImage}
             className="w-full h-40 object-cover rounded-[30px] "
             alt={data.name}
           />
           <div className="flex-grow">
-            <h1 className="font-bold pt-4 text-2xl">{data.name}</h1>
-                 <h2 className="text-gray-400 text-xs ">{`Longitude: ${data.coordinates.lng}`}</h2>
-            <h2 className="text-gray-400 text-xs">{`Latitude: ${data.coordinates.lat}`}</h2>
+            <h1 className="font-bold pt-4 text-xl">{data.name}</h1>
+           <div className="w-full flex items-center gap-2" >
+             {/* <h2 className="text-gray-400 text-xs ">{`Lng: ${data.coordinates.lng}`}</h2>
+            <h2 className="text-gray-400 text-xs">{`Lat: ${data.coordinates.lat}`}</h2> */}
 
+           </div>
             <div className="relative mt-2">
-              <div className={`relative ${isShowingFullDescription ? '' : 'h-[90px]'} overflow-hidden`}>
-                <small className="text-xs">
-                  {truncateDescription(data.description)}
-                </small>
-              </div>
+              <p className="text-xs" >
+              {data.description}
+              </p>
             </div>
           </div>
 
@@ -57,7 +55,13 @@ const HomeExploreCard = ({ data }) => {
             </div>
             <progress
               max="1"
-              value={data.currentAmount && data.target ? (Number(data.currentAmount) / Number(data.target)).toFixed(2) : 0}
+              value={
+                data.currentAmount && data.target
+                  ? (Number(data.currentAmount) / Number(data.target)).toFixed(
+                      2
+                    )
+                  : 0
+              }
               className="w-full"
             />
           </div>
@@ -103,18 +107,31 @@ const HomeExploreCard = ({ data }) => {
       {/** MODALS */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div ref={modalRef} className="bg-white p-6 rounded-lg w-[90%] max-w-md h-[90%] overflow-y-auto">
+          <div
+            ref={modalRef}
+            className="bg-white p-6 rounded-lg w-[90%] max-w-md h-[90%] overflow-y-auto"
+          >
             <h2 className="text-xl font-bold mb-4">{data.name} - Investment</h2>
             <img
-              src={`https://gateway.pinata.cloud/ipfs/${data.image || ""}?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
+              src={`https://gateway.pinata.cloud/ipfs/${
+                data.image || ""
+              }?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
               alt="Property"
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
             <div className="space-y-2 text-gray-600">
-              <p><strong>Location:</strong> {data.location}</p>
-              <p><strong>Description:</strong> {data.description}</p>
-              <p><strong>Targeted Raise:</strong> 200,000 SUI</p>
-              <p><strong>Min. Entry:</strong> 2.95 SUI</p>
+              <p>
+                <strong>Location:</strong> {data.location}
+              </p>
+              <p>
+                <strong>Description:</strong> {data.description}
+              </p>
+              <p>
+                <strong>Targeted Raise:</strong> 200,000 SUI
+              </p>
+              <p>
+                <strong>Min. Entry:</strong> 2.95 SUI
+              </p>
             </div>
 
             <div className="mt-6 space-y-3">
@@ -126,8 +143,6 @@ const HomeExploreCard = ({ data }) => {
               </ul>
             </div>
 
-
-
             <div className="mt-6 flex justify-between">
               <button
                 onClick={toggleModal}
@@ -136,13 +151,17 @@ const HomeExploreCard = ({ data }) => {
                 Cancel
               </button>
 
-
-                          <ConnectButton className="!bg-[#24c2a5] !hover:bg-[#1da88d] !px-4 !py-2  !text-white !rounded-lg   " connectText=" Confirm Investment" />
+              <ConnectButton
+                className="!bg-[#24c2a5] !hover:bg-[#1da88d] !px-4 !py-2  !text-white !rounded-lg   "
+                connectText=" Confirm Investment"
+              />
             </div>
 
             {isAvailable && (
               <div className="absolute top-[15rem] left-[10%] w-[80%] p-4 bg-[#1da88d] text-white text-center rounded-md">
-                {isHome ? "Please connect wallet" : "Investment page under construction 🏗️"}
+                {isHome
+                  ? "Please connect wallet"
+                  : "Investment page under construction 🏗️"}
                 <div
                   className="mt-2 text-lg cursor-pointer"
                   onClick={() => setIsAvailable(false)}
@@ -157,11 +176,17 @@ const HomeExploreCard = ({ data }) => {
 
       {isMapModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div ref={modalRef} className="bg-white p-6 rounded-lg max-w-md w-[90%]">
+          <div
+            ref={modalRef}
+            className="bg-white p-6 rounded-lg max-w-md w-[90%]"
+          >
             <h2 className="text-xl font-bold mb-4">{data.name} - Location</h2>
             <div className="h-[400px] w-full mb-4">
               <MapContainer
-                center={[data.coordinates?.lat || 0, data.coordinates?.lng || 0]}
+                center={[
+                  data.coordinates?.lat || 0,
+                  data.coordinates?.lng || 0,
+                ]}
                 zoom={13}
                 scrollWheelZoom={false}
                 style={{ height: "100%", width: "100%" }}
@@ -170,7 +195,12 @@ const HomeExploreCard = ({ data }) => {
                   attribution='&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[data.coordinates?.lat || 0, data.coordinates?.lng || 0]}>
+                <Marker
+                  position={[
+                    data.coordinates?.lat || 0,
+                    data.coordinates?.lng || 0,
+                  ]}
+                >
                   <Popup>
                     {data.name}
                     <br />
