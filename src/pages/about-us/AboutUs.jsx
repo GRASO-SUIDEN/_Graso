@@ -80,15 +80,7 @@ const AboutUs = () => {
       // twitter: "https://x.com/king_futures9?s=21",
       // github: "https://x.com/king_futures9?s=21",
     },
-    {
-      name: "Okorie Victor Onyekachi ",
-      role: "Graphic Designer",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/victor.jpg?raw=true",
-      linkedin: "http://www.linkedin.com/in/victor-okorie-49a3081a3",
-      twitter: "https://x.com/artovivo",
-      github: "https://github.com/artovivo",
-    },
+
     {
       name: "Okeke Chinedu Emmanuel ",
       role: "Frontend Developer",
@@ -107,16 +99,7 @@ const AboutUs = () => {
       twitter: "https://x.com/i_am_nebolisa",
       github: "https://github.com/benedictfred",
     },
-    {
-      name: " Ugbeda Genesis wisdom  ",
-      role: "Frontend Developer",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/genesis.jpg?raw=true",
-      linkedin:
-        "https://www.linkedin.com/in/wisdom-genesis-frontend-web-developer",
-      twitter: "https://x.com/dev_genesi?t=9BtzgF9YZM8jg9G_Xzibzg&s=08",
-      github: "https://github.com/Genesisufedo",
-    },
+
     {
       name: "  Egbo chikosolu Maryaugustina  ",
       role: "Social media manager",
@@ -126,15 +109,6 @@ const AboutUs = () => {
         "https://www.linkedin.com/in/egbo-chikosolu-mary-augustina-aba558251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       twitter: "https://x.com/Augustina__egbo?t=40D9E2C9B9DCPjd7zUvvEg&s=09",
       github: "https://x.com/Augustina__egbo?t=40D9E2C9B9DCPjd7zUvvEg&s=09",
-    },
-    {
-      name: " Ene Paschaline Chimeremma  ",
-      role: "Social Media Manager",
-      image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/paschaline.jpg?raw=true",
-      linkedin: "https://github.com/Alex-dev63",
-      twitter: "https://x.com/Xan_dra27?t=h9KVYDU5luuZdZEeOSfViA&s=08",
-      github: "https://github.com/Alex-dev63",
     },
 
     {
@@ -147,13 +121,13 @@ const AboutUs = () => {
       github: "https://github.com/Verifieddanny",
     },
     {
-      name: " Nweke Anthony ",
+      name: "Somtochukwu Kelechi Onwuajuese",
       role: "Backend Developer",
       image:
-        "https://github.com/chiscookeke11/Test-pagea/blob/main/sui_logo.png?raw=true",
-      linkedin: "https://www.linkedin.com/in/Anthonyslav1",
-      twitter: "https://x.com/Anthonyslav1",
-      github: "https://github.com/Anthonyslav1",
+        "https://pbs.twimg.com/profile_images/1907689552044544000/vVuen9NF_400x400.jpg",
+      // linkedin: "https://www.linkedin.com/in/Anthonyslav1",
+      twitter: "https://x.com/tweetSomto",
+      github: "https://github.com/soomtochukwu/soomtochukwu",
     },
   ];
 
