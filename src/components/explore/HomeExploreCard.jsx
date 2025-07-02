@@ -1,20 +1,18 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import sui from "../../../src/assets/sui.png";
 import Timer from "../Timer";
 import { ConnectButton } from "@mysten/dapp-kit";
+import assetImage from "../../assets/exploreCardImg.svg"
 
-const truncateDescription = (text, limit = 100) => {
-  if (!text) return "";
-  return text.length > limit ? text.substring(0, limit) + "..." : text;
-};
+
 
 const HomeExploreCard = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
-  const assetImage = "../../src/assets/exploreCardImg.svg";
+
 
   const modalRef = useRef(null);
   const isHome = true;
@@ -34,8 +32,7 @@ const HomeExploreCard = ({ data }) => {
           <div className="flex-grow">
             <h1 className="font-bold pt-4 text-xl">{data.name}</h1>
            <div className="w-full flex items-center gap-2" >
-             {/* <h2 className="text-gray-400 text-xs ">{`Lng: ${data.coordinates.lng}`}</h2>
-            <h2 className="text-gray-400 text-xs">{`Lat: ${data.coordinates.lat}`}</h2> */}
+
 
            </div>
             <div className="relative mt-2">
@@ -113,9 +110,7 @@ const HomeExploreCard = ({ data }) => {
           >
             <h2 className="text-xl font-bold mb-4">{data.name} - Investment</h2>
             <img
-              src={`https://gateway.pinata.cloud/ipfs/${
-                data.image || ""
-              }?pinataGatewayToken=${import.meta.env.VITE_GATEWAY_TOKEN}`}
+              src="/exploreCardImg.svg"
               alt="Property"
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
@@ -127,7 +122,7 @@ const HomeExploreCard = ({ data }) => {
                 <strong>Description:</strong> {data.description}
               </p>
               <p>
-                <strong>Targeted Raise:</strong> 200,000 SUI
+                <strong>Targeted Raise:</strong> {data.target.toLocaleString()} SUI
               </p>
               <p>
                 <strong>Min. Entry:</strong> 2.95 SUI
