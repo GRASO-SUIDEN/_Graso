@@ -1,8 +1,8 @@
 import Navbar from "../../components/navbar/NavBar";
 import { exploreData } from "../../../data/exploreData";
-import ExploreCard from "../../components/explore/ExploreCard";
 import Slider from "../../components/explore/Slider";
 import Footer from "../../components/Footer";
+import HomeExploreCard from "../../components/explore/HomeExploreCard";
 
 function ExplorePage() {
   return (
@@ -22,7 +22,7 @@ function ExplorePage() {
         <div className="flex justify-center items-center">
           <div className="max-w-[1500px] min-w-[800px] grid grid-cols-3 gap-10 justify-items-center max-md:hidden">
             {exploreData.map((data) => (
-              <ExploreCard data={data} key={data.id} />
+              <HomeExploreCard data={data} key={data.id} />
             ))}
           </div>
           <Slider />
